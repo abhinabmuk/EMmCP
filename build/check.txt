@@ -1,0 +1,1285 @@
+
+**************************************************************
+ Geant4 version Name: geant4-11-01-patch-01 [MT]   (10-February-2023)
+                       Copyright : Geant4 Collaboration
+                      References : NIM A 506 (2003), 250-303
+                                 : IEEE-TNS 53 (2006), 270-278
+                                 : NIM A 835 (2016), 186-225
+                             WWW : http://geant4.org/
+**************************************************************
+
+### New material Water
+=======================================================================
+======                 Electromagnetic Physics Parameters      ========
+=======================================================================
+LPM effect enabled                                 1
+Enable creation and use of sampling tables         0
+Apply cuts on all EM processes                     0
+Use combined TransportationWithMsc                 Disabled
+Use general process                                0
+Enable linear polarisation for gamma               0
+Enable photoeffect sampling below K-shell          1
+Enable sampling of quantum entanglement            0
+X-section factor for integral approach             0.8
+Min kinetic energy for tables                      10 eV 
+Max kinetic energy for tables                      10 TeV
+Number of bins per decade of a table               10
+Verbose level                                      0
+Verbose level for worker thread                    0
+Bremsstrahlung energy threshold above which 
+  primary e+- is added to the list of secondary    100 TeV
+Bremsstrahlung energy threshold above which primary
+  muon/hadron is added to the list of secondary    100 TeV
+Lowest triplet kinetic energy                      1 MeV
+Enable sampling of gamma linear polarisation       0
+5D gamma conversion model type                     0
+5D gamma conversion model on isolated ion          0
+Livermore data directory                           epics_2017
+=======================================================================
+======                 Ionisation Parameters                   ========
+=======================================================================
+Step function for e+-                              (0.2, 1 mm)
+Step function for muons/hadrons                    (0.2, 0.1 mm)
+Step function for light ions                       (0.2, 0.1 mm)
+Step function for general ions                     (0.2, 0.1 mm)
+Lowest e+e- kinetic energy                         1 keV
+Lowest muon/hadron kinetic energy                  1 keV
+Use ICRU90 data                                    0
+Fluctuations of dE/dx are enabled                  1
+Type of fluctuation model for leptons and hadrons  Universal
+Use built-in Birks satuaration                     0
+Build CSDA range enabled                           1
+Use cut as a final range enabled                   0
+Enable angular generator interface                 0
+Max kinetic energy for CSDA tables                 10 TeV
+Max kinetic energy for NIEL computation            0 eV 
+Linear loss limit                                  0.01
+Read data from file for e+e- pair production by mu 0
+=======================================================================
+======                 Multiple Scattering Parameters          ========
+=======================================================================
+Type of msc step limit algorithm for e+-           1
+Type of msc step limit algorithm for muons/hadrons 0
+Msc lateral displacement for e+- enabled           1
+Msc lateral displacement for muons and hadrons     0
+Urban msc model lateral displacement alg96         1
+Range factor for msc step limit for e+-            0.04
+Range factor for msc step limit for muons/hadrons  0.2
+Geometry factor for msc step limitation of e+-     2.5
+Safety factor for msc step limit for e+-           0.6
+Skin parameter for msc step limitation of e+-      1
+Lambda limit for msc step limit for e+-            1 mm
+Use Mott correction for e- scattering              0
+Factor used for dynamic computation of angular 
+  limit between single and multiple scattering     1
+Fixed angular limit between single 
+  and multiple scattering                          3.1416 rad
+Upper energy limit for e+- multiple scattering     100 MeV
+Type of electron single scattering model           0
+Type of nuclear form-factor                        1
+Screening factor                                   1
+=======================================================================
+Physics List For FCP
+Initialized ALP (gamma conversion to ALP) for material density = 1
+Initialized ALP (gamma conversion to ALP) for ANuclIn = 1
+Initialized ALP (gamma conversion to ALP) for ZNuclIn density = 1
+
+========== ALP Particle Info ==========
+Name: DMParticleALP
+Mass: 0.0167 GeV
+Mass Inputted in decay width: 0.0167
+Epsilon: 0.001 1/GeV
+Width: 2.31643e-14 GeV
+Width calculated: 2.31643e-14 GeV
+Lifetime: 2.84149e-11 s
+cτ (decay length): 0.00851857 m
+Is Stable: 0
+=======================================
+/run/verbose 1
+#
+/testem/det/setMat G4_Pb
+### New material G4_Pb
+/run/geometryModified
+/testem/det/setSize 1 m
+/run/geometryModified
+#
+/testem/phys/addPhysics standard
+#
+/run/setCut 1 mm
+#
+/run/initialize
+
+ The Box is 1 m   of G4_Pb
+  Material:    G4_Pb    density: 11.350 g/cm3   RadL:   5.613 mm   Nucl.Int.Length:  18.248 cm 
+                       Imean: 823.000 eV   temperature: 293.15 K  pressure:   1.00 atm
+
+   --->  Element: Pb (Pb)   Z = 82.0   N =   207   A = 207.217 g/mole
+         --->  Isotope: Pb204   Z = 82   N = 204   A = 203.97 g/mole   abundance:  1.400 %
+         --->  Isotope: Pb206   Z = 82   N = 206   A = 205.97 g/mole   abundance: 24.100 %
+         --->  Isotope: Pb207   Z = 82   N = 207   A = 206.98 g/mole   abundance: 22.100 %
+         --->  Isotope: Pb208   Z = 82   N = 208   A = 207.98 g/mole   abundance: 52.400 %
+          ElmMassFraction: 100.00 %  ElmAbundance 100.00 % 
+
+
+=== Processes registered for FCP- ===
+  Transportation
+  FCPIoni
+  FCPPairProd
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to DMParticleALP
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to DMParticleALP
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to FCP+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to FCP+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to FCP-
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to FCP-
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to GenericIon
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to GenericIon
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to He3
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to He3
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to alpha
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to alpha
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_He3
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_He3
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_alpha
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_alpha
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_deuteron
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_deuteron
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_doublehyperH4
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_doublehyperH4
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_doublehyperdoubleneutron
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_doublehyperdoubleneutron
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_hyperH4
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_hyperH4
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_hyperHe5
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_hyperHe5
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_hyperalpha
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_hyperalpha
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_hypertriton
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_hypertriton
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_neutron
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_neutron
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_proton
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_proton
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_triton
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_triton
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to chargedgeantino
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to chargedgeantino
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to deuteron
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to deuteron
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to doublehyperH4
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to doublehyperH4
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to doublehyperdoubleneutron
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to doublehyperdoubleneutron
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to e+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to e+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to e-
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to e-
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to gamma
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to gamma
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to geantino
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to geantino
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to hyperH4
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to hyperH4
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to hyperHe5
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to hyperHe5
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to hyperalpha
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to hyperalpha
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to hypertriton
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to hypertriton
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to kaon+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to kaon+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to kaon-
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to kaon-
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to mu+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to mu+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to mu-
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to mu-
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to neutron
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to neutron
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to pi+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to pi+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to pi-
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to pi-
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to proton
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to proton
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to triton
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to triton
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4PhysicsListHelper::RegisterProcess :hIoni for FCP+ with  type/subtype =2/2  is has same subType as FCPIoni for FCP+
+It will not be added !!
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : Run0111
+      issued by : G4PhysicsListHelper::RegisterProcess
+Duplication of processes
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4PhysicsListHelper::RegisterProcess :hIoni for FCP- with  type/subtype =2/2  is has same subType as FCPIoni for FCP-
+It will not be added !!
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : Run0111
+      issued by : G4PhysicsListHelper::RegisterProcess
+Duplication of processes
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:4.79834
+ E0 = 0.05  Max cross section = 1
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:5.9145
+ E0 = 0.1  Max cross section = 1
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:7.03097
+ E0 = 0.2  Max cross section = 1
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:8.50685
+ E0 = 0.5  Max cross section = 1
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:9.62281
+ E0 = 1  Max cross section = 1
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:10.7368
+ E0 = 2  Max cross section = 1
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:12.1948
+ E0 = 5  Max cross section = 1
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:13.2497
+ E0 = 10  Max cross section = 1
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:13.8096
+ E0 = 15  Max cross section = 1
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:14.3907
+ E0 = 25  Max cross section = 1
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:14.8666
+ E0 = 50  Max cross section = 1
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:15.0105
+ E0 = 80  Max cross section = 1
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:15.0862
+ E0 = 150  Max cross section = 1
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:15.1001
+ E0 = 200  Max cross section = 1
+#
+/gun/particle gamma
+/gun/energy 100 GeV
+#
+/analysis/setFileName mu+
+#
+/analysis/h1/set 1 100 0 30 cm
+/analysis/h1/set 2 100 0 2 GeV
+/analysis/h1/set 3 100 0 1000 GeV
+/analysis/h1/set 4 100 0 1000 GeV
+/analysis/h1/set 5 100 0 1000 GeV
+/analysis/h1/set 6 100 0 1000 GeV
+/analysis/h1/set 7 100 0 1000 GeV
+/analysis/h1/set 8 100 0 1000 GeV
+/analysis/h1/set 11 100 0 1000 GeV
+/analysis/h1/set 12 100 0 1000 GeV
+/analysis/h1/set 13 100 0 1000 GeV
+#
+/run/printProgress 1
+/run/beamOn 100
+
+========= Table of registered couples ============================
+
+Index : 0     used in the geometry : Yes
+ Material : G4_Pb
+ Range cuts        :  gamma  1 mm     e-  1 mm     e+  1 mm  proton 1 mm 
+ Energy thresholds :  gamma  101.797 keV    e-  1.37158 MeV    e+  1.2826 MeV proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+==================================================================
+
+### Run 0 starts.
+... set ntuple merging row mode : row-wise - done
+... create file : mu+.root - done
+... open analysis file : mu+.root - done
+... open analysis file : mu+.root - done
+
+------- MixMaxRng engine status -------
+ Current state vector is:
+mixmax state, file version 1.0
+N=17; V[N]={59199029321165193, 1672669539714083328, 1597478246683072814, 1379367119965986819, 2003852828413620816, 1821363074309789828, 1993769948894264364, 1500305318557803567, 1158530401465141163, 90122634784764854, 1361952954122384350, 2203456515982124149, 1655833252498904653, 1970076936719564069, 741363862280070854, 858440191937556435, 1121419499278519013}; counter= 17sumtot= 130771262791876759
+---------------------------------------
+--> Event 0 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
+--> Event 1 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
+--> Event 2 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
+--> Event 3 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
+--> Event 4 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
+--> Event 5 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
+--> Event 6 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
+--> Event 7 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
+--> Event 8 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
+--> Event 9 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
+--> Event 10 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
+--> Event 11 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
+--> Event 12 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
+--> Event 13 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
+--> Event 14 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
+--> Event 15 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
+--> Event 16 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
+--> Event 17 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
+--> Event 18 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
+--> Event 19 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
+--> Event 20 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
+--> Event 21 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
+--> Event 22 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
+--> Event 23 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
+--> Event 24 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
+Accepted after 38180 iterations for Angle
+EParent = 1.000000e+02 XAcc = 1.000000e+00 ThetaAcc = 8.319696e-05
+ DM PDG ID = 5300122 emitted by gamma in material G4_Pb (Z=82, A=207.217) with energy = 100 DM energy = 100
+--> Event 25 starts.
+--> Event 26 starts.
+--> Event 27 starts.
+--> Event 28 starts.
+--> Event 29 starts.
+--> Event 30 starts.
+--> Event 31 starts.
+--> Event 32 starts.
+--> Event 33 starts.
+--> Event 34 starts.
+--> Event 35 starts.
+--> Event 36 starts.
+--> Event 37 starts.
+--> Event 38 starts.
+--> Event 39 starts.
+--> Event 40 starts.
+--> Event 41 starts.
+--> Event 42 starts.
+--> Event 43 starts.
+--> Event 44 starts.
+--> Event 45 starts.
+--> Event 46 starts.
+--> Event 47 starts.
+--> Event 48 starts.
+--> Event 49 starts.
+--> Event 50 starts.
+--> Event 51 starts.
+--> Event 52 starts.
+--> Event 53 starts.
+--> Event 54 starts.
+--> Event 55 starts.
+--> Event 56 starts.
+--> Event 57 starts.
+--> Event 58 starts.
+--> Event 59 starts.
+--> Event 60 starts.
+--> Event 61 starts.
+--> Event 62 starts.
+--> Event 63 starts.
+--> Event 64 starts.
+--> Event 65 starts.
+--> Event 66 starts.
+--> Event 67 starts.
+--> Event 68 starts.
+--> Event 69 starts.
+--> Event 70 starts.
+--> Event 71 starts.
+--> Event 72 starts.
+--> Event 73 starts.
+--> Event 74 starts.
+--> Event 75 starts.
+--> Event 76 starts.
+--> Event 77 starts.
+--> Event 78 starts.
+--> Event 79 starts.
+--> Event 80 starts.
+--> Event 81 starts.
+--> Event 82 starts.
+--> Event 83 starts.
+--> Event 84 starts.
+--> Event 85 starts.
+--> Event 86 starts.
+--> Event 87 starts.
+--> Event 88 starts.
+--> Event 89 starts.
+--> Event 90 starts.
+--> Event 91 starts.
+--> Event 92 starts.
+--> Event 93 starts.
+--> Event 94 starts.
+--> Event 95 starts.
+--> Event 96 starts.
+--> Event 97 starts.
+--> Event 98 starts.
+--> Event 99 starts.
+ Run terminated.
+Run Summary
+  Number of events processed : 100
+  User=0.000000s Real=0.005258s Sys=0.000000s [Cpu=0.0%]
+
+ ======================== run summary ======================
+
+ The run was 100 gamma of 100 GeV through 1 m   of G4_Pb (density: 11.3 g/cm3 )
+================== Deleting memory pools ===================
+Number of memory pools allocated: 9; of which, static: 0
+Dynamic pools deleted: 9 / Total memory freed: 0.012 MB
+============================================================
