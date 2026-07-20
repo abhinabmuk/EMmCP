@@ -21,7 +21,7 @@ DMParticleALP* DMParticleALP::Definition()
   //get parameters from registry (NOTE: mass is parsed in GeV)
   //DarkMatterParametersRegistry* DMpar = DarkMatterParametersRegistry::GetInstance();
   G4double MassIn    = 0.0167; //in GeV
-  G4double epsilIn   = 0.001;  // 1/GeV coupling constant
+  G4double epsilIn   = 0.001 ;  // 1/GeV coupling constant
   G4double DecayType = 1; //always set to 0 , ALP always decays 
 
   G4String name = "DMParticleDarkALP";
@@ -42,8 +42,8 @@ DMParticleALP* DMParticleALP::Definition()
   if( !anInstance ) {
     anInstance = new G4ParticleDefinition(
         /* Name ..................... */ name,
-        /* Mass ..................... */ MassIn*GeV,
-        /* Decay width .............. */ WidthIn*GeV,
+        /* Mass ..................... */ MassIn,   // *GeV
+        /* Decay width .............. */ WidthIn,   // * GeV
         /* Decay width .............. */ // WidthIn*GeV,
 
         /* Charge ................... */ 0.,

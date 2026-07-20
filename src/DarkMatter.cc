@@ -35,6 +35,8 @@
 // Update on 14th July 
 /*
 4] Remove denisty check in emission (dynamic reading of density of different materials )
+5] Full removal of density check 
+6] Removal of Global veto to allow multiple ALP emssions (in a single run)
 */
 
 DarkMatter::DarkMatter(double MAIn, double EThreshIn, double ANuclIn, double ZNuclIn, double DensityIn,
@@ -128,7 +130,9 @@ bool DarkMatter::EmissionAllowed(double E0, double DensityMat)
 {
   if(E0 < 1.001*MA) return false;
   if(E0 < EThresh) return false;
-  if(NEmissions) return false; // For G4 DM classes
+
+ // if(NEmissions) return false; // For G4 DM classes
+
  // if(fabs(DensityMat - Density) > 0.1) return false;   // remove density check due to dynamic reading 
   return true;
 }
@@ -138,7 +142,7 @@ bool DarkMatter::Emission(double E0, double DensityMat, double StepLength)
 {
   if(E0 < 1.001*MA) return false;
   if(E0 < EThresh) return false;
-  if(fabs(DensityMat - Density) > 0.1) return false;
+ // if(fabs(DensityMat - Density) > 0.1) return false;
   double prob = SigmaNorm*GetSigmaTot(E0)*StepLength;
   AccumulatedProbability += prob;
   double tmprandom = G4UniformRand();

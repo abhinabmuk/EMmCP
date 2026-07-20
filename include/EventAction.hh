@@ -40,6 +40,14 @@
 class RunAction;
 class G4VProcess;
 
+// added DarkMatter class to Event and Stepping action due to NEmissions restriction which cuts off see claude query 
+// add Emission counter
+
+// added SteppingAction
+class SteppingAction;
+
+class DarkMatter;
+
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 class EventAction : public G4UserEventAction
@@ -54,13 +62,24 @@ class EventAction : public G4UserEventAction
     
     void SumEnergyDeposited(G4int trackID, G4double edep);
     void SumEnergyTransfered(const G4VProcess*, G4double);
+    void SetSteppingAction(SteppingAction* action) {theSteppingAction = action;}
+
+    DarkMatter* GetDarkMatterPointer() {return myDarkMatter;}
+    void CountEmission() {NEmissions++;}
 
   private:
     RunAction*    fRunAction;
-    
+    SteppingAction* theSteppingAction;
+
     G4double      fEdepPrimary, fEdepSecondary;
     std::map<G4String,G4double> fEnergyTransfered;
     std::map<G4String,G4int> fProcessSubType;
+
+    DarkMatter* myDarkMatter;
+    G4int NEmissions;
+       
+
+
 };
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

@@ -97,6 +97,7 @@ int main(int argc,char** argv) {
 
   //stepAction
   SteppingAction* steppingaction = new SteppingAction(runaction, eventaction);
+  eventaction->SetSteppingAction(steppingaction);  // ← ADD THIS LINE
   runManager->SetUserAction(steppingaction);
 
   //stackAction

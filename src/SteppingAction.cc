@@ -39,6 +39,11 @@
 #include "G4Step.hh"
 #include "G4ParticleTypes.hh"
 
+//added 
+
+#include "DarkMatter.hh"
+
+
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 SteppingAction::SteppingAction(RunAction* RA, EventAction* EA)
@@ -196,4 +201,10 @@ void SteppingAction::UserSteppingAction(const G4Step* step)
  }
 
  fEventaction->SumEnergyTransfered(process, Etransfer);
+}
+
+
+void SteppingAction::Reset()
+{
+ fEventaction->GetDarkMatterPointer()->ResetNEmissions();
 }

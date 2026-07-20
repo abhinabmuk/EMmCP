@@ -866,7 +866,7 @@ Index : 0     used in the geometry : Yes
 ------- MixMaxRng engine status -------
  Current state vector is:
 mixmax state, file version 1.0
-N=17; V[N]={59199029321165193, 1672669539714083328, 1597478246683072814, 1379367119965986819, 2003852828413620816, 1821363074309789828, 1993769948894264364, 1500305318557803567, 1158530401465141163, 90122634784764854, 1361952954122384350, 2203456515982124149, 1655833252498904653, 1970076936719564069, 741363862280070854, 858440191937556435, 1121419499278519013}; counter= 17sumtot= 130771262791876759
+N=17; V[N]={1923114729309690018, 1326576698971401866, 355964974729018193, 558618143118545228, 1850414697073721622, 104386391380790949, 2303149211529680518, 886909572015689291, 593973977256075354, 560370304373811810, 926001249417795720, 290279764313521767, 830651467233504295, 1156892781787120455, 1802649842600301398, 944858852036100296, 167507473820254751}; counter= 17sumtot= 441419066471165874
 ---------------------------------------
 --> Event 0 starts.
 CrossSection  Z82
@@ -1193,88 +1193,985 @@ GetepsilBench() value 0.0001
 Getepsil() value 0.001
 n value3.29854e+19
 XMeanFreePath value 1062.29
-Accepted after 38180 iterations for Angle
-EParent = 1.000000e+02 XAcc = 1.000000e+00 ThetaAcc = 8.319696e-05
- DM PDG ID = 5300122 emitted by gamma in material G4_Pb (Z=82, A=207.217) with energy = 100 DM energy = 100
 --> Event 25 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 26 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 27 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 28 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 29 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 30 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 31 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 32 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 33 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 34 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 35 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 36 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 37 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 38 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 39 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 40 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 41 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 42 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 43 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 44 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 45 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 46 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 47 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 48 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 49 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 50 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 51 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 52 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 53 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 54 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 55 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 56 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 57 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 58 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 59 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 60 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 61 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 62 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 63 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 64 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 65 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 66 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 67 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 68 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 69 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 70 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 71 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 72 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 73 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 74 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 75 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 76 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 77 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 78 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 79 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 80 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 81 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 82 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 83 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 84 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 85 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 86 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 87 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 88 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 89 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 90 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 91 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 92 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 93 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 94 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 95 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 96 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 97 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 98 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
 --> Event 99 starts.
+CrossSection  Z82
+CrossSection  A 207.217
+Coupling Constant:0.0001
+Mass:0.0167
+sigmaALPtotal [pb]:2.85387e+09
+CrossSection  before benching 2.85387e-25
+CrossSection 2.85387e-23
+picobarn value 1e-34
+GetepsilBench() value 0.0001
+Getepsil() value 0.001
+n value3.29854e+19
+XMeanFreePath value 1062.29
  Run terminated.
 Run Summary
   Number of events processed : 100
-  User=0.000000s Real=0.005258s Sys=0.000000s [Cpu=0.0%]
+  User=0.000000s Real=0.005614s Sys=0.000000s [Cpu=0.0%]
 
  ======================== run summary ======================
 

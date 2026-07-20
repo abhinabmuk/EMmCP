@@ -3224,9 +3224,11 @@ CMakeFiles/TestEm18.dir/src/DetectorMessenger.cc.o: /home/badshah/Downloads/G4AL
   /usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h
 
 CMakeFiles/TestEm18.dir/src/EventAction.cc.o: /home/badshah/Downloads/G4ALPS/G4ALPS/EMmCP/src/EventAction.cc \
+  /home/badshah/Downloads/G4ALPS/G4ALPS/EMmCP/include/DarkMatter.hh \
   /home/badshah/Downloads/G4ALPS/G4ALPS/EMmCP/include/EventAction.hh \
   /home/badshah/Downloads/G4ALPS/G4ALPS/EMmCP/include/HistoManager.hh \
   /home/badshah/Downloads/G4ALPS/G4ALPS/EMmCP/include/RunAction.hh \
+  /home/badshah/Downloads/G4ALPS/G4ALPS/EMmCP/include/SteppingAction.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/CLHEP/Random/DualRand.h \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/CLHEP/Random/JamesRandom.h \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/CLHEP/Random/MTwistEngine.h \
@@ -3406,6 +3408,7 @@ CMakeFiles/TestEm18.dir/src/EventAction.cc.o: /home/badshah/Downloads/G4ALPS/G4A
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4UItokenNum.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4UserEventAction.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4UserRunAction.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4UserSteppingAction.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4VAnalysisManager.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4VAnalysisManager.icc \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4VDigiCollection.hh \
@@ -3610,6 +3613,7 @@ CMakeFiles/TestEm18.dir/src/EventAction.cc.o: /home/badshah/Downloads/G4ALPS/G4A
   /usr/include/c++/13/limits \
   /usr/include/c++/13/locale \
   /usr/include/c++/13/map \
+  /usr/include/c++/13/math.h \
   /usr/include/c++/13/memory \
   /usr/include/c++/13/mutex \
   /usr/include/c++/13/new \
@@ -3651,6 +3655,17 @@ CMakeFiles/TestEm18.dir/src/EventAction.cc.o: /home/badshah/Downloads/G4ALPS/G4A
   /usr/include/errno.h \
   /usr/include/features-time64.h \
   /usr/include/features.h \
+  /usr/include/gsl/gsl_inline.h \
+  /usr/include/gsl/gsl_interp.h \
+  /usr/include/gsl/gsl_machine.h \
+  /usr/include/gsl/gsl_math.h \
+  /usr/include/gsl/gsl_minmax.h \
+  /usr/include/gsl/gsl_nan.h \
+  /usr/include/gsl/gsl_pow_int.h \
+  /usr/include/gsl/gsl_precision.h \
+  /usr/include/gsl/gsl_spline.h \
+  /usr/include/gsl/gsl_sys.h \
+  /usr/include/gsl/gsl_types.h \
   /usr/include/libintl.h \
   /usr/include/limits.h \
   /usr/include/linux/errno.h \
@@ -3765,6 +3780,7 @@ CMakeFiles/TestEm18.dir/src/EventAction.cc.o: /home/badshah/Downloads/G4ALPS/G4A
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
   /usr/include/x86_64-linux-gnu/sys/types.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/float.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/limits.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
@@ -14748,6 +14764,7 @@ CMakeFiles/TestEm18.dir/src/StepMaxMessenger.cc.o: /home/badshah/Downloads/G4ALP
   /usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h
 
 CMakeFiles/TestEm18.dir/src/SteppingAction.cc.o: /home/badshah/Downloads/G4ALPS/G4ALPS/EMmCP/src/SteppingAction.cc \
+  /home/badshah/Downloads/G4ALPS/G4ALPS/EMmCP/include/DarkMatter.hh \
   /home/badshah/Downloads/G4ALPS/G4ALPS/EMmCP/include/EventAction.hh \
   /home/badshah/Downloads/G4ALPS/G4ALPS/EMmCP/include/HistoManager.hh \
   /home/badshah/Downloads/G4ALPS/G4ALPS/EMmCP/include/RunAction.hh \
@@ -15225,6 +15242,7 @@ CMakeFiles/TestEm18.dir/src/SteppingAction.cc.o: /home/badshah/Downloads/G4ALPS/
   /usr/include/c++/13/limits \
   /usr/include/c++/13/locale \
   /usr/include/c++/13/map \
+  /usr/include/c++/13/math.h \
   /usr/include/c++/13/memory \
   /usr/include/c++/13/mutex \
   /usr/include/c++/13/new \
@@ -15266,6 +15284,17 @@ CMakeFiles/TestEm18.dir/src/SteppingAction.cc.o: /home/badshah/Downloads/G4ALPS/
   /usr/include/errno.h \
   /usr/include/features-time64.h \
   /usr/include/features.h \
+  /usr/include/gsl/gsl_inline.h \
+  /usr/include/gsl/gsl_interp.h \
+  /usr/include/gsl/gsl_machine.h \
+  /usr/include/gsl/gsl_math.h \
+  /usr/include/gsl/gsl_minmax.h \
+  /usr/include/gsl/gsl_nan.h \
+  /usr/include/gsl/gsl_pow_int.h \
+  /usr/include/gsl/gsl_precision.h \
+  /usr/include/gsl/gsl_spline.h \
+  /usr/include/gsl/gsl_sys.h \
+  /usr/include/gsl/gsl_types.h \
   /usr/include/libintl.h \
   /usr/include/limits.h \
   /usr/include/linux/errno.h \
@@ -15380,6 +15409,7 @@ CMakeFiles/TestEm18.dir/src/SteppingAction.cc.o: /home/badshah/Downloads/G4ALPS/
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
   /usr/include/x86_64-linux-gnu/sys/types.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/float.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/limits.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \

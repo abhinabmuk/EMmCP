@@ -37,6 +37,12 @@
 
 #include "G4Event.hh"
 
+//added stepping action header 
+
+#include "SteppingAction.hh"
+#include "DarkMatter.hh"
+
+
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 EventAction::EventAction(RunAction* RA)
@@ -53,6 +59,8 @@ EventAction::~EventAction()
 void EventAction::BeginOfEventAction(const G4Event*)
 {
  // initialisation per event
+
+ // theSteppingAction->Reset();
  fEdepPrimary = fEdepSecondary = 0.;
 }
 

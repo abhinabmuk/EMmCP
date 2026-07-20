@@ -82,7 +82,6 @@ PhysicsList::PhysicsList() : G4VModularPhysicsList(),
   G4double eThresh_GeV = 1;  // Energy cut (based on detector) for now set to 1 GeV
  
   // Dummy Z=1, A=1, density=1 — overridden per-step from G4Material
- // fALP = new ALP(alpMass_GeV, eThresh_GeV, /*ANucl=*/207., /*ZNucl=*/82., /*Density=*/11.35);
   fALP = new ALP(alpMass_GeV, eThresh_GeV,1,1,1);
 
 

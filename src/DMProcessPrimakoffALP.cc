@@ -109,6 +109,7 @@ G4double DMProcessPrimakoffALP::GetMeanFreePath( const G4Track& aTrack,
       // std::cout << "BiasSigmaFactor value " << BiasSigmaFactor << std::endl;
        std::cout << "n value" << n << std::endl;
        std::cout << "XMeanFreePath value " << XMeanFreePath << std::endl;
+       std::cout<<"Photon energy = "<<ekin<<" GeV"<<std::endl;
 
 
 
