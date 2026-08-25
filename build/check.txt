@@ -1,0 +1,1145 @@
+
+**************************************************************
+ Geant4 version Name: geant4-11-01-patch-01 [MT]   (10-February-2023)
+                       Copyright : Geant4 Collaboration
+                      References : NIM A 506 (2003), 250-303
+                                 : IEEE-TNS 53 (2006), 270-278
+                                 : NIM A 835 (2016), 186-225
+                             WWW : http://geant4.org/
+**************************************************************
+
+### New material Water
+=======================================================================
+======                 Electromagnetic Physics Parameters      ========
+=======================================================================
+LPM effect enabled                                 1
+Enable creation and use of sampling tables         0
+Apply cuts on all EM processes                     0
+Use combined TransportationWithMsc                 Disabled
+Use general process                                0
+Enable linear polarisation for gamma               0
+Enable photoeffect sampling below K-shell          1
+Enable sampling of quantum entanglement            0
+X-section factor for integral approach             0.8
+Min kinetic energy for tables                      10 eV 
+Max kinetic energy for tables                      100 TeV
+Number of bins per decade of a table               20
+Verbose level                                      0
+Verbose level for worker thread                    0
+Bremsstrahlung energy threshold above which 
+  primary e+- is added to the list of secondary    100 TeV
+Bremsstrahlung energy threshold above which primary
+  muon/hadron is added to the list of secondary    100 TeV
+Lowest triplet kinetic energy                      1 MeV
+Enable sampling of gamma linear polarisation       0
+5D gamma conversion model type                     0
+5D gamma conversion model on isolated ion          0
+Livermore data directory                           epics_2017
+=======================================================================
+======                 Ionisation Parameters                   ========
+=======================================================================
+Step function for e+-                              (0.2, 1 mm)
+Step function for muons/hadrons                    (0.2, 0.1 mm)
+Step function for light ions                       (0.2, 0.1 mm)
+Step function for general ions                     (0.2, 0.1 mm)
+Lowest e+e- kinetic energy                         1 keV
+Lowest muon/hadron kinetic energy                  1 keV
+Use ICRU90 data                                    0
+Fluctuations of dE/dx are enabled                  1
+Type of fluctuation model for leptons and hadrons  Universal
+Use built-in Birks satuaration                     0
+Build CSDA range enabled                           1
+Use cut as a final range enabled                   0
+Enable angular generator interface                 0
+Max kinetic energy for CSDA tables                 100 TeV
+Max kinetic energy for NIEL computation            0 eV 
+Linear loss limit                                  0.01
+Read data from file for e+e- pair production by mu 0
+=======================================================================
+======                 Multiple Scattering Parameters          ========
+=======================================================================
+Type of msc step limit algorithm for e+-           3
+Type of msc step limit algorithm for muons/hadrons 0
+Msc lateral displacement for e+- enabled           1
+Msc lateral displacement for muons and hadrons     0
+Urban msc model lateral displacement alg96         1
+Range factor for msc step limit for e+-            0.04
+Range factor for msc step limit for muons/hadrons  0.2
+Geometry factor for msc step limitation of e+-     2.5
+Safety factor for msc step limit for e+-           0.6
+Skin parameter for msc step limitation of e+-      1
+Lambda limit for msc step limit for e+-            1 mm
+Use Mott correction for e- scattering              0
+Factor used for dynamic computation of angular 
+  limit between single and multiple scattering     1
+Fixed angular limit between single 
+  and multiple scattering                          3.1416 rad
+Upper energy limit for e+- multiple scattering     100 MeV
+Type of electron single scattering model           0
+Type of nuclear form-factor                        1
+Screening factor                                   1
+=======================================================================
+Physics List For FCP
+Initialized ALP (gamma conversion to ALP) for material density = 1
+Initialized ALP (gamma conversion to ALP) for ANuclIn = 1
+Initialized ALP (gamma conversion to ALP) for ZNuclIn density = 1
+
+========== ALP Particle Info ==========
+Name: DMParticleALP
+Mass: 1.67e-05 GeV
+Mass Inputted in decay width: 0.0167
+Epsilon: 0.001 1/GeV
+Width: 2.31643e-17 GeV
+Width calculated: 2.31643e-14 GeV
+Lifetime: 2.84149e-08 s
+cτ (decay length): 8.51857 m
+Is Stable: 0
+=======================================
+/run/verbose 1
+/tracking/verbose 0
+#
+#/testem/det/setMat G4_LEAD_OXIDE
+#/testem/det/setMat G4_Pb
+/testem/det/setMat G4_Fe
+### New material G4_Fe
+/run/geometryModified
+#/testem/det/setMat G4_CONCRETE
+#/testem/det/setMat G4_Si
+/testem/det/setSize 0.1 m
+/run/geometryModified
+#
+#/testem/phys/addPhysics standard
+#
+/run/setCut 0.01 mm
+#
+/run/initialize
+
+ The Box is 10 cm  of G4_Fe
+  Material:    G4_Fe    density:  7.874 g/cm3   RadL:   1.757 cm   Nucl.Int.Length:  16.990 cm 
+                       Imean: 286.000 eV   temperature: 293.15 K  pressure:   1.00 atm
+
+   --->  Element: Fe (Fe)   Z = 26.0   N =    56   A = 55.845 g/mole
+         --->  Isotope:  Fe54   Z = 26   N =  54   A =  53.94 g/mole   abundance:  5.845 %
+         --->  Isotope:  Fe56   Z = 26   N =  56   A =  55.93 g/mole   abundance: 91.754 %
+         --->  Isotope:  Fe57   Z = 26   N =  57   A =  56.94 g/mole   abundance:  2.119 %
+         --->  Isotope:  Fe58   Z = 26   N =  58   A =  57.93 g/mole   abundance:  0.282 %
+          ElmMassFraction: 100.00 %  ElmAbundance 100.00 % 
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to DMParticleALP
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to DMParticleALP
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to GenericIon
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to GenericIon
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to He3
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to He3
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to alpha
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to alpha
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_He3
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_He3
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_alpha
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_alpha
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_deuteron
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_deuteron
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_doublehyperH4
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_doublehyperH4
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_doublehyperdoubleneutron
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_doublehyperdoubleneutron
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_hyperH4
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_hyperH4
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_hyperHe5
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_hyperHe5
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_hyperalpha
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_hyperalpha
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_hypertriton
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_hypertriton
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_neutron
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_neutron
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_proton
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_proton
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_triton
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_triton
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to chargedgeantino
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to chargedgeantino
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to deuteron
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to deuteron
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to doublehyperH4
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to doublehyperH4
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to doublehyperdoubleneutron
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to doublehyperdoubleneutron
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to e+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to e+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to e-
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to e-
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to gamma
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to gamma
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to geantino
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to geantino
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to hyperH4
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to hyperH4
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to hyperHe5
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to hyperHe5
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to hyperalpha
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to hyperalpha
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to hypertriton
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to hypertriton
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to kaon+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to kaon+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to kaon-
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to kaon-
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to mu+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to mu+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to mu-
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to mu-
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to neutron
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to neutron
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to pi+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to pi+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to pi-
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to pi-
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to proton
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to proton
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to triton
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to triton
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+ E0 = 0.008  Max cross section = 0
+ E0 = 0.02  Max cross section = 0
+ E0 = 0.05  Max cross section = 0
+ E0 = 0.1  Max cross section = 0
+ E0 = 0.2  Max cross section = 1
+ E0 = 0.5  Max cross section = 1
+ E0 = 1  Max cross section = 1
+ E0 = 2  Max cross section = 1
+ E0 = 5  Max cross section = 1
+ E0 = 10  Max cross section = 1
+ E0 = 15  Max cross section = 1
+ E0 = 25  Max cross section = 1
+ E0 = 50  Max cross section = 1
+ E0 = 80  Max cross section = 1
+ E0 = 150  Max cross section = 1
+ E0 = 200  Max cross section = 1
+/testem/trackSecondaries true
+#
+/gun/particle gamma
+/gun/energy 100 GeV
+#
+/analysis/setFileName mu+
+#
+/analysis/h1/set 1 100 0 30 cm
+/analysis/h1/set 2 100 0 2 GeV
+/analysis/h1/set 3 100 0 1000 GeV
+/analysis/h1/set 4 100 0 1000 GeV
+/analysis/h1/set 5 100 0 1000 GeV
+/analysis/h1/set 6 100 0 1000 GeV
+/analysis/h1/set 7 100 0 1000 GeV
+/analysis/h1/set 8 100 0 1000 GeV
+/analysis/h1/set 11 100 0 1000 GeV
+/analysis/h1/set 12 100 0 1000 GeV
+/analysis/h1/set 13 100 0 1000 GeV
+#
+/run/printProgress 1
+/run/beamOn 100
+
+========= Table of registered couples ============================
+
+Index : 0     used in the geometry : Yes
+ Material : Air
+ Range cuts        :  gamma  10 um     e-  10 um     e+  10 um  proton 10 um 
+ Energy thresholds :  gamma  990 eV     e-  990 eV     e+  990 eV  proton 1 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 1     used in the geometry : Yes
+ Material : G4_Fe
+ Range cuts        :  gamma  10 um     e-  10 um     e+  10 um  proton 10 um 
+ Energy thresholds :  gamma  1.90009 keV    e-  58.3568 keV    e+  57.5031 keV proton 1 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 2     used in the geometry : Yes
+ Material : G4_LEAD_OXIDE
+ Range cuts        :  gamma  10 um     e-  10 um     e+  10 um  proton 10 um 
+ Energy thresholds :  gamma  5.045 keV    e-  54.1287 keV    e+  53.1844 keV proton 1 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+==================================================================
+
+### Run 0 starts.
+... set ntuple merging row mode : row-wise - done
+... create file : mu+.root - done
+... open analysis file : mu+.root - done
+... open analysis file : mu+.root - done
+
+------- MixMaxRng engine status -------
+ Current state vector is:
+mixmax state, file version 1.0
+N=17; V[N]={257354623022085129, 876966716645519258, 43562728021179670, 131913765325316094, 1419093093917919691, 1329808391713210481, 1492489029013794131, 872823766958283041, 1994472092380784361, 1374070632251059492, 614894546064235904, 299611972768910997, 160646556627818164, 2296001986328526173, 1402216358509256768, 2098373138908096906, 2245399841412518845}; counter= 17sumtot= 462955166158963497
+---------------------------------------
+--> Event 0 starts.
+--> Event 1 starts.
+--> Event 2 starts.
+--> Event 3 starts.
+--> Event 4 starts.
+--> Event 5 starts.
+ekin = 245.555, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 245.555, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 670 iterations for Angle
+EParent = 2.455554e-01 XAcc = 1.000000e+00 ThetaAcc = 2.300842e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 0.245555 DM energy = 0.245555
+--> Event 6 starts.
+--> Event 7 starts.
+--> Event 8 starts.
+ekin = 129.412, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 129.412, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 130 iterations for Angle
+EParent = 1.294116e-01 XAcc = 1.000000e+00 ThetaAcc = 2.674802e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 0.129412 DM energy = 0.129412
+--> Event 9 starts.
+ekin = 644.101, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 644.101, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 944 iterations for Angle
+EParent = 6.441011e-01 XAcc = 1.000000e+00 ThetaAcc = 1.929253e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 0.644101 DM energy = 0.644101
+--> Event 10 starts.
+ekin = 802.343, Z = 26, A = 55.8451, density = 8.49105e+19, sigma = 38.2258, rate = 3.24577e+21
+Accepted after 639 iterations for Angle
+EParent = 8.023429e-01 XAcc = 1.000000e+00 ThetaAcc = 1.915017e-05
+ DM PDG ID = 5300122 emitted by gamma in material G4_Fe (Z=26, A=55.8451) with energy = 0.802343 DM energy = 0.802343
+ekin = 286.725, Z = 26, A = 55.8451, density = 8.49105e+19, sigma = 38.2258, rate = 3.24577e+21
+Accepted after 23 iterations for Angle
+EParent = 2.867248e-01 XAcc = 1.000000e+00 ThetaAcc = 2.952314e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_Fe (Z=26, A=55.8451) with energy = 0.286725 DM energy = 0.286725
+--> Event 11 starts.
+--> Event 12 starts.
+ekin = 332.302, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 332.302, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 779 iterations for Angle
+EParent = 3.323019e-01 XAcc = 1.000000e+00 ThetaAcc = 1.176178e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 0.332302 DM energy = 0.332302
+--> Event 13 starts.
+--> Event 14 starts.
+ekin = 221.64, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 221.64, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 134 iterations for Angle
+EParent = 2.216402e-01 XAcc = 1.000000e+00 ThetaAcc = 3.075163e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 0.22164 DM energy = 0.22164
+--> Event 15 starts.
+ekin = 118.903, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 118.903, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 2 iterations for Angle
+EParent = 1.189031e-01 XAcc = 9.999998e-01 ThetaAcc = 2.638287e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 0.118903 DM energy = 0.118903
+--> Event 16 starts.
+--> Event 17 starts.
+ekin = 221.233, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 221.233, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 51 iterations for Angle
+EParent = 2.212330e-01 XAcc = 1.000000e+00 ThetaAcc = 9.266389e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 0.221233 DM energy = 0.221233
+--> Event 18 starts.
+--> Event 19 starts.
+--> Event 20 starts.
+--> Event 21 starts.
+ekin = 107.149, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 107.149, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 2 iterations for Angle
+EParent = 1.071485e-01 XAcc = 1.000000e+00 ThetaAcc = 9.501507e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 0.107149 DM energy = 0.107149
+--> Event 22 starts.
+ekin = 110.533, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 110.533, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 38 iterations for Angle
+EParent = 1.105332e-01 XAcc = 1.000000e+00 ThetaAcc = 2.951534e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 0.110533 DM energy = 0.110533
+--> Event 23 starts.
+--> Event 24 starts.
+--> Event 25 starts.
+ekin = 245.955, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 245.955, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 136 iterations for Angle
+EParent = 2.459552e-01 XAcc = 1.000000e+00 ThetaAcc = 1.625666e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 0.245955 DM energy = 0.245955
+--> Event 26 starts.
+ekin = 141.308, Z = 26, A = 55.8451, density = 8.49105e+19, sigma = 38.2258, rate = 3.24577e+21
+Accepted after 72 iterations for Angle
+EParent = 1.413083e-01 XAcc = 9.999996e-01 ThetaAcc = 1.724990e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_Fe (Z=26, A=55.8451) with energy = 0.141308 DM energy = 0.141308
+--> Event 27 starts.
+--> Event 28 starts.
+ekin = 147.932, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 147.932, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 85 iterations for Angle
+EParent = 1.479317e-01 XAcc = 9.999999e-01 ThetaAcc = 1.499816e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 0.147932 DM energy = 0.147932
+ekin = 122.371, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 122.371, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 318 iterations for Angle
+EParent = 1.223708e-01 XAcc = 9.999999e-01 ThetaAcc = 1.699423e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 0.122371 DM energy = 0.122371
+--> Event 29 starts.
+--> Event 30 starts.
+ekin = 166.173, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 166.173, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 134 iterations for Angle
+EParent = 1.661729e-01 XAcc = 1.000000e+00 ThetaAcc = 7.887093e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 0.166173 DM energy = 0.166173
+--> Event 31 starts.
+ekin = 1901.68, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 1901.68, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 1485 iterations for Angle
+EParent = 1.901677e+00 XAcc = 1.000000e+00 ThetaAcc = 1.483739e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 1.90168 DM energy = 1.90168
+--> Event 32 starts.
+--> Event 33 starts.
+ekin = 202.205, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 202.205, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 187 iterations for Angle
+EParent = 2.022055e-01 XAcc = 9.999989e-01 ThetaAcc = 4.758899e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 0.202205 DM energy = 0.202205
+ekin = 847.396, Z = 26, A = 55.8451, density = 8.49105e+19, sigma = 38.2258, rate = 3.24577e+21
+Accepted after 608 iterations for Angle
+EParent = 8.473961e-01 XAcc = 1.000000e+00 ThetaAcc = 4.960327e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_Fe (Z=26, A=55.8451) with energy = 0.847396 DM energy = 0.847396
+--> Event 34 starts.
+ekin = 108.146, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 108.146, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 24 iterations for Angle
+EParent = 1.081464e-01 XAcc = 1.000000e+00 ThetaAcc = 8.797417e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 0.108146 DM energy = 0.108146
+ekin = 102.996, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 102.996, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 72 iterations for Angle
+EParent = 1.029965e-01 XAcc = 9.999967e-01 ThetaAcc = 1.157420e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 0.102996 DM energy = 0.102996
+--> Event 35 starts.
+--> Event 36 starts.
+--> Event 37 starts.
+ekin = 510.288, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 510.288, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 597 iterations for Angle
+EParent = 5.102876e-01 XAcc = 1.000000e+00 ThetaAcc = 2.241480e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 0.510288 DM energy = 0.510288
+--> Event 38 starts.
+--> Event 39 starts.
+--> Event 40 starts.
+ekin = 194.866, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 194.866, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 62 iterations for Angle
+EParent = 1.948656e-01 XAcc = 1.000000e+00 ThetaAcc = 1.028172e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 0.194866 DM energy = 0.194866
+ekin = 132.826, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 132.826, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 99 iterations for Angle
+EParent = 1.328258e-01 XAcc = 1.000000e+00 ThetaAcc = 2.346157e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 0.132826 DM energy = 0.132826
+--> Event 41 starts.
+--> Event 42 starts.
+--> Event 43 starts.
+--> Event 44 starts.
+ekin = 182.653, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 182.653, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 27 iterations for Angle
+EParent = 1.826525e-01 XAcc = 1.000000e+00 ThetaAcc = 3.288462e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 0.182653 DM energy = 0.182653
+ekin = 115.95, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 115.95, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 97 iterations for Angle
+EParent = 1.159498e-01 XAcc = 9.999962e-01 ThetaAcc = 1.160693e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 0.11595 DM energy = 0.115949
+--> Event 45 starts.
+--> Event 46 starts.
+ekin = 219.762, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 219.762, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 7 iterations for Angle
+EParent = 2.197622e-01 XAcc = 9.999997e-01 ThetaAcc = 2.248275e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 0.219762 DM energy = 0.219762
+--> Event 47 starts.
+--> Event 48 starts.
+--> Event 49 starts.
+--> Event 50 starts.
+ekin = 508.651, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 508.651, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 442 iterations for Angle
+EParent = 5.086509e-01 XAcc = 1.000000e+00 ThetaAcc = 4.442140e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 0.508651 DM energy = 0.508651
+--> Event 51 starts.
+--> Event 52 starts.
+--> Event 53 starts.
+--> Event 54 starts.
+ekin = 2734.68, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 2734.68, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 63 iterations for Angle
+EParent = 2.734683e+00 XAcc = 1.000000e+00 ThetaAcc = 1.005840e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 2.73468 DM energy = 2.73468
+--> Event 55 starts.
+--> Event 56 starts.
+ekin = 385.982, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 385.982, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 842 iterations for Angle
+EParent = 3.859823e-01 XAcc = 9.999999e-01 ThetaAcc = 1.131345e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 0.385982 DM energy = 0.385982
+--> Event 57 starts.
+ekin = 171.209, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 171.209, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 255 iterations for Angle
+EParent = 1.712094e-01 XAcc = 9.999997e-01 ThetaAcc = 2.620355e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 0.171209 DM energy = 0.171209
+--> Event 58 starts.
+ekin = 115.301, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 115.301, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 83 iterations for Angle
+EParent = 1.153015e-01 XAcc = 9.999999e-01 ThetaAcc = 2.155325e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 0.115301 DM energy = 0.115301
+--> Event 59 starts.
+--> Event 60 starts.
+ekin = 156.102, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 156.102, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 89 iterations for Angle
+EParent = 1.561023e-01 XAcc = 1.000000e+00 ThetaAcc = 1.254457e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 0.156102 DM energy = 0.156102
+ekin = 144.823, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 144.823, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 65 iterations for Angle
+EParent = 1.448225e-01 XAcc = 1.000000e+00 ThetaAcc = 2.269340e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 0.144823 DM energy = 0.144823
+--> Event 61 starts.
+ekin = 319.954, Z = 26, A = 55.8451, density = 8.49105e+19, sigma = 38.2258, rate = 3.24577e+21
+Accepted after 499 iterations for Angle
+EParent = 3.199544e-01 XAcc = 9.999992e-01 ThetaAcc = 1.672200e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_Fe (Z=26, A=55.8451) with energy = 0.319954 DM energy = 0.319954
+--> Event 62 starts.
+--> Event 63 starts.
+--> Event 64 starts.
+ekin = 132.013, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 132.013, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 43 iterations for Angle
+EParent = 1.320135e-01 XAcc = 9.999984e-01 ThetaAcc = 7.152299e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 0.132013 DM energy = 0.132013
+--> Event 65 starts.
+--> Event 66 starts.
+--> Event 67 starts.
+ekin = 571.208, Z = 26, A = 55.8451, density = 8.49105e+19, sigma = 38.2258, rate = 3.24577e+21
+Accepted after 340 iterations for Angle
+EParent = 5.712083e-01 XAcc = 1.000000e+00 ThetaAcc = 1.477456e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_Fe (Z=26, A=55.8451) with energy = 0.571208 DM energy = 0.571208
+--> Event 68 starts.
+--> Event 69 starts.
+--> Event 70 starts.
+--> Event 71 starts.
+--> Event 72 starts.
+--> Event 73 starts.
+--> Event 74 starts.
+--> Event 75 starts.
+--> Event 76 starts.
+ekin = 326.429, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 326.429, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 219 iterations for Angle
+EParent = 3.264292e-01 XAcc = 1.000000e+00 ThetaAcc = 7.212732e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 0.326429 DM energy = 0.326429
+--> Event 77 starts.
+--> Event 78 starts.
+--> Event 79 starts.
+ekin = 151.235, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 151.235, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 136 iterations for Angle
+EParent = 1.512353e-01 XAcc = 9.999953e-01 ThetaAcc = 1.138655e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 0.151235 DM energy = 0.151235
+--> Event 80 starts.
+--> Event 81 starts.
+ekin = 105.676, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 105.676, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 59 iterations for Angle
+EParent = 1.056764e-01 XAcc = 1.000000e+00 ThetaAcc = 1.344202e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 0.105676 DM energy = 0.105676
+--> Event 82 starts.
+ekin = 316.877, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 316.877, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 201 iterations for Angle
+EParent = 3.168769e-01 XAcc = 1.000000e+00 ThetaAcc = 1.264273e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 0.316877 DM energy = 0.316877
+--> Event 83 starts.
+ekin = 103.087, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 103.087, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 15 iterations for Angle
+EParent = 1.030875e-01 XAcc = 1.000000e+00 ThetaAcc = 6.734301e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 0.103087 DM energy = 0.103087
+--> Event 84 starts.
+ekin = 116.091, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 116.091, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 35 iterations for Angle
+EParent = 1.160911e-01 XAcc = 1.000000e+00 ThetaAcc = 1.003107e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 0.116091 DM energy = 0.116091
+ekin = 3252.09, Z = 26, A = 55.8451, density = 8.49105e+19, sigma = 38.2258, rate = 3.24577e+21
+Accepted after 3912 iterations for Angle
+EParent = 3.252088e+00 XAcc = 1.000000e+00 ThetaAcc = 7.932175e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_Fe (Z=26, A=55.8451) with energy = 3.25209 DM energy = 3.25209
+--> Event 85 starts.
+--> Event 86 starts.
+--> Event 87 starts.
+--> Event 88 starts.
+--> Event 89 starts.
+--> Event 90 starts.
+--> Event 91 starts.
+--> Event 92 starts.
+--> Event 93 starts.
+ekin = 142.074, Z = 26, A = 55.8451, density = 8.49105e+19, sigma = 38.2258, rate = 3.24577e+21
+Accepted after 133 iterations for Angle
+EParent = 1.420740e-01 XAcc = 1.000000e+00 ThetaAcc = 1.912307e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_Fe (Z=26, A=55.8451) with energy = 0.142074 DM energy = 0.142074
+--> Event 94 starts.
+ekin = 103.648, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 103.648, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 60 iterations for Angle
+EParent = 1.036478e-01 XAcc = 9.999881e-01 ThetaAcc = 2.182060e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 0.103648 DM energy = 0.103647
+ekin = 108.629, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 108.629, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 153 iterations for Angle
+EParent = 1.086292e-01 XAcc = 1.000000e+00 ThetaAcc = 2.377853e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 0.108629 DM energy = 0.108629
+--> Event 95 starts.
+ekin = 213.048, Z = 26, A = 55.8451, density = 8.49105e+19, sigma = 38.2258, rate = 3.24577e+21
+Accepted after 480 iterations for Angle
+EParent = 2.130477e-01 XAcc = 9.999988e-01 ThetaAcc = 2.528040e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_Fe (Z=26, A=55.8451) with energy = 0.213048 DM energy = 0.213047
+--> Event 96 starts.
+--> Event 97 starts.
+ekin = 117.476, Z = 8, A = 15.9994, density = 2.57129e+19, sigma = 3.98718, rate = 1.02522e+20
+ekin = 117.476, Z = 82, A = 207.217, density = 2.57108e+19, sigma = 341.047, rate = 8.76857e+21
+Accepted after 32 iterations for Angle
+EParent = 1.174762e-01 XAcc = 1.000000e+00 ThetaAcc = 1.265774e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_LEAD_OXIDE (Z=82, A=207.217) with energy = 0.117476 DM energy = 0.117476
+--> Event 98 starts.
+--> Event 99 starts.
+ekin = 127.733, Z = 26, A = 55.8451, density = 8.49105e+19, sigma = 38.2258, rate = 3.24577e+21
+Accepted after 22 iterations for Angle
+EParent = 1.277327e-01 XAcc = 9.999994e-01 ThetaAcc = 2.371322e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_Fe (Z=26, A=55.8451) with energy = 0.127733 DM energy = 0.127733
+ Run terminated.
+Run Summary
+  Number of events processed : 100
+  User=83.360000s Real=83.461345s Sys=0.010000s [Cpu=99.9%]
+
+ ======================== run summary ======================
+
+ The run was 100 gamma of 100 GeV through 10 cm  of G4_Fe (density: 7.87 g/cm3 )
+================== Deleting memory pools ===================
+Number of memory pools allocated: 11; of which, static: 0
+Dynamic pools deleted: 11 / Total memory freed: 0.17 MB
+============================================================

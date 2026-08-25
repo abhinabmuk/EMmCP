@@ -48,6 +48,8 @@
 #include "G4UIExecutive.hh"
 #include "G4VisExecutive.hh"
 
+//added based on DMG4 pacakage
+#include "FTFP_BERT.hh"
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 int main(int argc,char** argv) {

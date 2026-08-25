@@ -47,15 +47,22 @@
 #include "G4UnitsTable.hh"
 #include "G4SystemOfUnits.hh"
 
+/* Aug 17th */
+// 1 ] Added world volume to Geometry 
+// 2 ] 
+
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 DetectorConstruction::DetectorConstruction()
 :G4VUserDetectorConstruction(),fPBox(0), fLBox(0), fMaterial(0),
+ fPBox2(0), fLBox2(0), fMaterial2(0),
  fDetectorMessenger(0)
 {
-  fBoxSize = 1*cm;
+  fBoxSize  = 1*cm;
+  fBoxSize2 = 10*cm;     // layer 2 thickness — set as you want
   DefineMaterials();
-  SetMaterial("Water");  
+  SetMaterial("Water");
+  fMaterial2 = G4NistManager::Instance()->FindOrBuildMaterial("G4_LEAD_OXIDE"); // layer 2 material
   fDetectorMessenger = new DetectorMessenger(this);
 }
 
@@ -133,27 +140,42 @@ G4VPhysicalVolume* DetectorConstruction::ConstructVolumes()
   G4LogicalVolumeStore::GetInstance()->Clean();
   G4SolidStore::GetInstance()->Clean();
 
-  G4Box*
-  sBox = new G4Box("Container",                              //its name
-                   fBoxSize/2,fBoxSize/2,fBoxSize/2);        //its dimensions
+ //add world volume
 
-  fLBox = new G4LogicalVolume(sBox,                        //its shape
-                             fMaterial,                    //its material
-                             fMaterial->GetName());        //its name
+  G4double fExpHall_x = 10*m;
+  G4double fExpHall_y = 10*m;
+  G4double fExpHall_z = 10*m;
 
-  fPBox = new G4PVPlacement(0,                          //no rotation
-                             G4ThreeVector(),           //at (0,0,0)
-                           fLBox,                       //its logical volume
-                           fMaterial->GetName(),        //its name
-                           0,                           //its mother  volume
-                           false,                       //no boolean operation
-                           0);                          //copy number
-                           
+  G4Material* air = G4Material::GetMaterial("Air");
+
+  G4Box* world_box = new G4Box("World", fExpHall_x, fExpHall_y, fExpHall_z);
+  G4LogicalVolume* fWorld_LV = new G4LogicalVolume(world_box, air, "World", 0, 0, 0);
+  G4VPhysicalVolume* world_PV = new G4PVPlacement(0, G4ThreeVector(), fWorld_LV, "World", 0, false, 0);
+
+
+ // First layer 
+  G4Box* sBox = new G4Box("Container",fBoxSize/2,fBoxSize/2,fBoxSize/2);        //its dimensions
+  fLBox = new G4LogicalVolume(sBox, fMaterial,fMaterial->GetName());        //its name
+  fPBox = new G4PVPlacement(0, G4ThreeVector(), fLBox, fMaterial->GetName(), fWorld_LV, false, 0);                       
+ // {No rotation , at (0,0,0) , its logical volume , its name , its mother  volume  , no boolean operation , copy number }
+
+
+  G4double fLayer2 = 10*cm;
+  G4double z2 = fBoxSize/2 + fLayer2/2;   // = 5cm + 5cm = 10cm
+  
+  G4double x2 = fBoxSize/2 + fLayer2/2;   // just past the +x face of layer 1
+
+
+//   G4Box* sBox2 = new G4Box("Container_2",fLayer2/2,fLayer2/2,fLayer2/2);        //its dimensions
+//   fLBox2 = new G4LogicalVolume(sBox2, fMaterial2, "Container_2");        //its name      
+// fPBox2 = new G4PVPlacement(0, G4ThreeVector(x2, 0, 0), fLBox2, "Container_2", fWorld_LV, false, 0);                 
+
   PrintParameters();
   
   //always return the root volume
   //
-  return fPBox;
+  //return fPBox; 
+  return world_PV;
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

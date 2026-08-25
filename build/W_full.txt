@@ -1,0 +1,3524 @@
+
+**************************************************************
+ Geant4 version Name: geant4-11-01-patch-01 [MT]   (10-February-2023)
+                       Copyright : Geant4 Collaboration
+                      References : NIM A 506 (2003), 250-303
+                                 : IEEE-TNS 53 (2006), 270-278
+                                 : NIM A 835 (2016), 186-225
+                             WWW : http://geant4.org/
+**************************************************************
+
+### New material Water
+=======================================================================
+======                 Electromagnetic Physics Parameters      ========
+=======================================================================
+LPM effect enabled                                 1
+Enable creation and use of sampling tables         0
+Apply cuts on all EM processes                     0
+Use combined TransportationWithMsc                 Disabled
+Use general process                                0
+Enable linear polarisation for gamma               0
+Enable photoeffect sampling below K-shell          1
+Enable sampling of quantum entanglement            0
+X-section factor for integral approach             0.8
+Min kinetic energy for tables                      10 eV 
+Max kinetic energy for tables                      100 TeV
+Number of bins per decade of a table               20
+Verbose level                                      0
+Verbose level for worker thread                    0
+Bremsstrahlung energy threshold above which 
+  primary e+- is added to the list of secondary    100 TeV
+Bremsstrahlung energy threshold above which primary
+  muon/hadron is added to the list of secondary    100 TeV
+Lowest triplet kinetic energy                      1 MeV
+Enable sampling of gamma linear polarisation       0
+5D gamma conversion model type                     0
+5D gamma conversion model on isolated ion          0
+Livermore data directory                           epics_2017
+=======================================================================
+======                 Ionisation Parameters                   ========
+=======================================================================
+Step function for e+-                              (0.2, 1 mm)
+Step function for muons/hadrons                    (0.2, 0.1 mm)
+Step function for light ions                       (0.2, 0.1 mm)
+Step function for general ions                     (0.2, 0.1 mm)
+Lowest e+e- kinetic energy                         1 keV
+Lowest muon/hadron kinetic energy                  1 keV
+Use ICRU90 data                                    0
+Fluctuations of dE/dx are enabled                  1
+Type of fluctuation model for leptons and hadrons  Universal
+Use built-in Birks satuaration                     0
+Build CSDA range enabled                           1
+Use cut as a final range enabled                   0
+Enable angular generator interface                 0
+Max kinetic energy for CSDA tables                 100 TeV
+Max kinetic energy for NIEL computation            0 eV 
+Linear loss limit                                  0.01
+Read data from file for e+e- pair production by mu 0
+=======================================================================
+======                 Multiple Scattering Parameters          ========
+=======================================================================
+Type of msc step limit algorithm for e+-           3
+Type of msc step limit algorithm for muons/hadrons 0
+Msc lateral displacement for e+- enabled           1
+Msc lateral displacement for muons and hadrons     0
+Urban msc model lateral displacement alg96         1
+Range factor for msc step limit for e+-            0.04
+Range factor for msc step limit for muons/hadrons  0.2
+Geometry factor for msc step limitation of e+-     2.5
+Safety factor for msc step limit for e+-           0.6
+Skin parameter for msc step limitation of e+-      1
+Lambda limit for msc step limit for e+-            1 mm
+Use Mott correction for e- scattering              0
+Factor used for dynamic computation of angular 
+  limit between single and multiple scattering     1
+Fixed angular limit between single 
+  and multiple scattering                          3.1416 rad
+Upper energy limit for e+- multiple scattering     100 MeV
+Type of electron single scattering model           0
+Type of nuclear form-factor                        1
+Screening factor                                   1
+=======================================================================
+Physics List For FCP
+Initialized ALP (gamma conversion to ALP) for material density = 1
+Initialized ALP (gamma conversion to ALP) for ANuclIn = 1
+Initialized ALP (gamma conversion to ALP) for ZNuclIn density = 1
+
+========== ALP Particle Info ==========
+Name: DMParticleALP
+Mass: 1.67e-05 GeV
+Mass Inputted in decay width: 0.0167
+Epsilon: 0.001 1/GeV
+Width: 2.31643e-17 GeV
+Width calculated: 2.31643e-14 GeV
+Lifetime: 2.84149e-08 s
+cτ (decay length): 8.51857 m
+Is Stable: 0
+=======================================
+/run/verbose 1
+/tracking/verbose 0
+#
+#/testem/det/setMat G4_LEAD_OXIDE
+#/testem/det/setMat G4_Pb
+#/testem/det/setMat G4_Fe
+/testem/det/setMat G4_W
+### New material G4_W
+/run/geometryModified
+#/testem/det/setMat G4_CONCRETE
+#/testem/det/setMat G4_Zn
+/testem/det/setSize 0.1 m
+/run/geometryModified
+#
+#/testem/phys/addPhysics standard
+#
+/run/setCut 0.01 mm
+#
+/run/initialize
+
+ The Box is 10 cm  of G4_W
+  Material:     G4_W    density: 19.300 g/cm3   RadL:   3.504 mm   Nucl.Int.Length:  10.312 cm 
+                       Imean: 727.000 eV   temperature: 293.15 K  pressure:   1.00 atm
+
+   --->  Element: W (W)   Z = 74.0   N =   184   A = 183.842 g/mole
+         --->  Isotope:  W180   Z = 74   N = 180   A = 179.95 g/mole   abundance:  0.120 %
+         --->  Isotope:  W182   Z = 74   N = 182   A = 181.95 g/mole   abundance: 26.500 %
+         --->  Isotope:  W183   Z = 74   N = 183   A = 182.95 g/mole   abundance: 14.310 %
+         --->  Isotope:  W184   Z = 74   N = 184   A = 183.95 g/mole   abundance: 30.640 %
+         --->  Isotope:  W186   Z = 74   N = 186   A = 185.95 g/mole   abundance: 28.430 %
+          ElmMassFraction: 100.00 %  ElmAbundance 100.00 % 
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to DMParticleALP
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to DMParticleALP
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to GenericIon
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to GenericIon
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to He3
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to He3
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to alpha
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to alpha
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_He3
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_He3
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_alpha
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_alpha
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_deuteron
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_deuteron
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_doublehyperH4
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_doublehyperH4
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_doublehyperdoubleneutron
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_doublehyperdoubleneutron
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_hyperH4
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_hyperH4
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_hyperHe5
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_hyperHe5
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_hyperalpha
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_hyperalpha
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_hypertriton
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_hypertriton
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_neutron
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_neutron
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_proton
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_proton
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_triton
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to anti_triton
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to chargedgeantino
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to chargedgeantino
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to deuteron
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to deuteron
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to doublehyperH4
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to doublehyperH4
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to doublehyperdoubleneutron
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to doublehyperdoubleneutron
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to e+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to e+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to e-
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to e-
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to gamma
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to gamma
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to geantino
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to geantino
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to hyperH4
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to hyperH4
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to hyperHe5
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to hyperHe5
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to hyperalpha
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to hyperalpha
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to hypertriton
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to hypertriton
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to kaon+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to kaon+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to kaon-
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to kaon-
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to mu+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to mu+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to mu-
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to mu-
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to neutron
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to neutron
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to pi+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to pi+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to pi-
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to pi-
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to proton
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to proton
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to triton
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : ProcMan113
+      issued by : G4ProcessManager::SetProcessOrderingToFirst()
+Set Ordering First is invoked twice for Transportation to triton
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+ E0 = 0.008  Max cross section = 0
+ E0 = 0.02  Max cross section = 0
+ E0 = 0.05  Max cross section = 0
+ E0 = 0.1  Max cross section = 0
+ E0 = 0.2  Max cross section = 1
+ E0 = 0.5  Max cross section = 1
+ E0 = 1  Max cross section = 1
+ E0 = 2  Max cross section = 1
+ E0 = 5  Max cross section = 1
+ E0 = 10  Max cross section = 1
+ E0 = 15  Max cross section = 1
+ E0 = 25  Max cross section = 1
+ E0 = 50  Max cross section = 1
+ E0 = 80  Max cross section = 1
+ E0 = 150  Max cross section = 1
+ E0 = 200  Max cross section = 1
+/testem/trackSecondaries true
+#
+/gun/particle gamma
+/gun/energy 100 GeV
+#
+/analysis/setFileName mu+
+#
+/analysis/h1/set 1 100 0 30 cm
+/analysis/h1/set 2 100 0 2 GeV
+/analysis/h1/set 3 100 0 1000 GeV
+/analysis/h1/set 4 100 0 1000 GeV
+/analysis/h1/set 5 100 0 1000 GeV
+/analysis/h1/set 6 100 0 1000 GeV
+/analysis/h1/set 7 100 0 1000 GeV
+/analysis/h1/set 8 100 0 1000 GeV
+/analysis/h1/set 11 100 0 1000 GeV
+/analysis/h1/set 12 100 0 1000 GeV
+/analysis/h1/set 13 100 0 1000 GeV
+#
+/run/printProgress 1
+/run/beamOn 10000
+
+========= Table of registered couples ============================
+
+Index : 0     used in the geometry : Yes
+ Material : Air
+ Range cuts        :  gamma  10 um     e-  10 um     e+  10 um  proton 10 um 
+ Energy thresholds :  gamma  990 eV     e-  990 eV     e+  990 eV  proton 1 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 1     used in the geometry : Yes
+ Material : G4_W
+ Range cuts        :  gamma  10 um     e-  10 um     e+  10 um  proton 10 um 
+ Energy thresholds :  gamma  7.70222 keV    e-  81.4923 keV    e+  79.8329 keV proton 1 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+==================================================================
+
+### Run 0 starts.
+... set ntuple merging row mode : row-wise - done
+... create file : mu+.root - done
+... open analysis file : mu+.root - done
+... open analysis file : mu+.root - done
+
+------- MixMaxRng engine status -------
+ Current state vector is:
+mixmax state, file version 1.0
+N=17; V[N]={1967254935381664778, 1554036274326163366, 1645883342767253925, 1571172435651972070, 1691085643523659248, 1199482731039311979, 2292560698584595101, 1349937055361846573, 1733995713043639622, 1364501965243989081, 670546674185909323, 704503485438685597, 1089971825191581722, 1476620554456827904, 1098851923408397222, 890197798449251160, 1368037076147719521}; counter= 17sumtot= 610210040065528682
+---------------------------------------
+--> Event 0 starts.
+--> Event 1 starts.
+ekin = 188.39, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 131 iterations for Angle
+EParent = 1.883902e-01 XAcc = 1.000000e+00 ThetaAcc = 2.373399e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.18839 DM energy = 0.18839
+--> Event 2 starts.
+--> Event 3 starts.
+ekin = 374.208, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 237 iterations for Angle
+EParent = 3.742075e-01 XAcc = 1.000000e+00 ThetaAcc = 1.091460e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.374208 DM energy = 0.374208
+--> Event 4 starts.
+ekin = 154.515, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 233 iterations for Angle
+EParent = 1.545151e-01 XAcc = 9.999979e-01 ThetaAcc = 7.140267e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.154515 DM energy = 0.154515
+--> Event 5 starts.
+--> Event 6 starts.
+ekin = 262.564, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 2 iterations for Angle
+EParent = 2.625635e-01 XAcc = 1.000000e+00 ThetaAcc = 5.929601e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.262564 DM energy = 0.262564
+ekin = 859.956, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 521 iterations for Angle
+EParent = 8.599559e-01 XAcc = 9.999998e-01 ThetaAcc = 9.149226e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.859956 DM energy = 0.859956
+--> Event 7 starts.
+--> Event 8 starts.
+--> Event 9 starts.
+--> Event 10 starts.
+ekin = 199.86, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 15 iterations for Angle
+EParent = 1.998597e-01 XAcc = 9.999955e-01 ThetaAcc = 9.133869e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.19986 DM energy = 0.199859
+--> Event 11 starts.
+--> Event 12 starts.
+--> Event 13 starts.
+ekin = 207.166, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 151 iterations for Angle
+EParent = 2.071662e-01 XAcc = 1.000000e+00 ThetaAcc = 1.736679e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.207166 DM energy = 0.207166
+--> Event 14 starts.
+--> Event 15 starts.
+--> Event 16 starts.
+--> Event 17 starts.
+--> Event 18 starts.
+--> Event 19 starts.
+--> Event 20 starts.
+ekin = 373.7, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 103 iterations for Angle
+EParent = 3.737002e-01 XAcc = 9.999966e-01 ThetaAcc = 5.762034e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.3737 DM energy = 0.373699
+--> Event 21 starts.
+--> Event 22 starts.
+--> Event 23 starts.
+ekin = 203.594, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 15 iterations for Angle
+EParent = 2.035942e-01 XAcc = 9.999937e-01 ThetaAcc = 1.067406e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.203594 DM energy = 0.203593
+ekin = 121.401, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 48 iterations for Angle
+EParent = 1.214013e-01 XAcc = 1.000000e+00 ThetaAcc = 3.453254e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.121401 DM energy = 0.121401
+--> Event 24 starts.
+--> Event 25 starts.
+--> Event 26 starts.
+--> Event 27 starts.
+ekin = 323.45, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 47 iterations for Angle
+EParent = 3.234499e-01 XAcc = 1.000000e+00 ThetaAcc = 3.960460e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.32345 DM energy = 0.32345
+--> Event 28 starts.
+--> Event 29 starts.
+--> Event 30 starts.
+--> Event 31 starts.
+--> Event 32 starts.
+ekin = 170.746, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 244 iterations for Angle
+EParent = 1.707459e-01 XAcc = 1.000000e+00 ThetaAcc = 9.282837e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.170746 DM energy = 0.170746
+--> Event 33 starts.
+ekin = 183.753, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 291 iterations for Angle
+EParent = 1.837525e-01 XAcc = 9.999999e-01 ThetaAcc = 1.552251e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.183753 DM energy = 0.183752
+--> Event 34 starts.
+--> Event 35 starts.
+--> Event 36 starts.
+--> Event 37 starts.
+--> Event 38 starts.
+--> Event 39 starts.
+--> Event 40 starts.
+--> Event 41 starts.
+--> Event 42 starts.
+--> Event 43 starts.
+--> Event 44 starts.
+--> Event 45 starts.
+--> Event 46 starts.
+--> Event 47 starts.
+--> Event 48 starts.
+--> Event 49 starts.
+--> Event 50 starts.
+--> Event 51 starts.
+--> Event 52 starts.
+--> Event 53 starts.
+--> Event 54 starts.
+--> Event 55 starts.
+ekin = 317.989, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 22 iterations for Angle
+EParent = 3.179890e-01 XAcc = 1.000000e+00 ThetaAcc = 4.392685e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.317989 DM energy = 0.317989
+--> Event 56 starts.
+ekin = 287.162, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 87 iterations for Angle
+EParent = 2.871616e-01 XAcc = 9.999992e-01 ThetaAcc = 3.165713e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.287162 DM energy = 0.287161
+--> Event 57 starts.
+--> Event 58 starts.
+ekin = 3204.7, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 141 iterations for Angle
+EParent = 3.204697e+00 XAcc = 9.999999e-01 ThetaAcc = 3.589780e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 3.2047 DM energy = 3.2047
+--> Event 59 starts.
+--> Event 60 starts.
+--> Event 61 starts.
+ekin = 171.436, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 19 iterations for Angle
+EParent = 1.714363e-01 XAcc = 1.000000e+00 ThetaAcc = 3.617082e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.171436 DM energy = 0.171436
+--> Event 62 starts.
+--> Event 63 starts.
+--> Event 64 starts.
+--> Event 65 starts.
+--> Event 66 starts.
+--> Event 67 starts.
+--> Event 68 starts.
+--> Event 69 starts.
+--> Event 70 starts.
+--> Event 71 starts.
+--> Event 72 starts.
+--> Event 73 starts.
+ekin = 3175.54, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 8553 iterations for Angle
+EParent = 3.175544e+00 XAcc = 9.999998e-01 ThetaAcc = 4.440000e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 3.17554 DM energy = 3.17554
+--> Event 74 starts.
+ekin = 289.742, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 471 iterations for Angle
+EParent = 2.897423e-01 XAcc = 9.999953e-01 ThetaAcc = 7.728635e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.289742 DM energy = 0.289741
+ekin = 323.404, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 191 iterations for Angle
+EParent = 3.234043e-01 XAcc = 9.999997e-01 ThetaAcc = 1.821722e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.323404 DM energy = 0.323404
+ekin = 161.898, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 226 iterations for Angle
+EParent = 1.618979e-01 XAcc = 1.000000e+00 ThetaAcc = 5.402725e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.161898 DM energy = 0.161898
+--> Event 75 starts.
+ekin = 123.321, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 53 iterations for Angle
+EParent = 1.233205e-01 XAcc = 1.000000e+00 ThetaAcc = 3.931063e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.123321 DM energy = 0.123321
+--> Event 76 starts.
+--> Event 77 starts.
+--> Event 78 starts.
+--> Event 79 starts.
+ekin = 145.474, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 189 iterations for Angle
+EParent = 1.454741e-01 XAcc = 1.000000e+00 ThetaAcc = 2.713309e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.145474 DM energy = 0.145474
+--> Event 80 starts.
+--> Event 81 starts.
+--> Event 82 starts.
+--> Event 83 starts.
+--> Event 84 starts.
+ekin = 141.336, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 360 iterations for Angle
+EParent = 1.413361e-01 XAcc = 1.000000e+00 ThetaAcc = 8.648726e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.141336 DM energy = 0.141336
+ekin = 191.989, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 45 iterations for Angle
+EParent = 1.919892e-01 XAcc = 1.000000e+00 ThetaAcc = 1.746803e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.191989 DM energy = 0.191989
+--> Event 85 starts.
+--> Event 86 starts.
+ekin = 440.143, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 508 iterations for Angle
+EParent = 4.401435e-01 XAcc = 1.000000e+00 ThetaAcc = 6.129891e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.440143 DM energy = 0.440143
+--> Event 87 starts.
+--> Event 88 starts.
+--> Event 89 starts.
+--> Event 90 starts.
+--> Event 91 starts.
+ekin = 223.642, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 137 iterations for Angle
+EParent = 2.236418e-01 XAcc = 9.999995e-01 ThetaAcc = 2.884363e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.223642 DM energy = 0.223642
+--> Event 92 starts.
+--> Event 93 starts.
+--> Event 94 starts.
+--> Event 95 starts.
+--> Event 96 starts.
+ekin = 277.201, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 381 iterations for Angle
+EParent = 2.772007e-01 XAcc = 1.000000e+00 ThetaAcc = 5.942421e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.277201 DM energy = 0.277201
+--> Event 97 starts.
+--> Event 98 starts.
+ekin = 114.187, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 137 iterations for Angle
+EParent = 1.141873e-01 XAcc = 1.000000e+00 ThetaAcc = 4.306854e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.114187 DM energy = 0.114187
+--> Event 99 starts.
+ekin = 109.183, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 39 iterations for Angle
+EParent = 1.091827e-01 XAcc = 9.999959e-01 ThetaAcc = 1.179848e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.109183 DM energy = 0.109182
+--> Event 100 starts.
+--> Event 101 starts.
+--> Event 102 starts.
+--> Event 103 starts.
+ekin = 199.232, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 605 iterations for Angle
+EParent = 1.992322e-01 XAcc = 1.000000e+00 ThetaAcc = 2.186882e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.199232 DM energy = 0.199232
+--> Event 104 starts.
+ekin = 506.852, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 784 iterations for Angle
+EParent = 5.068516e-01 XAcc = 1.000000e+00 ThetaAcc = 1.120032e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.506852 DM energy = 0.506852
+--> Event 105 starts.
+--> Event 106 starts.
+ekin = 448.828, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 115 iterations for Angle
+EParent = 4.488282e-01 XAcc = 1.000000e+00 ThetaAcc = 4.168230e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.448828 DM energy = 0.448828
+--> Event 107 starts.
+ekin = 101.469, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 123 iterations for Angle
+EParent = 1.014694e-01 XAcc = 9.999791e-01 ThetaAcc = 2.752912e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.101469 DM energy = 0.101467
+--> Event 108 starts.
+ekin = 973.068, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 428 iterations for Angle
+EParent = 9.730685e-01 XAcc = 1.000000e+00 ThetaAcc = 1.668765e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.973068 DM energy = 0.973068
+ekin = 103.525, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 26 iterations for Angle
+EParent = 1.035252e-01 XAcc = 9.999886e-01 ThetaAcc = 2.013173e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.103525 DM energy = 0.103524
+--> Event 109 starts.
+--> Event 110 starts.
+ekin = 139.698, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 229 iterations for Angle
+EParent = 1.396977e-01 XAcc = 1.000000e+00 ThetaAcc = 5.854690e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.139698 DM energy = 0.139698
+--> Event 111 starts.
+--> Event 112 starts.
+--> Event 113 starts.
+--> Event 114 starts.
+--> Event 115 starts.
+--> Event 116 starts.
+--> Event 117 starts.
+--> Event 118 starts.
+ekin = 277.206, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 272 iterations for Angle
+EParent = 2.772058e-01 XAcc = 1.000000e+00 ThetaAcc = 2.053189e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.277206 DM energy = 0.277206
+ekin = 113.003, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 34 iterations for Angle
+EParent = 1.130034e-01 XAcc = 1.000000e+00 ThetaAcc = 2.862511e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.113003 DM energy = 0.113003
+--> Event 119 starts.
+--> Event 120 starts.
+ekin = 105.74, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 91 iterations for Angle
+EParent = 1.057396e-01 XAcc = 9.999946e-01 ThetaAcc = 1.373306e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.10574 DM energy = 0.105739
+--> Event 121 starts.
+--> Event 122 starts.
+--> Event 123 starts.
+ekin = 159.955, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 125 iterations for Angle
+EParent = 1.599549e-01 XAcc = 1.000000e+00 ThetaAcc = 1.913381e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.159955 DM energy = 0.159955
+--> Event 124 starts.
+ekin = 2274.36, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 1127 iterations for Angle
+EParent = 2.274362e+00 XAcc = 1.000000e+00 ThetaAcc = 1.821628e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 2.27436 DM energy = 2.27436
+--> Event 125 starts.
+--> Event 126 starts.
+--> Event 127 starts.
+--> Event 128 starts.
+ekin = 115.28, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 114 iterations for Angle
+EParent = 1.152801e-01 XAcc = 1.000000e+00 ThetaAcc = 6.054088e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.11528 DM energy = 0.11528
+--> Event 129 starts.
+--> Event 130 starts.
+--> Event 131 starts.
+ekin = 150.509, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 160 iterations for Angle
+EParent = 1.505085e-01 XAcc = 1.000000e+00 ThetaAcc = 5.334604e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.150509 DM energy = 0.150509
+--> Event 132 starts.
+ekin = 138.587, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 42 iterations for Angle
+EParent = 1.385871e-01 XAcc = 1.000000e+00 ThetaAcc = 4.577683e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.138587 DM energy = 0.138587
+--> Event 133 starts.
+ekin = 224.4, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 99 iterations for Angle
+EParent = 2.243997e-01 XAcc = 1.000000e+00 ThetaAcc = 2.449539e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.2244 DM energy = 0.2244
+--> Event 134 starts.
+--> Event 135 starts.
+--> Event 136 starts.
+--> Event 137 starts.
+--> Event 138 starts.
+--> Event 139 starts.
+ekin = 314.631, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 26 iterations for Angle
+EParent = 3.146314e-01 XAcc = 9.999985e-01 ThetaAcc = 4.167872e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.314631 DM energy = 0.314631
+ekin = 128.423, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 207 iterations for Angle
+EParent = 1.284229e-01 XAcc = 1.000000e+00 ThetaAcc = 2.655221e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.128423 DM energy = 0.128423
+--> Event 140 starts.
+--> Event 141 starts.
+--> Event 142 starts.
+--> Event 143 starts.
+--> Event 144 starts.
+--> Event 145 starts.
+ekin = 437.73, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 591 iterations for Angle
+EParent = 4.377302e-01 XAcc = 1.000000e+00 ThetaAcc = 1.537999e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.43773 DM energy = 0.43773
+--> Event 146 starts.
+--> Event 147 starts.
+ekin = 106.962, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 21 iterations for Angle
+EParent = 1.069619e-01 XAcc = 1.000000e+00 ThetaAcc = 9.746153e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.106962 DM energy = 0.106962
+ekin = 172.048, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 30 iterations for Angle
+EParent = 1.720476e-01 XAcc = 1.000000e+00 ThetaAcc = 3.523647e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.172048 DM energy = 0.172048
+--> Event 148 starts.
+--> Event 149 starts.
+ekin = 163.182, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 89 iterations for Angle
+EParent = 1.631819e-01 XAcc = 1.000000e+00 ThetaAcc = 2.084548e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.163182 DM energy = 0.163182
+--> Event 150 starts.
+ekin = 129.434, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 20 iterations for Angle
+EParent = 1.294338e-01 XAcc = 9.999993e-01 ThetaAcc = 4.383659e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.129434 DM energy = 0.129434
+ekin = 1140.68, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 810 iterations for Angle
+EParent = 1.140683e+00 XAcc = 9.999986e-01 ThetaAcc = 2.149804e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 1.14068 DM energy = 1.14068
+ekin = 132.529, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 84 iterations for Angle
+EParent = 1.325286e-01 XAcc = 1.000000e+00 ThetaAcc = 1.932978e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.132529 DM energy = 0.132529
+ekin = 171.431, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 154 iterations for Angle
+EParent = 1.714309e-01 XAcc = 1.000000e+00 ThetaAcc = 5.651973e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.171431 DM energy = 0.171431
+--> Event 151 starts.
+ekin = 116.98, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 20 iterations for Angle
+EParent = 1.169797e-01 XAcc = 1.000000e+00 ThetaAcc = 3.585772e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.11698 DM energy = 0.11698
+ekin = 281.177, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 756 iterations for Angle
+EParent = 2.811768e-01 XAcc = 1.000000e+00 ThetaAcc = 2.627930e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.281177 DM energy = 0.281177
+ekin = 156.622, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 37 iterations for Angle
+EParent = 1.566221e-01 XAcc = 9.999999e-01 ThetaAcc = 1.152407e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.156622 DM energy = 0.156622
+--> Event 152 starts.
+ekin = 872.306, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 971 iterations for Angle
+EParent = 8.723061e-01 XAcc = 9.999997e-01 ThetaAcc = 1.072961e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.872306 DM energy = 0.872306
+--> Event 153 starts.
+--> Event 154 starts.
+--> Event 155 starts.
+ekin = 1054, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 256 iterations for Angle
+EParent = 1.054002e+00 XAcc = 1.000000e+00 ThetaAcc = 7.323223e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 1.054 DM energy = 1.054
+--> Event 156 starts.
+--> Event 157 starts.
+ekin = 1476.54, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 1841 iterations for Angle
+EParent = 1.476537e+00 XAcc = 1.000000e+00 ThetaAcc = 2.225004e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 1.47654 DM energy = 1.47654
+--> Event 158 starts.
+ekin = 124.38, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 226 iterations for Angle
+EParent = 1.243805e-01 XAcc = 1.000000e+00 ThetaAcc = 1.058298e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.12438 DM energy = 0.12438
+--> Event 159 starts.
+ekin = 136.308, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 152 iterations for Angle
+EParent = 1.363085e-01 XAcc = 9.999947e-01 ThetaAcc = 1.201210e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.136308 DM energy = 0.136308
+--> Event 160 starts.
+--> Event 161 starts.
+ekin = 693.355, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 636 iterations for Angle
+EParent = 6.933551e-01 XAcc = 9.999994e-01 ThetaAcc = 1.817996e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.693355 DM energy = 0.693355
+--> Event 162 starts.
+--> Event 163 starts.
+--> Event 164 starts.
+--> Event 165 starts.
+--> Event 166 starts.
+--> Event 167 starts.
+--> Event 168 starts.
+--> Event 169 starts.
+ekin = 163.38, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 61 iterations for Angle
+EParent = 1.633804e-01 XAcc = 1.000000e+00 ThetaAcc = 5.194710e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.16338 DM energy = 0.16338
+--> Event 170 starts.
+--> Event 171 starts.
+--> Event 172 starts.
+--> Event 173 starts.
+--> Event 174 starts.
+ekin = 171.322, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 56 iterations for Angle
+EParent = 1.713220e-01 XAcc = 9.999982e-01 ThetaAcc = 6.232061e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.171322 DM energy = 0.171322
+--> Event 175 starts.
+--> Event 176 starts.
+--> Event 177 starts.
+--> Event 178 starts.
+--> Event 179 starts.
+--> Event 180 starts.
+--> Event 181 starts.
+--> Event 182 starts.
+--> Event 183 starts.
+--> Event 184 starts.
+--> Event 185 starts.
+--> Event 186 starts.
+--> Event 187 starts.
+ekin = 107.043, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 133 iterations for Angle
+EParent = 1.070431e-01 XAcc = 1.000000e+00 ThetaAcc = 5.490160e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.107043 DM energy = 0.107043
+--> Event 188 starts.
+--> Event 189 starts.
+ekin = 197.873, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 7 iterations for Angle
+EParent = 1.978731e-01 XAcc = 1.000000e+00 ThetaAcc = 5.078497e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.197873 DM energy = 0.197873
+--> Event 190 starts.
+--> Event 191 starts.
+ekin = 397.338, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 84 iterations for Angle
+EParent = 3.973379e-01 XAcc = 1.000000e+00 ThetaAcc = 3.362018e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.397338 DM energy = 0.397338
+--> Event 192 starts.
+--> Event 193 starts.
+ekin = 122.701, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 16 iterations for Angle
+EParent = 1.227015e-01 XAcc = 1.000000e+00 ThetaAcc = 4.724506e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.122701 DM energy = 0.122701
+--> Event 194 starts.
+--> Event 195 starts.
+--> Event 196 starts.
+--> Event 197 starts.
+--> Event 198 starts.
+--> Event 199 starts.
+--> Event 200 starts.
+--> Event 201 starts.
+--> Event 202 starts.
+ekin = 143.252, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 190 iterations for Angle
+EParent = 1.432517e-01 XAcc = 1.000000e+00 ThetaAcc = 3.780702e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.143252 DM energy = 0.143252
+--> Event 203 starts.
+--> Event 204 starts.
+--> Event 205 starts.
+--> Event 206 starts.
+ekin = 115.28, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 162 iterations for Angle
+EParent = 1.152802e-01 XAcc = 1.000000e+00 ThetaAcc = 1.858375e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.11528 DM energy = 0.11528
+--> Event 207 starts.
+--> Event 208 starts.
+--> Event 209 starts.
+--> Event 210 starts.
+--> Event 211 starts.
+--> Event 212 starts.
+--> Event 213 starts.
+--> Event 214 starts.
+ekin = 412.95, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 216 iterations for Angle
+EParent = 4.129502e-01 XAcc = 9.999993e-01 ThetaAcc = 2.551612e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.41295 DM energy = 0.41295
+ekin = 120.599, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 157 iterations for Angle
+EParent = 1.205988e-01 XAcc = 9.999874e-01 ThetaAcc = 1.958729e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.120599 DM energy = 0.120597
+--> Event 215 starts.
+--> Event 216 starts.
+ekin = 169.075, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 38 iterations for Angle
+EParent = 1.690754e-01 XAcc = 9.999996e-01 ThetaAcc = 3.013654e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.169075 DM energy = 0.169075
+--> Event 217 starts.
+--> Event 218 starts.
+ekin = 261.881, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 45 iterations for Angle
+EParent = 2.618812e-01 XAcc = 9.999994e-01 ThetaAcc = 2.902302e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.261881 DM energy = 0.261881
+--> Event 219 starts.
+ekin = 115.335, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 7 iterations for Angle
+EParent = 1.153349e-01 XAcc = 9.999998e-01 ThetaAcc = 2.432477e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.115335 DM energy = 0.115335
+--> Event 220 starts.
+--> Event 221 starts.
+--> Event 222 starts.
+ekin = 161.752, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 24 iterations for Angle
+EParent = 1.617521e-01 XAcc = 9.999998e-01 ThetaAcc = 1.996758e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.161752 DM energy = 0.161752
+--> Event 223 starts.
+--> Event 224 starts.
+ekin = 121.208, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 105 iterations for Angle
+EParent = 1.212080e-01 XAcc = 1.000000e+00 ThetaAcc = 1.946601e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.121208 DM energy = 0.121208
+--> Event 225 starts.
+--> Event 226 starts.
+--> Event 227 starts.
+ekin = 129.606, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 23 iterations for Angle
+EParent = 1.296058e-01 XAcc = 9.999966e-01 ThetaAcc = 9.827886e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.129606 DM energy = 0.129605
+ekin = 533.218, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 385 iterations for Angle
+EParent = 5.332177e-01 XAcc = 1.000000e+00 ThetaAcc = 2.624063e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.533218 DM energy = 0.533218
+--> Event 228 starts.
+--> Event 229 starts.
+ekin = 113.077, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 24 iterations for Angle
+EParent = 1.130765e-01 XAcc = 9.999931e-01 ThetaAcc = 1.501415e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.113077 DM energy = 0.113076
+--> Event 230 starts.
+--> Event 231 starts.
+--> Event 232 starts.
+--> Event 233 starts.
+--> Event 234 starts.
+--> Event 235 starts.
+--> Event 236 starts.
+ekin = 125.395, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 3 iterations for Angle
+EParent = 1.253953e-01 XAcc = 9.999995e-01 ThetaAcc = 3.675071e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.125395 DM energy = 0.125395
+--> Event 237 starts.
+--> Event 238 starts.
+--> Event 239 starts.
+--> Event 240 starts.
+--> Event 241 starts.
+ekin = 101.217, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 2 iterations for Angle
+EParent = 1.012175e-01 XAcc = 1.000000e+00 ThetaAcc = 6.132538e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.101217 DM energy = 0.101217
+--> Event 242 starts.
+--> Event 243 starts.
+ekin = 330.629, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 110 iterations for Angle
+EParent = 3.306290e-01 XAcc = 9.999999e-01 ThetaAcc = 7.799076e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.330629 DM energy = 0.330629
+ekin = 150.457, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 30 iterations for Angle
+EParent = 1.504568e-01 XAcc = 1.000000e+00 ThetaAcc = 3.290523e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.150457 DM energy = 0.150457
+--> Event 244 starts.
+--> Event 245 starts.
+--> Event 246 starts.
+--> Event 247 starts.
+--> Event 248 starts.
+ekin = 3102.34, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 59 iterations for Angle
+EParent = 3.102342e+00 XAcc = 1.000000e+00 ThetaAcc = 4.469613e-05
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 3.10234 DM energy = 3.10234
+--> Event 249 starts.
+ekin = 537.478, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 99 iterations for Angle
+EParent = 5.374780e-01 XAcc = 9.999984e-01 ThetaAcc = 3.259858e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.537478 DM energy = 0.537477
+--> Event 250 starts.
+--> Event 251 starts.
+ekin = 281.215, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 243 iterations for Angle
+EParent = 2.812155e-01 XAcc = 1.000000e+00 ThetaAcc = 1.249200e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.281215 DM energy = 0.281215
+ekin = 184.821, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 157 iterations for Angle
+EParent = 1.848215e-01 XAcc = 1.000000e+00 ThetaAcc = 3.887189e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.184821 DM energy = 0.184821
+--> Event 252 starts.
+--> Event 253 starts.
+ekin = 165.038, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 802 iterations for Angle
+EParent = 1.650375e-01 XAcc = 1.000000e+00 ThetaAcc = 1.875209e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.165038 DM energy = 0.165038
+--> Event 254 starts.
+--> Event 255 starts.
+ekin = 10957.3, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 23725 iterations for Angle
+EParent = 1.095732e+01 XAcc = 9.999999e-01 ThetaAcc = 1.526620e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 10.9573 DM energy = 10.9573
+--> Event 256 starts.
+ekin = 231.697, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 295 iterations for Angle
+EParent = 2.316975e-01 XAcc = 9.999997e-01 ThetaAcc = 2.099472e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.231697 DM energy = 0.231697
+--> Event 257 starts.
+--> Event 258 starts.
+--> Event 259 starts.
+--> Event 260 starts.
+ekin = 108.27, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 287 iterations for Angle
+EParent = 1.082700e-01 XAcc = 1.000000e+00 ThetaAcc = 6.478040e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.10827 DM energy = 0.10827
+ekin = 183.764, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 52 iterations for Angle
+EParent = 1.837637e-01 XAcc = 1.000000e+00 ThetaAcc = 1.334854e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.183764 DM energy = 0.183764
+--> Event 261 starts.
+ekin = 612.044, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 411 iterations for Angle
+EParent = 6.120436e-01 XAcc = 9.999991e-01 ThetaAcc = 2.263222e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.612044 DM energy = 0.612043
+--> Event 262 starts.
+ekin = 786.281, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 42 iterations for Angle
+EParent = 7.862806e-01 XAcc = 1.000000e+00 ThetaAcc = 3.446395e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.786281 DM energy = 0.786281
+--> Event 263 starts.
+--> Event 264 starts.
+--> Event 265 starts.
+--> Event 266 starts.
+--> Event 267 starts.
+--> Event 268 starts.
+ekin = 238.644, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 236 iterations for Angle
+EParent = 2.386436e-01 XAcc = 1.000000e+00 ThetaAcc = 7.818721e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.238644 DM energy = 0.238644
+--> Event 269 starts.
+--> Event 270 starts.
+--> Event 271 starts.
+--> Event 272 starts.
+--> Event 273 starts.
+--> Event 274 starts.
+--> Event 275 starts.
+ekin = 426.622, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 308 iterations for Angle
+EParent = 4.266217e-01 XAcc = 1.000000e+00 ThetaAcc = 9.370417e-05
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.426622 DM energy = 0.426622
+--> Event 276 starts.
+--> Event 277 starts.
+ekin = 320.146, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 137 iterations for Angle
+EParent = 3.201460e-01 XAcc = 1.000000e+00 ThetaAcc = 3.370600e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.320146 DM energy = 0.320146
+--> Event 278 starts.
+--> Event 279 starts.
+--> Event 280 starts.
+ekin = 131.318, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 2 iterations for Angle
+EParent = 1.313176e-01 XAcc = 9.999868e-01 ThetaAcc = 1.919700e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.131318 DM energy = 0.131316
+--> Event 281 starts.
+--> Event 282 starts.
+ekin = 278.05, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 338 iterations for Angle
+EParent = 2.780502e-01 XAcc = 1.000000e+00 ThetaAcc = 6.578666e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.27805 DM energy = 0.27805
+--> Event 283 starts.
+ekin = 101.039, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 106 iterations for Angle
+EParent = 1.010392e-01 XAcc = 9.999998e-01 ThetaAcc = 3.013913e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.101039 DM energy = 0.101039
+--> Event 284 starts.
+--> Event 285 starts.
+--> Event 286 starts.
+--> Event 287 starts.
+--> Event 288 starts.
+--> Event 289 starts.
+ekin = 134.062, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 86 iterations for Angle
+EParent = 1.340623e-01 XAcc = 1.000000e+00 ThetaAcc = 7.443872e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.134062 DM energy = 0.134062
+ekin = 545.473, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 736 iterations for Angle
+EParent = 5.454733e-01 XAcc = 9.999991e-01 ThetaAcc = 2.471158e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.545473 DM energy = 0.545473
+--> Event 290 starts.
+--> Event 291 starts.
+ekin = 152.903, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 165 iterations for Angle
+EParent = 1.529030e-01 XAcc = 1.000000e+00 ThetaAcc = 5.789657e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.152903 DM energy = 0.152903
+--> Event 292 starts.
+ekin = 113.882, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 249 iterations for Angle
+EParent = 1.138817e-01 XAcc = 9.999985e-01 ThetaAcc = 6.904237e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.113882 DM energy = 0.113882
+ekin = 1422.85, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 876 iterations for Angle
+EParent = 1.422852e+00 XAcc = 9.999999e-01 ThetaAcc = 3.846999e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 1.42285 DM energy = 1.42285
+--> Event 293 starts.
+--> Event 294 starts.
+--> Event 295 starts.
+--> Event 296 starts.
+--> Event 297 starts.
+--> Event 298 starts.
+--> Event 299 starts.
+--> Event 300 starts.
+--> Event 301 starts.
+--> Event 302 starts.
+ekin = 214.883, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 46 iterations for Angle
+EParent = 2.148827e-01 XAcc = 9.999999e-01 ThetaAcc = 1.325337e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.214883 DM energy = 0.214883
+--> Event 303 starts.
+--> Event 304 starts.
+ekin = 156.288, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 224 iterations for Angle
+EParent = 1.562881e-01 XAcc = 1.000000e+00 ThetaAcc = 4.430876e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.156288 DM energy = 0.156288
+--> Event 305 starts.
+--> Event 306 starts.
+ekin = 112.72, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 4 iterations for Angle
+EParent = 1.127197e-01 XAcc = 1.000000e+00 ThetaAcc = 6.196212e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.11272 DM energy = 0.11272
+--> Event 307 starts.
+ekin = 481.607, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 984 iterations for Angle
+EParent = 4.816071e-01 XAcc = 1.000000e+00 ThetaAcc = 2.073122e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.481607 DM energy = 0.481607
+--> Event 308 starts.
+ekin = 198.597, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 54 iterations for Angle
+EParent = 1.985967e-01 XAcc = 9.999998e-01 ThetaAcc = 2.061633e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.198597 DM energy = 0.198597
+--> Event 309 starts.
+--> Event 310 starts.
+ekin = 164.207, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 372 iterations for Angle
+EParent = 1.642067e-01 XAcc = 9.999997e-01 ThetaAcc = 2.791087e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.164207 DM energy = 0.164207
+--> Event 311 starts.
+--> Event 312 starts.
+ekin = 150.685, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 175 iterations for Angle
+EParent = 1.506854e-01 XAcc = 9.999997e-01 ThetaAcc = 2.795660e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.150685 DM energy = 0.150685
+--> Event 313 starts.
+ekin = 137.218, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 1 iterations for Angle
+EParent = 1.372176e-01 XAcc = 1.000000e+00 ThetaAcc = 9.190795e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.137218 DM energy = 0.137218
+ekin = 113.238, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 75 iterations for Angle
+EParent = 1.132383e-01 XAcc = 9.999999e-01 ThetaAcc = 2.142725e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.113238 DM energy = 0.113238
+--> Event 314 starts.
+ekin = 152.403, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 25 iterations for Angle
+EParent = 1.524025e-01 XAcc = 1.000000e+00 ThetaAcc = 2.528320e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.152403 DM energy = 0.152403
+--> Event 315 starts.
+ekin = 11315.1, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 958 iterations for Angle
+EParent = 1.131507e+01 XAcc = 1.000000e+00 ThetaAcc = 4.464445e-05
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 11.3151 DM energy = 11.3151
+--> Event 316 starts.
+ekin = 357.926, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 83 iterations for Angle
+EParent = 3.579258e-01 XAcc = 1.000000e+00 ThetaAcc = 3.081384e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.357926 DM energy = 0.357926
+--> Event 317 starts.
+ekin = 276.413, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 196 iterations for Angle
+EParent = 2.764135e-01 XAcc = 9.999973e-01 ThetaAcc = 5.984400e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.276413 DM energy = 0.276413
+--> Event 318 starts.
+--> Event 319 starts.
+--> Event 320 starts.
+ekin = 113.191, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 5 iterations for Angle
+EParent = 1.131915e-01 XAcc = 9.999999e-01 ThetaAcc = 1.569962e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.113191 DM energy = 0.113191
+--> Event 321 starts.
+--> Event 322 starts.
+--> Event 323 starts.
+--> Event 324 starts.
+--> Event 325 starts.
+--> Event 326 starts.
+--> Event 327 starts.
+--> Event 328 starts.
+ekin = 109.343, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 21 iterations for Angle
+EParent = 1.093432e-01 XAcc = 9.999988e-01 ThetaAcc = 6.431807e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.109343 DM energy = 0.109343
+--> Event 329 starts.
+--> Event 330 starts.
+ekin = 157.928, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 305 iterations for Angle
+EParent = 1.579277e-01 XAcc = 9.999767e-01 ThetaAcc = 2.331162e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.157928 DM energy = 0.157924
+--> Event 331 starts.
+ekin = 228.771, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 58 iterations for Angle
+EParent = 2.287709e-01 XAcc = 1.000000e+00 ThetaAcc = 7.776817e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.228771 DM energy = 0.228771
+--> Event 332 starts.
+ekin = 211.414, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 263 iterations for Angle
+EParent = 2.114140e-01 XAcc = 9.999942e-01 ThetaAcc = 1.001769e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.211414 DM energy = 0.211413
+--> Event 333 starts.
+ekin = 167.293, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 8 iterations for Angle
+EParent = 1.672935e-01 XAcc = 9.999999e-01 ThetaAcc = 1.611306e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.167293 DM energy = 0.167293
+--> Event 334 starts.
+--> Event 335 starts.
+--> Event 336 starts.
+ekin = 388.79, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 422 iterations for Angle
+EParent = 3.887905e-01 XAcc = 9.999966e-01 ThetaAcc = 5.642515e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.38879 DM energy = 0.388789
+--> Event 337 starts.
+ekin = 104.748, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 15 iterations for Angle
+EParent = 1.047478e-01 XAcc = 1.000000e+00 ThetaAcc = 1.001572e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.104748 DM energy = 0.104748
+--> Event 338 starts.
+--> Event 339 starts.
+ekin = 219.226, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 75 iterations for Angle
+EParent = 2.192257e-01 XAcc = 9.999760e-01 ThetaAcc = 2.006581e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.219226 DM energy = 0.21922
+--> Event 340 starts.
+--> Event 341 starts.
+--> Event 342 starts.
+--> Event 343 starts.
+--> Event 344 starts.
+--> Event 345 starts.
+--> Event 346 starts.
+ekin = 113.324, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 31 iterations for Angle
+EParent = 1.133241e-01 XAcc = 9.999999e-01 ThetaAcc = 1.352816e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.113324 DM energy = 0.113324
+--> Event 347 starts.
+ekin = 442.419, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 44 iterations for Angle
+EParent = 4.424188e-01 XAcc = 9.999999e-01 ThetaAcc = 8.089603e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.442419 DM energy = 0.442419
+--> Event 348 starts.
+--> Event 349 starts.
+ekin = 1886, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 351 iterations for Angle
+EParent = 1.886005e+00 XAcc = 9.999999e-01 ThetaAcc = 3.579604e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 1.886 DM energy = 1.886
+--> Event 350 starts.
+ekin = 121.53, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 92 iterations for Angle
+EParent = 1.215297e-01 XAcc = 1.000000e+00 ThetaAcc = 1.499190e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.12153 DM energy = 0.12153
+--> Event 351 starts.
+ekin = 530.809, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 136 iterations for Angle
+EParent = 5.308086e-01 XAcc = 9.999992e-01 ThetaAcc = 2.394770e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.530809 DM energy = 0.530808
+--> Event 352 starts.
+ekin = 109.211, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 166 iterations for Angle
+EParent = 1.092111e-01 XAcc = 9.999990e-01 ThetaAcc = 5.828027e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.109211 DM energy = 0.109211
+ekin = 114.634, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 13 iterations for Angle
+EParent = 1.146342e-01 XAcc = 1.000000e+00 ThetaAcc = 1.461916e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.114634 DM energy = 0.114634
+--> Event 353 starts.
+--> Event 354 starts.
+--> Event 355 starts.
+--> Event 356 starts.
+ekin = 140.478, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 235 iterations for Angle
+EParent = 1.404778e-01 XAcc = 9.999999e-01 ThetaAcc = 1.235494e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.140478 DM energy = 0.140478
+--> Event 357 starts.
+ekin = 113.809, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 31 iterations for Angle
+EParent = 1.138091e-01 XAcc = 9.999948e-01 ThetaAcc = 1.290209e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.113809 DM energy = 0.113808
+ekin = 119.447, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 128 iterations for Angle
+EParent = 1.194466e-01 XAcc = 1.000000e+00 ThetaAcc = 1.136415e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.119447 DM energy = 0.119447
+ekin = 711.913, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 324 iterations for Angle
+EParent = 7.119133e-01 XAcc = 9.999996e-01 ThetaAcc = 1.411361e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.711913 DM energy = 0.711913
+--> Event 358 starts.
+ekin = 217.997, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 83 iterations for Angle
+EParent = 2.179972e-01 XAcc = 1.000000e+00 ThetaAcc = 7.341150e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.217997 DM energy = 0.217997
+ekin = 163.315, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 144 iterations for Angle
+EParent = 1.633152e-01 XAcc = 9.999999e-01 ThetaAcc = 1.778856e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.163315 DM energy = 0.163315
+--> Event 359 starts.
+--> Event 360 starts.
+ekin = 223.236, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 38 iterations for Angle
+EParent = 2.232355e-01 XAcc = 1.000000e+00 ThetaAcc = 1.083341e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.223236 DM energy = 0.223236
+--> Event 361 starts.
+--> Event 362 starts.
+ekin = 566.01, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 1563 iterations for Angle
+EParent = 5.660100e-01 XAcc = 9.999956e-01 ThetaAcc = 5.338890e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.56601 DM energy = 0.566008
+--> Event 363 starts.
+--> Event 364 starts.
+ekin = 145.706, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 13 iterations for Angle
+EParent = 1.457065e-01 XAcc = 1.000000e+00 ThetaAcc = 4.438783e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.145706 DM energy = 0.145706
+--> Event 365 starts.
+--> Event 366 starts.
+--> Event 367 starts.
+ekin = 110.743, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 37 iterations for Angle
+EParent = 1.107430e-01 XAcc = 9.999999e-01 ThetaAcc = 1.300116e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.110743 DM energy = 0.110743
+--> Event 368 starts.
+--> Event 369 starts.
+--> Event 370 starts.
+ekin = 106.79, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 22 iterations for Angle
+EParent = 1.067900e-01 XAcc = 1.000000e+00 ThetaAcc = 1.054644e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.10679 DM energy = 0.10679
+--> Event 371 starts.
+ekin = 131.036, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 67 iterations for Angle
+EParent = 1.310365e-01 XAcc = 9.999995e-01 ThetaAcc = 3.704183e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.131036 DM energy = 0.131036
+ekin = 144.079, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 44 iterations for Angle
+EParent = 1.440792e-01 XAcc = 9.999995e-01 ThetaAcc = 3.621391e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.144079 DM energy = 0.144079
+--> Event 372 starts.
+--> Event 373 starts.
+--> Event 374 starts.
+ekin = 147.029, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 121 iterations for Angle
+EParent = 1.470291e-01 XAcc = 9.999981e-01 ThetaAcc = 6.848307e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.147029 DM energy = 0.147029
+ekin = 102.617, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 55 iterations for Angle
+EParent = 1.026167e-01 XAcc = 1.000000e+00 ThetaAcc = 3.321436e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.102617 DM energy = 0.102617
+--> Event 375 starts.
+--> Event 376 starts.
+ekin = 102.361, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 10 iterations for Angle
+EParent = 1.023614e-01 XAcc = 9.999790e-01 ThetaAcc = 2.744415e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.102361 DM energy = 0.102359
+--> Event 377 starts.
+ekin = 278.364, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 132 iterations for Angle
+EParent = 2.783635e-01 XAcc = 1.000000e+00 ThetaAcc = 2.966698e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.278364 DM energy = 0.278364
+--> Event 378 starts.
+ekin = 1299.46, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 1768 iterations for Angle
+EParent = 1.299457e+00 XAcc = 1.000000e+00 ThetaAcc = 5.754988e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 1.29946 DM energy = 1.29946
+--> Event 379 starts.
+--> Event 380 starts.
+--> Event 381 starts.
+--> Event 382 starts.
+--> Event 383 starts.
+ekin = 815.305, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 206 iterations for Angle
+EParent = 8.153050e-01 XAcc = 9.999982e-01 ThetaAcc = 2.810235e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.815305 DM energy = 0.815304
+--> Event 384 starts.
+ekin = 345.406, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 593 iterations for Angle
+EParent = 3.454055e-01 XAcc = 9.999991e-01 ThetaAcc = 3.017319e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.345406 DM energy = 0.345405
+--> Event 385 starts.
+ekin = 187.686, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 1 iterations for Angle
+EParent = 1.876855e-01 XAcc = 9.999795e-01 ThetaAcc = 2.002677e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.187686 DM energy = 0.187682
+--> Event 386 starts.
+--> Event 387 starts.
+--> Event 388 starts.
+ekin = 265.891, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 88 iterations for Angle
+EParent = 2.658913e-01 XAcc = 1.000000e+00 ThetaAcc = 9.858380e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.265891 DM energy = 0.265891
+ekin = 995.384, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 737 iterations for Angle
+EParent = 9.953843e-01 XAcc = 1.000000e+00 ThetaAcc = 3.717734e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.995384 DM energy = 0.995384
+ekin = 567.023, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 285 iterations for Angle
+EParent = 5.670232e-01 XAcc = 1.000000e+00 ThetaAcc = 4.608043e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.567023 DM energy = 0.567023
+--> Event 389 starts.
+--> Event 390 starts.
+--> Event 391 starts.
+--> Event 392 starts.
+--> Event 393 starts.
+--> Event 394 starts.
+--> Event 395 starts.
+--> Event 396 starts.
+--> Event 397 starts.
+ekin = 343.297, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 866 iterations for Angle
+EParent = 3.432974e-01 XAcc = 1.000000e+00 ThetaAcc = 1.319257e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.343297 DM energy = 0.343297
+--> Event 398 starts.
+--> Event 399 starts.
+ekin = 137.318, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 51 iterations for Angle
+EParent = 1.373180e-01 XAcc = 1.000000e+00 ThetaAcc = 5.379488e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.137318 DM energy = 0.137318
+--> Event 400 starts.
+ekin = 141.664, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 48 iterations for Angle
+EParent = 1.416641e-01 XAcc = 9.999916e-01 ThetaAcc = 1.479119e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.141664 DM energy = 0.141663
+--> Event 401 starts.
+--> Event 402 starts.
+--> Event 403 starts.
+ekin = 164.247, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 64 iterations for Angle
+EParent = 1.642474e-01 XAcc = 1.000000e+00 ThetaAcc = 1.847043e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.164247 DM energy = 0.164247
+--> Event 404 starts.
+--> Event 405 starts.
+--> Event 406 starts.
+--> Event 407 starts.
+--> Event 408 starts.
+--> Event 409 starts.
+ekin = 1959.99, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 834 iterations for Angle
+EParent = 1.959987e+00 XAcc = 1.000000e+00 ThetaAcc = 3.714126e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 1.95999 DM energy = 1.95999
+--> Event 410 starts.
+--> Event 411 starts.
+--> Event 412 starts.
+--> Event 413 starts.
+--> Event 414 starts.
+--> Event 415 starts.
+--> Event 416 starts.
+--> Event 417 starts.
+--> Event 418 starts.
+--> Event 419 starts.
+--> Event 420 starts.
+ekin = 1138.19, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 1445 iterations for Angle
+EParent = 1.138195e+00 XAcc = 1.000000e+00 ThetaAcc = 4.457831e-05
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 1.13819 DM energy = 1.13819
+ekin = 227.041, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 292 iterations for Angle
+EParent = 2.270410e-01 XAcc = 9.999999e-01 ThetaAcc = 1.052327e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.227041 DM energy = 0.227041
+--> Event 421 starts.
+--> Event 422 starts.
+--> Event 423 starts.
+--> Event 424 starts.
+--> Event 425 starts.
+--> Event 426 starts.
+ekin = 341.067, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 14 iterations for Angle
+EParent = 3.410670e-01 XAcc = 1.000000e+00 ThetaAcc = 6.114493e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.341067 DM energy = 0.341067
+--> Event 427 starts.
+--> Event 428 starts.
+--> Event 429 starts.
+ekin = 178.238, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 19 iterations for Angle
+EParent = 1.782380e-01 XAcc = 1.000000e+00 ThetaAcc = 7.494672e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.178238 DM energy = 0.178238
+--> Event 430 starts.
+ekin = 210.68, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 95 iterations for Angle
+EParent = 2.106798e-01 XAcc = 9.999720e-01 ThetaAcc = 2.209439e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.21068 DM energy = 0.210674
+ekin = 157.131, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 65 iterations for Angle
+EParent = 1.571309e-01 XAcc = 1.000000e+00 ThetaAcc = 1.153204e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.157131 DM energy = 0.157131
+--> Event 431 starts.
+--> Event 432 starts.
+--> Event 433 starts.
+--> Event 434 starts.
+--> Event 435 starts.
+--> Event 436 starts.
+--> Event 437 starts.
+ekin = 599.289, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 696 iterations for Angle
+EParent = 5.992895e-01 XAcc = 1.000000e+00 ThetaAcc = 2.494980e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.599289 DM energy = 0.599289
+ekin = 182.627, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 120 iterations for Angle
+EParent = 1.826266e-01 XAcc = 9.999980e-01 ThetaAcc = 6.376954e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.182627 DM energy = 0.182626
+--> Event 438 starts.
+ekin = 662.619, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 1199 iterations for Angle
+EParent = 6.626189e-01 XAcc = 1.000000e+00 ThetaAcc = 4.083627e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.662619 DM energy = 0.662619
+--> Event 439 starts.
+--> Event 440 starts.
+ekin = 130.562, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 95 iterations for Angle
+EParent = 1.305622e-01 XAcc = 9.999957e-01 ThetaAcc = 1.099682e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.130562 DM energy = 0.130562
+--> Event 441 starts.
+ekin = 2127.9, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 2421 iterations for Angle
+EParent = 2.127901e+00 XAcc = 1.000000e+00 ThetaAcc = 1.341544e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 2.1279 DM energy = 2.1279
+--> Event 442 starts.
+--> Event 443 starts.
+--> Event 444 starts.
+--> Event 445 starts.
+ekin = 118.204, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 45 iterations for Angle
+EParent = 1.182044e-01 XAcc = 1.000000e+00 ThetaAcc = 1.175466e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.118204 DM energy = 0.118204
+--> Event 446 starts.
+--> Event 447 starts.
+--> Event 448 starts.
+--> Event 449 starts.
+ekin = 146.4, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 100 iterations for Angle
+EParent = 1.463999e-01 XAcc = 9.999990e-01 ThetaAcc = 5.009093e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.1464 DM energy = 0.1464
+--> Event 450 starts.
+--> Event 451 starts.
+ekin = 210.513, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 151 iterations for Angle
+EParent = 2.105125e-01 XAcc = 1.000000e+00 ThetaAcc = 1.665361e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.210513 DM energy = 0.210513
+--> Event 452 starts.
+ekin = 100.932, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 241 iterations for Angle
+EParent = 1.009322e-01 XAcc = 1.000000e+00 ThetaAcc = 4.390982e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.100932 DM energy = 0.100932
+--> Event 453 starts.
+ekin = 203.363, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 97 iterations for Angle
+EParent = 2.033630e-01 XAcc = 1.000000e+00 ThetaAcc = 1.851682e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.203363 DM energy = 0.203363
+--> Event 454 starts.
+--> Event 455 starts.
+--> Event 456 starts.
+--> Event 457 starts.
+--> Event 458 starts.
+--> Event 459 starts.
+--> Event 460 starts.
+ekin = 342.406, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 17 iterations for Angle
+EParent = 3.424061e-01 XAcc = 9.999999e-01 ThetaAcc = 8.177561e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.342406 DM energy = 0.342406
+ekin = 151.386, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 145 iterations for Angle
+EParent = 1.513863e-01 XAcc = 1.000000e+00 ThetaAcc = 7.588183e-05
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.151386 DM energy = 0.151386
+--> Event 461 starts.
+ekin = 109.736, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 129 iterations for Angle
+EParent = 1.097359e-01 XAcc = 9.999997e-01 ThetaAcc = 3.397704e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.109736 DM energy = 0.109736
+--> Event 462 starts.
+--> Event 463 starts.
+--> Event 464 starts.
+--> Event 465 starts.
+--> Event 466 starts.
+--> Event 467 starts.
+--> Event 468 starts.
+ekin = 104.894, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 452 iterations for Angle
+EParent = 1.048939e-01 XAcc = 1.000000e+00 ThetaAcc = 1.669066e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.104894 DM energy = 0.104894
+ekin = 139.135, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 3 iterations for Angle
+EParent = 1.391348e-01 XAcc = 9.999967e-01 ThetaAcc = 9.316468e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.139135 DM energy = 0.139134
+--> Event 469 starts.
+--> Event 470 starts.
+--> Event 471 starts.
+--> Event 472 starts.
+--> Event 473 starts.
+--> Event 474 starts.
+--> Event 475 starts.
+--> Event 476 starts.
+--> Event 477 starts.
+--> Event 478 starts.
+--> Event 479 starts.
+--> Event 480 starts.
+ekin = 107.984, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 59 iterations for Angle
+EParent = 1.079838e-01 XAcc = 1.000000e+00 ThetaAcc = 9.753202e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.107984 DM energy = 0.107984
+ekin = 334.088, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 197 iterations for Angle
+EParent = 3.340877e-01 XAcc = 9.999997e-01 ThetaAcc = 1.901917e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.334088 DM energy = 0.334088
+--> Event 481 starts.
+--> Event 482 starts.
+--> Event 483 starts.
+--> Event 484 starts.
+ekin = 251.485, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 139 iterations for Angle
+EParent = 2.514849e-01 XAcc = 9.999919e-01 ThetaAcc = 1.086956e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.251485 DM energy = 0.251483
+--> Event 485 starts.
+--> Event 486 starts.
+--> Event 487 starts.
+ekin = 245.527, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 164 iterations for Angle
+EParent = 2.455267e-01 XAcc = 9.999718e-01 ThetaAcc = 2.056781e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.245527 DM energy = 0.24552
+--> Event 488 starts.
+--> Event 489 starts.
+--> Event 490 starts.
+ekin = 152.044, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 1 iterations for Angle
+EParent = 1.520443e-01 XAcc = 9.999999e-01 ThetaAcc = 1.338456e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.152044 DM energy = 0.152044
+--> Event 491 starts.
+--> Event 492 starts.
+--> Event 493 starts.
+ekin = 321.624, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 7 iterations for Angle
+EParent = 3.216241e-01 XAcc = 9.999998e-01 ThetaAcc = 1.369636e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.321624 DM energy = 0.321624
+--> Event 494 starts.
+ekin = 315.161, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 263 iterations for Angle
+EParent = 3.151610e-01 XAcc = 1.000000e+00 ThetaAcc = 9.887440e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.315161 DM energy = 0.315161
+--> Event 495 starts.
+--> Event 496 starts.
+ekin = 130.599, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 140 iterations for Angle
+EParent = 1.305995e-01 XAcc = 1.000000e+00 ThetaAcc = 7.640378e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.130599 DM energy = 0.130599
+--> Event 497 starts.
+ekin = 254.349, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 106 iterations for Angle
+EParent = 2.543488e-01 XAcc = 1.000000e+00 ThetaAcc = 8.246941e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.254349 DM energy = 0.254349
+--> Event 498 starts.
+--> Event 499 starts.
+ekin = 109.032, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 249 iterations for Angle
+EParent = 1.090320e-01 XAcc = 1.000000e+00 ThetaAcc = 1.218575e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.109032 DM energy = 0.109032
+--> Event 500 starts.
+ekin = 126.059, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 17 iterations for Angle
+EParent = 1.260588e-01 XAcc = 1.000000e+00 ThetaAcc = 5.598250e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.126059 DM energy = 0.126059
+--> Event 501 starts.
+--> Event 502 starts.
+--> Event 503 starts.
+--> Event 504 starts.
+--> Event 505 starts.
+ekin = 110.172, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 84 iterations for Angle
+EParent = 1.101724e-01 XAcc = 1.000000e+00 ThetaAcc = 2.029771e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.110172 DM energy = 0.110172
+--> Event 506 starts.
+ekin = 1606.38, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 2937 iterations for Angle
+EParent = 1.606379e+00 XAcc = 1.000000e+00 ThetaAcc = 4.031118e-05
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 1.60638 DM energy = 1.60638
+--> Event 507 starts.
+--> Event 508 starts.
+--> Event 509 starts.
+ekin = 148.823, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 25 iterations for Angle
+EParent = 1.488232e-01 XAcc = 9.999859e-01 ThetaAcc = 1.866183e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.148823 DM energy = 0.148821
+--> Event 510 starts.
+--> Event 511 starts.
+--> Event 512 starts.
+--> Event 513 starts.
+ekin = 162.49, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 14 iterations for Angle
+EParent = 1.624900e-01 XAcc = 9.999997e-01 ThetaAcc = 2.650501e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.16249 DM energy = 0.16249
+--> Event 514 starts.
+ekin = 1517.69, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 1601 iterations for Angle
+EParent = 1.517692e+00 XAcc = 9.999997e-01 ThetaAcc = 8.981541e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 1.51769 DM energy = 1.51769
+--> Event 515 starts.
+ekin = 228.637, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 87 iterations for Angle
+EParent = 2.286368e-01 XAcc = 9.999996e-01 ThetaAcc = 2.430004e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.228637 DM energy = 0.228637
+--> Event 516 starts.
+ekin = 131.739, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 224 iterations for Angle
+EParent = 1.317387e-01 XAcc = 1.000000e+00 ThetaAcc = 7.317601e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.131739 DM energy = 0.131739
+--> Event 517 starts.
+--> Event 518 starts.
+ekin = 264.437, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 18 iterations for Angle
+EParent = 2.644375e-01 XAcc = 1.000000e+00 ThetaAcc = 1.132774e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.264437 DM energy = 0.264437
+--> Event 519 starts.
+--> Event 520 starts.
+--> Event 521 starts.
+--> Event 522 starts.
+--> Event 523 starts.
+ekin = 113.804, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 11 iterations for Angle
+EParent = 1.138044e-01 XAcc = 1.000000e+00 ThetaAcc = 4.484517e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.113804 DM energy = 0.113804
+--> Event 524 starts.
+--> Event 525 starts.
+--> Event 526 starts.
+--> Event 527 starts.
+--> Event 528 starts.
+ekin = 146.585, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 70 iterations for Angle
+EParent = 1.465847e-01 XAcc = 1.000000e+00 ThetaAcc = 1.356070e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.146585 DM energy = 0.146585
+--> Event 529 starts.
+ekin = 172.573, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 128 iterations for Angle
+EParent = 1.725726e-01 XAcc = 9.999993e-01 ThetaAcc = 3.901189e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.172573 DM energy = 0.172573
+--> Event 530 starts.
+ekin = 156.102, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 37 iterations for Angle
+EParent = 1.561017e-01 XAcc = 9.999999e-01 ThetaAcc = 1.778204e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.156102 DM energy = 0.156102
+--> Event 531 starts.
+ekin = 119.017, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 227 iterations for Angle
+EParent = 1.190169e-01 XAcc = 1.000000e+00 ThetaAcc = 3.160818e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.119017 DM energy = 0.119017
+ekin = 454.862, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 66 iterations for Angle
+EParent = 4.548620e-01 XAcc = 9.999990e-01 ThetaAcc = 2.870718e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.454862 DM energy = 0.454861
+--> Event 532 starts.
+ekin = 575.527, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 249 iterations for Angle
+EParent = 5.755267e-01 XAcc = 9.999994e-01 ThetaAcc = 1.938146e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.575527 DM energy = 0.575526
+ekin = 595.218, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 769 iterations for Angle
+EParent = 5.952180e-01 XAcc = 1.000000e+00 ThetaAcc = 1.016651e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.595218 DM energy = 0.595218
+--> Event 533 starts.
+--> Event 534 starts.
+--> Event 535 starts.
+--> Event 536 starts.
+ekin = 112.355, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 110 iterations for Angle
+EParent = 1.123546e-01 XAcc = 9.999985e-01 ThetaAcc = 6.968172e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.112355 DM energy = 0.112354
+ekin = 207.754, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 161 iterations for Angle
+EParent = 2.077538e-01 XAcc = 1.000000e+00 ThetaAcc = 3.739418e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.207754 DM energy = 0.207754
+--> Event 537 starts.
+ekin = 255.493, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 246 iterations for Angle
+EParent = 2.554935e-01 XAcc = 1.000000e+00 ThetaAcc = 1.384997e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.255493 DM energy = 0.255493
+--> Event 538 starts.
+ekin = 194.075, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 119 iterations for Angle
+EParent = 1.940754e-01 XAcc = 1.000000e+00 ThetaAcc = 6.456570e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.194075 DM energy = 0.194075
+--> Event 539 starts.
+ekin = 216.883, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 541 iterations for Angle
+EParent = 2.168831e-01 XAcc = 1.000000e+00 ThetaAcc = 4.341703e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.216883 DM energy = 0.216883
+--> Event 540 starts.
+ekin = 107.375, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 11 iterations for Angle
+EParent = 1.073751e-01 XAcc = 1.000000e+00 ThetaAcc = 2.995465e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.107375 DM energy = 0.107375
+--> Event 541 starts.
+ekin = 307.68, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 146 iterations for Angle
+EParent = 3.076798e-01 XAcc = 9.999929e-01 ThetaAcc = 9.225878e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.30768 DM energy = 0.307678
+--> Event 542 starts.
+--> Event 543 starts.
+--> Event 544 starts.
+--> Event 545 starts.
+--> Event 546 starts.
+ekin = 143.45, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 34 iterations for Angle
+EParent = 1.434497e-01 XAcc = 9.999999e-01 ThetaAcc = 1.689862e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.14345 DM energy = 0.14345
+--> Event 547 starts.
+--> Event 548 starts.
+ekin = 3438.89, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 6765 iterations for Angle
+EParent = 3.438893e+00 XAcc = 1.000000e+00 ThetaAcc = 2.211303e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 3.43889 DM energy = 3.43889
+--> Event 549 starts.
+--> Event 550 starts.
+--> Event 551 starts.
+ekin = 132.438, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 30 iterations for Angle
+EParent = 1.324383e-01 XAcc = 1.000000e+00 ThetaAcc = 6.146213e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.132438 DM energy = 0.132438
+--> Event 552 starts.
+ekin = 219.034, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 254 iterations for Angle
+EParent = 2.190337e-01 XAcc = 1.000000e+00 ThetaAcc = 2.207320e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.219034 DM energy = 0.219034
+--> Event 553 starts.
+ekin = 108.108, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 70 iterations for Angle
+EParent = 1.081080e-01 XAcc = 9.999883e-01 ThetaAcc = 1.990661e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.108108 DM energy = 0.108107
+--> Event 554 starts.
+--> Event 555 starts.
+--> Event 556 starts.
+--> Event 557 starts.
+ekin = 245.322, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 42 iterations for Angle
+EParent = 2.453216e-01 XAcc = 1.000000e+00 ThetaAcc = 1.124617e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.245322 DM energy = 0.245322
+ekin = 174.719, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 120 iterations for Angle
+EParent = 1.747186e-01 XAcc = 9.999992e-01 ThetaAcc = 4.156010e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.174719 DM energy = 0.174718
+--> Event 558 starts.
+--> Event 559 starts.
+--> Event 560 starts.
+--> Event 561 starts.
+--> Event 562 starts.
+--> Event 563 starts.
+--> Event 564 starts.
+--> Event 565 starts.
+--> Event 566 starts.
+--> Event 567 starts.
+ekin = 235.839, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 282 iterations for Angle
+EParent = 2.358390e-01 XAcc = 9.999949e-01 ThetaAcc = 8.919088e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.235839 DM energy = 0.235838
+--> Event 568 starts.
+--> Event 569 starts.
+--> Event 570 starts.
+--> Event 571 starts.
+ekin = 600.742, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 642 iterations for Angle
+EParent = 6.007422e-01 XAcc = 1.000000e+00 ThetaAcc = 5.599347e-05
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.600742 DM energy = 0.600742
+--> Event 572 starts.
+--> Event 573 starts.
+--> Event 574 starts.
+ekin = 644.495, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 164 iterations for Angle
+EParent = 6.444951e-01 XAcc = 1.000000e+00 ThetaAcc = 1.647790e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.644495 DM energy = 0.644495
+--> Event 575 starts.
+ekin = 120.169, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 18 iterations for Angle
+EParent = 1.201686e-01 XAcc = 1.000000e+00 ThetaAcc = 6.546580e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.120169 DM energy = 0.120169
+--> Event 576 starts.
+--> Event 577 starts.
+--> Event 578 starts.
+--> Event 579 starts.
+ekin = 141.093, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 104 iterations for Angle
+EParent = 1.410929e-01 XAcc = 1.000000e+00 ThetaAcc = 8.450835e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.141093 DM energy = 0.141093
+--> Event 580 starts.
+ekin = 163.153, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 97 iterations for Angle
+EParent = 1.631533e-01 XAcc = 9.999965e-01 ThetaAcc = 8.893772e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.163153 DM energy = 0.163153
+ekin = 187.028, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 103 iterations for Angle
+EParent = 1.870275e-01 XAcc = 1.000000e+00 ThetaAcc = 5.528135e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.187028 DM energy = 0.187028
+--> Event 581 starts.
+--> Event 582 starts.
+--> Event 583 starts.
+--> Event 584 starts.
+--> Event 585 starts.
+--> Event 586 starts.
+--> Event 587 starts.
+--> Event 588 starts.
+ekin = 446.464, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 916 iterations for Angle
+EParent = 4.464640e-01 XAcc = 1.000000e+00 ThetaAcc = 1.375541e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.446464 DM energy = 0.446464
+--> Event 589 starts.
+--> Event 590 starts.
+ekin = 127.135, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 53 iterations for Angle
+EParent = 1.271353e-01 XAcc = 9.999999e-01 ThetaAcc = 1.777681e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.127135 DM energy = 0.127135
+--> Event 591 starts.
+--> Event 592 starts.
+ekin = 171.526, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 28 iterations for Angle
+EParent = 1.715258e-01 XAcc = 1.000000e+00 ThetaAcc = 1.580057e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.171526 DM energy = 0.171526
+ekin = 480.509, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 350 iterations for Angle
+EParent = 4.805095e-01 XAcc = 1.000000e+00 ThetaAcc = 4.991512e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.480509 DM energy = 0.480509
+ekin = 104.617, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 55 iterations for Angle
+EParent = 1.046168e-01 XAcc = 9.999999e-01 ThetaAcc = 2.168362e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.104617 DM energy = 0.104617
+--> Event 593 starts.
+--> Event 594 starts.
+--> Event 595 starts.
+--> Event 596 starts.
+ekin = 439.77, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 137 iterations for Angle
+EParent = 4.397702e-01 XAcc = 9.999999e-01 ThetaAcc = 6.626284e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.43977 DM energy = 0.43977
+--> Event 597 starts.
+ekin = 5617.72, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 1370 iterations for Angle
+EParent = 5.617724e+00 XAcc = 1.000000e+00 ThetaAcc = 1.648403e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 5.61772 DM energy = 5.61772
+--> Event 598 starts.
+--> Event 599 starts.
+--> Event 600 starts.
+ekin = 404.849, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 5 iterations for Angle
+EParent = 4.048493e-01 XAcc = 9.999979e-01 ThetaAcc = 4.371895e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.404849 DM energy = 0.404848
+ekin = 186.378, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 161 iterations for Angle
+EParent = 1.863780e-01 XAcc = 9.999974e-01 ThetaAcc = 7.143467e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.186378 DM energy = 0.186377
+--> Event 601 starts.
+--> Event 602 starts.
+ekin = 100.851, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 59 iterations for Angle
+EParent = 1.008514e-01 XAcc = 9.999971e-01 ThetaAcc = 1.031516e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.100851 DM energy = 0.100851
+--> Event 603 starts.
+--> Event 604 starts.
+--> Event 605 starts.
+ekin = 446.903, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 147 iterations for Angle
+EParent = 4.469029e-01 XAcc = 1.000000e+00 ThetaAcc = 7.384919e-05
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.446903 DM energy = 0.446903
+ekin = 133.434, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 123 iterations for Angle
+EParent = 1.334338e-01 XAcc = 1.000000e+00 ThetaAcc = 1.844913e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.133434 DM energy = 0.133434
+--> Event 606 starts.
+--> Event 607 starts.
+--> Event 608 starts.
+--> Event 609 starts.
+--> Event 610 starts.
+ekin = 183.25, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 30 iterations for Angle
+EParent = 1.832496e-01 XAcc = 1.000000e+00 ThetaAcc = 2.937594e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.18325 DM energy = 0.18325
+ekin = 120.724, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 148 iterations for Angle
+EParent = 1.207235e-01 XAcc = 1.000000e+00 ThetaAcc = 6.594710e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.120724 DM energy = 0.120724
+--> Event 611 starts.
+--> Event 612 starts.
+--> Event 613 starts.
+--> Event 614 starts.
+--> Event 615 starts.
+--> Event 616 starts.
+--> Event 617 starts.
+--> Event 618 starts.
+--> Event 619 starts.
+ekin = 151.746, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 89 iterations for Angle
+EParent = 1.517462e-01 XAcc = 1.000000e+00 ThetaAcc = 5.844275e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.151746 DM energy = 0.151746
+--> Event 620 starts.
+ekin = 279.09, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 496 iterations for Angle
+EParent = 2.790900e-01 XAcc = 9.999999e-01 ThetaAcc = 1.165149e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.27909 DM energy = 0.27909
+ekin = 100.691, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 33 iterations for Angle
+EParent = 1.006908e-01 XAcc = 9.999997e-01 ThetaAcc = 3.123144e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.100691 DM energy = 0.100691
+--> Event 621 starts.
+--> Event 622 starts.
+ekin = 238.667, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 45 iterations for Angle
+EParent = 2.386668e-01 XAcc = 1.000000e+00 ThetaAcc = 4.396942e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.238667 DM energy = 0.238667
+--> Event 623 starts.
+ekin = 111.941, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 152 iterations for Angle
+EParent = 1.119408e-01 XAcc = 1.000000e+00 ThetaAcc = 1.019092e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.111941 DM energy = 0.111941
+--> Event 624 starts.
+--> Event 625 starts.
+--> Event 626 starts.
+--> Event 627 starts.
+ekin = 406.291, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 34 iterations for Angle
+EParent = 4.062907e-01 XAcc = 9.999961e-01 ThetaAcc = 5.937116e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.406291 DM energy = 0.406289
+--> Event 628 starts.
+--> Event 629 starts.
+--> Event 630 starts.
+--> Event 631 starts.
+--> Event 632 starts.
+--> Event 633 starts.
+ekin = 665.349, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 34 iterations for Angle
+EParent = 6.653487e-01 XAcc = 1.000000e+00 ThetaAcc = 2.931454e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.665349 DM energy = 0.665349
+--> Event 634 starts.
+--> Event 635 starts.
+--> Event 636 starts.
+--> Event 637 starts.
+ekin = 405.816, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 152 iterations for Angle
+EParent = 4.058161e-01 XAcc = 9.999637e-01 ThetaAcc = 1.814028e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.405816 DM energy = 0.405801
+--> Event 638 starts.
+--> Event 639 starts.
+ekin = 162.321, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 171 iterations for Angle
+EParent = 1.623207e-01 XAcc = 1.000000e+00 ThetaAcc = 4.284640e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.162321 DM energy = 0.162321
+--> Event 640 starts.
+--> Event 641 starts.
+--> Event 642 starts.
+--> Event 643 starts.
+ekin = 552.476, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 247 iterations for Angle
+EParent = 5.524763e-01 XAcc = 1.000000e+00 ThetaAcc = 1.561503e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.552476 DM energy = 0.552476
+--> Event 644 starts.
+--> Event 645 starts.
+--> Event 646 starts.
+--> Event 647 starts.
+--> Event 648 starts.
+--> Event 649 starts.
+ekin = 244.213, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 6 iterations for Angle
+EParent = 2.442126e-01 XAcc = 9.999953e-01 ThetaAcc = 8.388252e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.244213 DM energy = 0.244211
+ekin = 455.2, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 24 iterations for Angle
+EParent = 4.552000e-01 XAcc = 1.000000e+00 ThetaAcc = 2.747858e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.4552 DM energy = 0.4552
+--> Event 650 starts.
+--> Event 651 starts.
+--> Event 652 starts.
+ekin = 5810.94, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 2064 iterations for Angle
+EParent = 5.810942e+00 XAcc = 1.000000e+00 ThetaAcc = 1.409239e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 5.81094 DM energy = 5.81094
+--> Event 653 starts.
+--> Event 654 starts.
+--> Event 655 starts.
+--> Event 656 starts.
+--> Event 657 starts.
+--> Event 658 starts.
+--> Event 659 starts.
+ekin = 170.909, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 23 iterations for Angle
+EParent = 1.709086e-01 XAcc = 9.999999e-01 ThetaAcc = 1.205003e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.170909 DM energy = 0.170909
+--> Event 660 starts.
+--> Event 661 starts.
+ekin = 19003.7, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 4815 iterations for Angle
+EParent = 1.900372e+01 XAcc = 9.999998e-01 ThetaAcc = 1.773888e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 19.0037 DM energy = 19.0037
+--> Event 662 starts.
+ekin = 405.013, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 68 iterations for Angle
+EParent = 4.050129e-01 XAcc = 9.999999e-01 ThetaAcc = 1.032512e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.405013 DM energy = 0.405013
+ekin = 103.481, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 24 iterations for Angle
+EParent = 1.034813e-01 XAcc = 9.999747e-01 ThetaAcc = 2.999258e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.103481 DM energy = 0.103479
+ekin = 101.711, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 10 iterations for Angle
+EParent = 1.017110e-01 XAcc = 1.000000e+00 ThetaAcc = 1.145237e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.101711 DM energy = 0.101711
+--> Event 663 starts.
+--> Event 664 starts.
+--> Event 665 starts.
+ekin = 105.146, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 106 iterations for Angle
+EParent = 1.051455e-01 XAcc = 1.000000e+00 ThetaAcc = 5.437696e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.105146 DM energy = 0.105146
+--> Event 666 starts.
+ekin = 1113.17, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 1401 iterations for Angle
+EParent = 1.113169e+00 XAcc = 9.999953e-01 ThetaAcc = 3.945433e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 1.11317 DM energy = 1.11316
+ekin = 109.802, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 15 iterations for Angle
+EParent = 1.098019e-01 XAcc = 9.999995e-01 ThetaAcc = 3.965149e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.109802 DM energy = 0.109802
+--> Event 667 starts.
+ekin = 473.532, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 166 iterations for Angle
+EParent = 4.735320e-01 XAcc = 1.000000e+00 ThetaAcc = 3.077189e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.473532 DM energy = 0.473532
+ekin = 239.324, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 6 iterations for Angle
+EParent = 2.393244e-01 XAcc = 1.000000e+00 ThetaAcc = 3.285991e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.239324 DM energy = 0.239324
+--> Event 668 starts.
+--> Event 669 starts.
+ekin = 101.601, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 115 iterations for Angle
+EParent = 1.016012e-01 XAcc = 1.000000e+00 ThetaAcc = 7.903847e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.101601 DM energy = 0.101601
+--> Event 670 starts.
+ekin = 113.882, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 19 iterations for Angle
+EParent = 1.138815e-01 XAcc = 1.000000e+00 ThetaAcc = 1.777739e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.113882 DM energy = 0.113882
+ekin = 114.757, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 41 iterations for Angle
+EParent = 1.147569e-01 XAcc = 1.000000e+00 ThetaAcc = 1.983586e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.114757 DM energy = 0.114757
+--> Event 671 starts.
+--> Event 672 starts.
+ekin = 2815.34, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 3418 iterations for Angle
+EParent = 2.815344e+00 XAcc = 1.000000e+00 ThetaAcc = 2.374805e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 2.81534 DM energy = 2.81534
+ekin = 1362.57, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 426 iterations for Angle
+EParent = 1.362575e+00 XAcc = 1.000000e+00 ThetaAcc = 1.119699e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 1.36257 DM energy = 1.36257
+--> Event 673 starts.
+--> Event 674 starts.
+--> Event 675 starts.
+--> Event 676 starts.
+--> Event 677 starts.
+--> Event 678 starts.
+--> Event 679 starts.
+--> Event 680 starts.
+ekin = 602.133, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 202 iterations for Angle
+EParent = 6.021329e-01 XAcc = 9.999905e-01 ThetaAcc = 7.596475e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.602133 DM energy = 0.602127
+ekin = 2567.42, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 273 iterations for Angle
+EParent = 2.567416e+00 XAcc = 1.000000e+00 ThetaAcc = 3.872073e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 2.56742 DM energy = 2.56742
+--> Event 681 starts.
+--> Event 682 starts.
+ekin = 138.847, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 308 iterations for Angle
+EParent = 1.388474e-01 XAcc = 9.999971e-01 ThetaAcc = 8.821844e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.138847 DM energy = 0.138847
+--> Event 683 starts.
+--> Event 684 starts.
+ekin = 127.411, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 47 iterations for Angle
+EParent = 1.274109e-01 XAcc = 9.999945e-01 ThetaAcc = 1.256938e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.127411 DM energy = 0.12741
+--> Event 685 starts.
+--> Event 686 starts.
+--> Event 687 starts.
+ekin = 376.779, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 12 iterations for Angle
+EParent = 3.767795e-01 XAcc = 9.999997e-01 ThetaAcc = 1.828182e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.376779 DM energy = 0.376779
+--> Event 688 starts.
+--> Event 689 starts.
+ekin = 110.297, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 42 iterations for Angle
+EParent = 1.102968e-01 XAcc = 9.999999e-01 ThetaAcc = 1.305765e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.110297 DM energy = 0.110297
+--> Event 690 starts.
+--> Event 691 starts.
+--> Event 692 starts.
+--> Event 693 starts.
+--> Event 694 starts.
+--> Event 695 starts.
+--> Event 696 starts.
+ekin = 120.717, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 29 iterations for Angle
+EParent = 1.207173e-01 XAcc = 1.000000e+00 ThetaAcc = 1.833442e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.120717 DM energy = 0.120717
+--> Event 697 starts.
+ekin = 935.905, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 814 iterations for Angle
+EParent = 9.359049e-01 XAcc = 1.000000e+00 ThetaAcc = 2.928927e-05
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.935905 DM energy = 0.935905
+--> Event 698 starts.
+--> Event 699 starts.
+--> Event 700 starts.
+--> Event 701 starts.
+--> Event 702 starts.
+--> Event 703 starts.
+ekin = 132.497, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 57 iterations for Angle
+EParent = 1.324974e-01 XAcc = 9.999762e-01 ThetaAcc = 2.567296e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.132497 DM energy = 0.132494
+--> Event 704 starts.
+ekin = 172.487, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 22 iterations for Angle
+EParent = 1.724867e-01 XAcc = 1.000000e+00 ThetaAcc = 7.529297e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.172487 DM energy = 0.172487
+--> Event 705 starts.
+ekin = 104.431, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 36 iterations for Angle
+EParent = 1.044314e-01 XAcc = 1.000000e+00 ThetaAcc = 1.671945e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.104431 DM energy = 0.104431
+--> Event 706 starts.
+--> Event 707 starts.
+--> Event 708 starts.
+--> Event 709 starts.
+--> Event 710 starts.
+--> Event 711 starts.
+--> Event 712 starts.
+--> Event 713 starts.
+--> Event 714 starts.
+--> Event 715 starts.
+--> Event 716 starts.
+ekin = 915.486, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 305 iterations for Angle
+EParent = 9.154858e-01 XAcc = 1.000000e+00 ThetaAcc = 2.902467e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.915486 DM energy = 0.915486
+--> Event 717 starts.
+--> Event 718 starts.
+--> Event 719 starts.
+ekin = 167.269, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 177 iterations for Angle
+EParent = 1.672694e-01 XAcc = 9.999999e-01 ThetaAcc = 1.071944e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.167269 DM energy = 0.167269
+--> Event 720 starts.
+--> Event 721 starts.
+--> Event 722 starts.
+--> Event 723 starts.
+--> Event 724 starts.
+--> Event 725 starts.
+--> Event 726 starts.
+ekin = 112.021, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 180 iterations for Angle
+EParent = 1.120208e-01 XAcc = 9.999997e-01 ThetaAcc = 3.085428e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.112021 DM energy = 0.112021
+--> Event 727 starts.
+--> Event 728 starts.
+--> Event 729 starts.
+--> Event 730 starts.
+--> Event 731 starts.
+ekin = 178.761, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 124 iterations for Angle
+EParent = 1.787612e-01 XAcc = 9.999990e-01 ThetaAcc = 4.492436e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.178761 DM energy = 0.178761
+--> Event 732 starts.
+ekin = 108.842, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 1 iterations for Angle
+EParent = 1.088415e-01 XAcc = 1.000000e+00 ThetaAcc = 1.192719e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.108842 DM energy = 0.108842
+--> Event 733 starts.
+--> Event 734 starts.
+--> Event 735 starts.
+--> Event 736 starts.
+--> Event 737 starts.
+--> Event 738 starts.
+--> Event 739 starts.
+--> Event 740 starts.
+--> Event 741 starts.
+--> Event 742 starts.
+ekin = 134.825, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 133 iterations for Angle
+EParent = 1.348246e-01 XAcc = 9.999955e-01 ThetaAcc = 1.102681e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.134825 DM energy = 0.134824
+ekin = 133.524, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 15 iterations for Angle
+EParent = 1.335235e-01 XAcc = 9.999999e-01 ThetaAcc = 1.435237e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.133524 DM energy = 0.133524
+--> Event 743 starts.
+--> Event 744 starts.
+--> Event 745 starts.
+--> Event 746 starts.
+--> Event 747 starts.
+ekin = 162.924, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 36 iterations for Angle
+EParent = 1.629237e-01 XAcc = 9.999999e-01 ThetaAcc = 1.704585e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.162924 DM energy = 0.162924
+--> Event 748 starts.
+--> Event 749 starts.
+--> Event 750 starts.
+--> Event 751 starts.
+ekin = 375.809, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 249 iterations for Angle
+EParent = 3.758091e-01 XAcc = 1.000000e+00 ThetaAcc = 6.594857e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.375809 DM energy = 0.375809
+ekin = 369.417, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 409 iterations for Angle
+EParent = 3.694169e-01 XAcc = 1.000000e+00 ThetaAcc = 2.964121e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.369417 DM energy = 0.369417
+--> Event 752 starts.
+--> Event 753 starts.
+--> Event 754 starts.
+--> Event 755 starts.
+--> Event 756 starts.
+--> Event 757 starts.
+--> Event 758 starts.
+--> Event 759 starts.
+--> Event 760 starts.
+--> Event 761 starts.
+ekin = 822.109, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 737 iterations for Angle
+EParent = 8.221090e-01 XAcc = 9.999986e-01 ThetaAcc = 2.538248e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.822109 DM energy = 0.822108
+--> Event 762 starts.
+ekin = 203.701, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 71 iterations for Angle
+EParent = 2.037010e-01 XAcc = 1.000000e+00 ThetaAcc = 4.324008e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.203701 DM energy = 0.203701
+--> Event 763 starts.
+ekin = 1692.32, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 126 iterations for Angle
+EParent = 1.692322e+00 XAcc = 1.000000e+00 ThetaAcc = 8.896883e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 1.69232 DM energy = 1.69232
+--> Event 764 starts.
+ekin = 222.115, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 64 iterations for Angle
+EParent = 2.221154e-01 XAcc = 9.999934e-01 ThetaAcc = 1.044202e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.222115 DM energy = 0.222114
+--> Event 765 starts.
+--> Event 766 starts.
+ekin = 102.509, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 4 iterations for Angle
+EParent = 1.025090e-01 XAcc = 9.999967e-01 ThetaAcc = 1.082000e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.102509 DM energy = 0.102509
+--> Event 767 starts.
+--> Event 768 starts.
+--> Event 769 starts.
+--> Event 770 starts.
+--> Event 771 starts.
+--> Event 772 starts.
+--> Event 773 starts.
+--> Event 774 starts.
+--> Event 775 starts.
+ekin = 265.786, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 79 iterations for Angle
+EParent = 2.657856e-01 XAcc = 1.000000e+00 ThetaAcc = 4.978926e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.265786 DM energy = 0.265786
+--> Event 776 starts.
+ekin = 252.196, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 224 iterations for Angle
+EParent = 2.521961e-01 XAcc = 1.000000e+00 ThetaAcc = 7.616166e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.252196 DM energy = 0.252196
+--> Event 777 starts.
+ekin = 514.03, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 306 iterations for Angle
+EParent = 5.140297e-01 XAcc = 9.999820e-01 ThetaAcc = 1.133498e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.51403 DM energy = 0.51402
+--> Event 778 starts.
+ekin = 928.498, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 21 iterations for Angle
+EParent = 9.284983e-01 XAcc = 1.000000e+00 ThetaAcc = 2.227146e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.928498 DM energy = 0.928498
+--> Event 779 starts.
+--> Event 780 starts.
+--> Event 781 starts.
+--> Event 782 starts.
+--> Event 783 starts.
+ekin = 118.772, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 74 iterations for Angle
+EParent = 1.187715e-01 XAcc = 9.999998e-01 ThetaAcc = 2.776144e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.118772 DM energy = 0.118771
+--> Event 784 starts.
+--> Event 785 starts.
+--> Event 786 starts.
+ekin = 107.278, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 313 iterations for Angle
+EParent = 1.072776e-01 XAcc = 1.000000e+00 ThetaAcc = 9.600134e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.107278 DM energy = 0.107278
+--> Event 787 starts.
+ekin = 225.475, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 101 iterations for Angle
+EParent = 2.254754e-01 XAcc = 1.000000e+00 ThetaAcc = 4.172715e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.225475 DM energy = 0.225475
+--> Event 788 starts.
+--> Event 789 starts.
+--> Event 790 starts.
+--> Event 791 starts.
+ekin = 164.144, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 21 iterations for Angle
+EParent = 1.641438e-01 XAcc = 1.000000e+00 ThetaAcc = 5.878101e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.164144 DM energy = 0.164144
+ekin = 527.157, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 216 iterations for Angle
+EParent = 5.271570e-01 XAcc = 9.999976e-01 ThetaAcc = 4.076123e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.527157 DM energy = 0.527156
+--> Event 792 starts.
+ekin = 100.831, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 24 iterations for Angle
+EParent = 1.008313e-01 XAcc = 1.000000e+00 ThetaAcc = 7.848047e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.100831 DM energy = 0.100831
+--> Event 793 starts.
+--> Event 794 starts.
+ekin = 104.526, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 17 iterations for Angle
+EParent = 1.045259e-01 XAcc = 1.000000e+00 ThetaAcc = 5.118101e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.104526 DM energy = 0.104526
+--> Event 795 starts.
+ekin = 270.997, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 26 iterations for Angle
+EParent = 2.709968e-01 XAcc = 9.999999e-01 ThetaAcc = 1.343563e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.270997 DM energy = 0.270997
+--> Event 796 starts.
+--> Event 797 starts.
+--> Event 798 starts.
+--> Event 799 starts.
+ekin = 155.419, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 10 iterations for Angle
+EParent = 1.554189e-01 XAcc = 9.999656e-01 ThetaAcc = 2.853534e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.155419 DM energy = 0.155414
+--> Event 800 starts.
+ekin = 162.26, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 5 iterations for Angle
+EParent = 1.622600e-01 XAcc = 1.000000e+00 ThetaAcc = 9.088205e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.16226 DM energy = 0.16226
+--> Event 801 starts.
+--> Event 802 starts.
+--> Event 803 starts.
+--> Event 804 starts.
+--> Event 805 starts.
+--> Event 806 starts.
+ekin = 100.139, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 179 iterations for Angle
+EParent = 1.001394e-01 XAcc = 1.000000e+00 ThetaAcc = 3.156024e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.100139 DM energy = 0.100139
+--> Event 807 starts.
+ekin = 113.823, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 44 iterations for Angle
+EParent = 1.138228e-01 XAcc = 9.999989e-01 ThetaAcc = 5.829971e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.113823 DM energy = 0.113823
+--> Event 808 starts.
+--> Event 809 starts.
+ekin = 1585.47, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 4793 iterations for Angle
+EParent = 1.585470e+00 XAcc = 1.000000e+00 ThetaAcc = 1.420042e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 1.58547 DM energy = 1.58547
+--> Event 810 starts.
+ekin = 309.742, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 336 iterations for Angle
+EParent = 3.097418e-01 XAcc = 9.999999e-01 ThetaAcc = 9.751264e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.309742 DM energy = 0.309742
+--> Event 811 starts.
+--> Event 812 starts.
+--> Event 813 starts.
+ekin = 503.08, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 309 iterations for Angle
+EParent = 5.030801e-01 XAcc = 1.000000e+00 ThetaAcc = 4.510365e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.50308 DM energy = 0.50308
+--> Event 814 starts.
+--> Event 815 starts.
+ekin = 101.279, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 39 iterations for Angle
+EParent = 1.012795e-01 XAcc = 1.000000e+00 ThetaAcc = 3.901960e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.101279 DM energy = 0.101279
+--> Event 816 starts.
+--> Event 817 starts.
+--> Event 818 starts.
+--> Event 819 starts.
+--> Event 820 starts.
+ekin = 245.055, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 186 iterations for Angle
+EParent = 2.450547e-01 XAcc = 1.000000e+00 ThetaAcc = 3.645906e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.245055 DM energy = 0.245055
+--> Event 821 starts.
+ekin = 219.06, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 28 iterations for Angle
+EParent = 2.190596e-01 XAcc = 1.000000e+00 ThetaAcc = 1.701494e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.21906 DM energy = 0.21906
+--> Event 822 starts.
+ekin = 397.161, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 214 iterations for Angle
+EParent = 3.971610e-01 XAcc = 9.999997e-01 ThetaAcc = 1.540689e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.397161 DM energy = 0.397161
+--> Event 823 starts.
+--> Event 824 starts.
+ekin = 246.685, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 100 iterations for Angle
+EParent = 2.466848e-01 XAcc = 1.000000e+00 ThetaAcc = 2.428538e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.246685 DM energy = 0.246685
+--> Event 825 starts.
+--> Event 826 starts.
+--> Event 827 starts.
+ekin = 160.655, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 15 iterations for Angle
+EParent = 1.606551e-01 XAcc = 1.000000e+00 ThetaAcc = 1.213043e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.160655 DM energy = 0.160655
+--> Event 828 starts.
+--> Event 829 starts.
+--> Event 830 starts.
+--> Event 831 starts.
+ekin = 242.965, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 116 iterations for Angle
+EParent = 2.429645e-01 XAcc = 9.999942e-01 ThetaAcc = 9.376844e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.242965 DM energy = 0.242963
+--> Event 832 starts.
+--> Event 833 starts.
+--> Event 834 starts.
+ekin = 751.65, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 502 iterations for Angle
+EParent = 7.516500e-01 XAcc = 9.999991e-01 ThetaAcc = 2.051885e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.75165 DM energy = 0.751649
+ekin = 210.578, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 53 iterations for Angle
+EParent = 2.105778e-01 XAcc = 9.999700e-01 ThetaAcc = 2.288484e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.210578 DM energy = 0.210571
+--> Event 835 starts.
+--> Event 836 starts.
+--> Event 837 starts.
+--> Event 838 starts.
+--> Event 839 starts.
+ekin = 153.819, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 370 iterations for Angle
+EParent = 1.538188e-01 XAcc = 1.000000e+00 ThetaAcc = 5.184337e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.153819 DM energy = 0.153819
+--> Event 840 starts.
+ekin = 186.423, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 119 iterations for Angle
+EParent = 1.864230e-01 XAcc = 1.000000e+00 ThetaAcc = 2.604906e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.186423 DM energy = 0.186423
+--> Event 841 starts.
+ekin = 102.313, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 64 iterations for Angle
+EParent = 1.023128e-01 XAcc = 1.000000e+00 ThetaAcc = 3.476478e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.102313 DM energy = 0.102313
+--> Event 842 starts.
+--> Event 843 starts.
+ekin = 153.469, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 234 iterations for Angle
+EParent = 1.534686e-01 XAcc = 9.999999e-01 ThetaAcc = 1.730394e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.153469 DM energy = 0.153469
+--> Event 844 starts.
+ekin = 101.386, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 134 iterations for Angle
+EParent = 1.013859e-01 XAcc = 9.999994e-01 ThetaAcc = 4.669972e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.101386 DM energy = 0.101386
+--> Event 845 starts.
+--> Event 846 starts.
+--> Event 847 starts.
+--> Event 848 starts.
+ekin = 152.267, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 128 iterations for Angle
+EParent = 1.522671e-01 XAcc = 9.999990e-01 ThetaAcc = 4.893072e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.152267 DM energy = 0.152267
+--> Event 849 starts.
+ekin = 117.063, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 76 iterations for Angle
+EParent = 1.170631e-01 XAcc = 9.999991e-01 ThetaAcc = 5.422193e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.117063 DM energy = 0.117063
+--> Event 850 starts.
+ekin = 285.299, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 221 iterations for Angle
+EParent = 2.852989e-01 XAcc = 1.000000e+00 ThetaAcc = 6.983766e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.285299 DM energy = 0.285299
+--> Event 851 starts.
+ekin = 107.204, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 5 iterations for Angle
+EParent = 1.072041e-01 XAcc = 9.999785e-01 ThetaAcc = 2.715306e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.107204 DM energy = 0.107202
+--> Event 852 starts.
+--> Event 853 starts.
+--> Event 854 starts.
+--> Event 855 starts.
+ekin = 111.389, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 84 iterations for Angle
+EParent = 1.113887e-01 XAcc = 1.000000e+00 ThetaAcc = 7.874156e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.111389 DM energy = 0.111389
+--> Event 856 starts.
+--> Event 857 starts.
+--> Event 858 starts.
+--> Event 859 starts.
+--> Event 860 starts.
+--> Event 861 starts.
+--> Event 862 starts.
+--> Event 863 starts.
+--> Event 864 starts.
+--> Event 865 starts.
+ekin = 209.694, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 215 iterations for Angle
+EParent = 2.096942e-01 XAcc = 9.999961e-01 ThetaAcc = 8.312528e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.209694 DM energy = 0.209693
+--> Event 866 starts.
+ekin = 105.553, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 68 iterations for Angle
+EParent = 1.055531e-01 XAcc = 9.999997e-01 ThetaAcc = 3.374298e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.105553 DM energy = 0.105553
+--> Event 867 starts.
+ekin = 154.296, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 58 iterations for Angle
+EParent = 1.542963e-01 XAcc = 1.000000e+00 ThetaAcc = 3.019512e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.154296 DM energy = 0.154296
+--> Event 868 starts.
+ekin = 199.655, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 178 iterations for Angle
+EParent = 1.996555e-01 XAcc = 9.999999e-01 ThetaAcc = 1.361489e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.199655 DM energy = 0.199655
+--> Event 869 starts.
+ekin = 223.474, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 311 iterations for Angle
+EParent = 2.234741e-01 XAcc = 1.000000e+00 ThetaAcc = 6.429282e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.223474 DM energy = 0.223474
+ekin = 189.392, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 86 iterations for Angle
+EParent = 1.893919e-01 XAcc = 1.000000e+00 ThetaAcc = 3.443056e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.189392 DM energy = 0.189392
+--> Event 870 starts.
+ekin = 1853.27, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 1254 iterations for Angle
+EParent = 1.853272e+00 XAcc = 9.999999e-01 ThetaAcc = 4.376645e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 1.85327 DM energy = 1.85327
+--> Event 871 starts.
+--> Event 872 starts.
+--> Event 873 starts.
+--> Event 874 starts.
+--> Event 875 starts.
+ekin = 150.384, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 176 iterations for Angle
+EParent = 1.503845e-01 XAcc = 1.000000e+00 ThetaAcc = 5.882446e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.150384 DM energy = 0.150384
+--> Event 876 starts.
+ekin = 108.293, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 31 iterations for Angle
+EParent = 1.082928e-01 XAcc = 9.999966e-01 ThetaAcc = 1.082168e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.108293 DM energy = 0.108292
+--> Event 877 starts.
+--> Event 878 starts.
+ekin = 165.819, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 159 iterations for Angle
+EParent = 1.658191e-01 XAcc = 9.999959e-01 ThetaAcc = 9.515204e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.165819 DM energy = 0.165818
+--> Event 879 starts.
+ekin = 227.995, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 269 iterations for Angle
+EParent = 2.279950e-01 XAcc = 1.000000e+00 ThetaAcc = 7.233446e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.227995 DM energy = 0.227995
+--> Event 880 starts.
+--> Event 881 starts.
+--> Event 882 starts.
+ekin = 456.962, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 851 iterations for Angle
+EParent = 4.569615e-01 XAcc = 9.999999e-01 ThetaAcc = 9.033254e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.456962 DM energy = 0.456961
+ekin = 234.204, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 228 iterations for Angle
+EParent = 2.342044e-01 XAcc = 1.000000e+00 ThetaAcc = 2.229095e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.234204 DM energy = 0.234204
+--> Event 883 starts.
+ekin = 102.947, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 83 iterations for Angle
+EParent = 1.029466e-01 XAcc = 9.999996e-01 ThetaAcc = 3.740037e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.102947 DM energy = 0.102947
+--> Event 884 starts.
+--> Event 885 starts.
+--> Event 886 starts.
+--> Event 887 starts.
+ekin = 140.916, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 16 iterations for Angle
+EParent = 1.409162e-01 XAcc = 1.000000e+00 ThetaAcc = 3.723868e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.140916 DM energy = 0.140916
+--> Event 888 starts.
+ekin = 210.973, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 192 iterations for Angle
+EParent = 2.109728e-01 XAcc = 9.999998e-01 ThetaAcc = 1.737871e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.210973 DM energy = 0.210973
+--> Event 889 starts.
+--> Event 890 starts.
+--> Event 891 starts.
+--> Event 892 starts.
+--> Event 893 starts.
+ekin = 126.522, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 38 iterations for Angle
+EParent = 1.265219e-01 XAcc = 1.000000e+00 ThetaAcc = 1.106283e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.126522 DM energy = 0.126522
+--> Event 894 starts.
+ekin = 205.703, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 59 iterations for Angle
+EParent = 2.057028e-01 XAcc = 1.000000e+00 ThetaAcc = 5.849880e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.205703 DM energy = 0.205703
+ekin = 151.947, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 174 iterations for Angle
+EParent = 1.519471e-01 XAcc = 9.999954e-01 ThetaAcc = 1.058062e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.151947 DM energy = 0.151946
+--> Event 895 starts.
+ekin = 414.458, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 248 iterations for Angle
+EParent = 4.144583e-01 XAcc = 1.000000e+00 ThetaAcc = 1.356241e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.414458 DM energy = 0.414458
+--> Event 896 starts.
+ekin = 198.546, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 171 iterations for Angle
+EParent = 1.985458e-01 XAcc = 9.999725e-01 ThetaAcc = 2.258455e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.198546 DM energy = 0.19854
+--> Event 897 starts.
+ekin = 340.728, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 50 iterations for Angle
+EParent = 3.407282e-01 XAcc = 9.999993e-01 ThetaAcc = 2.803047e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.340728 DM energy = 0.340728
+ekin = 427.678, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 548 iterations for Angle
+EParent = 4.276779e-01 XAcc = 9.999989e-01 ThetaAcc = 3.043878e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.427678 DM energy = 0.427677
+--> Event 898 starts.
+--> Event 899 starts.
+--> Event 900 starts.
+--> Event 901 starts.
+--> Event 902 starts.
+ekin = 720.903, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 502 iterations for Angle
+EParent = 7.209034e-01 XAcc = 1.000000e+00 ThetaAcc = 7.437700e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.720903 DM energy = 0.720903
+--> Event 903 starts.
+--> Event 904 starts.
+--> Event 905 starts.
+--> Event 906 starts.
+--> Event 907 starts.
+ekin = 336.056, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 247 iterations for Angle
+EParent = 3.360565e-01 XAcc = 9.999986e-01 ThetaAcc = 3.946680e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.336056 DM energy = 0.336056
+--> Event 908 starts.
+ekin = 421.945, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 248 iterations for Angle
+EParent = 4.219452e-01 XAcc = 1.000000e+00 ThetaAcc = 9.315733e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.421945 DM energy = 0.421945
+--> Event 909 starts.
+ekin = 107.255, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 257 iterations for Angle
+EParent = 1.072554e-01 XAcc = 1.000000e+00 ThetaAcc = 1.924817e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.107255 DM energy = 0.107255
+--> Event 910 starts.
+ekin = 1300.63, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 696 iterations for Angle
+EParent = 1.300626e+00 XAcc = 9.999974e-01 ThetaAcc = 2.699642e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 1.30063 DM energy = 1.30062
+--> Event 911 starts.
+ekin = 210.653, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 111 iterations for Angle
+EParent = 2.106529e-01 XAcc = 9.999999e-01 ThetaAcc = 1.390383e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.210653 DM energy = 0.210653
+ekin = 106.285, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 6 iterations for Angle
+EParent = 1.062846e-01 XAcc = 1.000000e+00 ThetaAcc = 5.061103e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.106285 DM energy = 0.106285
+ekin = 236.46, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 93 iterations for Angle
+EParent = 2.364596e-01 XAcc = 9.999999e-01 ThetaAcc = 1.267640e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.23646 DM energy = 0.23646
+--> Event 912 starts.
+ekin = 143.634, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 114 iterations for Angle
+EParent = 1.436339e-01 XAcc = 1.000000e+00 ThetaAcc = 2.345859e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.143634 DM energy = 0.143634
+--> Event 913 starts.
+--> Event 914 starts.
+ekin = 533.837, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 90 iterations for Angle
+EParent = 5.338369e-01 XAcc = 1.000000e+00 ThetaAcc = 5.882398e-05
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.533837 DM energy = 0.533837
+--> Event 915 starts.
+--> Event 916 starts.
+ekin = 101.93, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 51 iterations for Angle
+EParent = 1.019301e-01 XAcc = 1.000000e+00 ThetaAcc = 7.247803e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.10193 DM energy = 0.10193
+--> Event 917 starts.
+--> Event 918 starts.
+--> Event 919 starts.
+--> Event 920 starts.
+ekin = 199.428, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 48 iterations for Angle
+EParent = 1.994281e-01 XAcc = 9.999988e-01 ThetaAcc = 4.749664e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.199428 DM energy = 0.199428
+--> Event 921 starts.
+--> Event 922 starts.
+--> Event 923 starts.
+--> Event 924 starts.
+--> Event 925 starts.
+ekin = 150.92, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 7 iterations for Angle
+EParent = 1.509196e-01 XAcc = 9.999830e-01 ThetaAcc = 2.032407e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.15092 DM energy = 0.150917
+--> Event 926 starts.
+ekin = 115.524, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 59 iterations for Angle
+EParent = 1.155245e-01 XAcc = 9.999996e-01 ThetaAcc = 3.507084e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.115524 DM energy = 0.115524
+--> Event 927 starts.
+ekin = 380.682, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 46 iterations for Angle
+EParent = 3.806824e-01 XAcc = 9.999915e-01 ThetaAcc = 9.056692e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.380682 DM energy = 0.380679
+--> Event 928 starts.
+--> Event 929 starts.
+ekin = 220.705, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 118 iterations for Angle
+EParent = 2.207047e-01 XAcc = 1.000000e+00 ThetaAcc = 1.780421e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.220705 DM energy = 0.220705
+--> Event 930 starts.
+--> Event 931 starts.
+ekin = 164.608, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 371 iterations for Angle
+EParent = 1.646084e-01 XAcc = 9.999866e-01 ThetaAcc = 1.730017e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.164608 DM energy = 0.164606
+--> Event 932 starts.
+ekin = 157.48, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 102 iterations for Angle
+EParent = 1.574798e-01 XAcc = 9.999982e-01 ThetaAcc = 6.494353e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.15748 DM energy = 0.15748
+--> Event 933 starts.
+ekin = 232.116, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 425 iterations for Angle
+EParent = 2.321162e-01 XAcc = 9.999925e-01 ThetaAcc = 1.093414e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.232116 DM energy = 0.232114
+--> Event 934 starts.
+ekin = 146.728, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 60 iterations for Angle
+EParent = 1.467280e-01 XAcc = 1.000000e+00 ThetaAcc = 6.926116e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.146728 DM energy = 0.146728
+--> Event 935 starts.
+--> Event 936 starts.
+ekin = 107.423, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 111 iterations for Angle
+EParent = 1.074230e-01 XAcc = 1.000000e+00 ThetaAcc = 6.609860e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.107423 DM energy = 0.107423
+--> Event 937 starts.
+ekin = 6483.51, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 3433 iterations for Angle
+EParent = 6.483515e+00 XAcc = 1.000000e+00 ThetaAcc = 7.454739e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 6.48351 DM energy = 6.48351
+ekin = 316.278, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 50 iterations for Angle
+EParent = 3.162781e-01 XAcc = 1.000000e+00 ThetaAcc = 1.797911e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.316278 DM energy = 0.316278
+--> Event 938 starts.
+--> Event 939 starts.
+--> Event 940 starts.
+--> Event 941 starts.
+--> Event 942 starts.
+ekin = 1533.11, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 116 iterations for Angle
+EParent = 1.533113e+00 XAcc = 1.000000e+00 ThetaAcc = 2.255655e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 1.53311 DM energy = 1.53311
+ekin = 1456.95, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 128 iterations for Angle
+EParent = 1.456946e+00 XAcc = 1.000000e+00 ThetaAcc = 8.154321e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 1.45695 DM energy = 1.45695
+--> Event 943 starts.
+--> Event 944 starts.
+--> Event 945 starts.
+ekin = 546.502, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 178 iterations for Angle
+EParent = 5.465015e-01 XAcc = 1.000000e+00 ThetaAcc = 2.008671e-05
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.546502 DM energy = 0.546502
+--> Event 946 starts.
+--> Event 947 starts.
+--> Event 948 starts.
+ekin = 815.164, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 281 iterations for Angle
+EParent = 8.151641e-01 XAcc = 1.000000e+00 ThetaAcc = 7.364481e-05
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.815164 DM energy = 0.815164
+ekin = 177.311, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 75 iterations for Angle
+EParent = 1.773110e-01 XAcc = 9.999863e-01 ThetaAcc = 1.685621e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.177311 DM energy = 0.177309
+--> Event 949 starts.
+--> Event 950 starts.
+ekin = 435.608, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 918 iterations for Angle
+EParent = 4.356079e-01 XAcc = 1.000000e+00 ThetaAcc = 1.744357e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.435608 DM energy = 0.435608
+--> Event 951 starts.
+ekin = 436.595, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 87 iterations for Angle
+EParent = 4.365952e-01 XAcc = 9.999997e-01 ThetaAcc = 1.452239e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.436595 DM energy = 0.436595
+--> Event 952 starts.
+--> Event 953 starts.
+--> Event 954 starts.
+ekin = 734.981, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 2240 iterations for Angle
+EParent = 7.349808e-01 XAcc = 1.000000e+00 ThetaAcc = 1.303479e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.734981 DM energy = 0.734981
+ekin = 131.098, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 21 iterations for Angle
+EParent = 1.310975e-01 XAcc = 1.000000e+00 ThetaAcc = 1.892636e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.131098 DM energy = 0.131098
+--> Event 955 starts.
+--> Event 956 starts.
+ekin = 220.288, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 228 iterations for Angle
+EParent = 2.202884e-01 XAcc = 1.000000e+00 ThetaAcc = 2.269687e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.220288 DM energy = 0.220288
+--> Event 957 starts.
+--> Event 958 starts.
+ekin = 225.853, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 98 iterations for Angle
+EParent = 2.258527e-01 XAcc = 9.999991e-01 ThetaAcc = 3.821239e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.225853 DM energy = 0.225853
+--> Event 959 starts.
+ekin = 684.234, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 60 iterations for Angle
+EParent = 6.842337e-01 XAcc = 1.000000e+00 ThetaAcc = 6.100994e-05
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.684234 DM energy = 0.684234
+--> Event 960 starts.
+--> Event 961 starts.
+ekin = 303.367, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 1 iterations for Angle
+EParent = 3.033665e-01 XAcc = 1.000000e+00 ThetaAcc = 4.124050e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.303367 DM energy = 0.303367
+--> Event 962 starts.
+--> Event 963 starts.
+--> Event 964 starts.
+ekin = 352.673, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 897 iterations for Angle
+EParent = 3.526732e-01 XAcc = 9.999986e-01 ThetaAcc = 3.866453e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.352673 DM energy = 0.352673
+ekin = 215.588, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 60 iterations for Angle
+EParent = 2.155877e-01 XAcc = 1.000000e+00 ThetaAcc = 3.399280e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.215588 DM energy = 0.215588
+--> Event 965 starts.
+--> Event 966 starts.
+ekin = 479.529, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 78 iterations for Angle
+EParent = 4.795292e-01 XAcc = 9.999990e-01 ThetaAcc = 2.811623e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.479529 DM energy = 0.479529
+--> Event 967 starts.
+--> Event 968 starts.
+--> Event 969 starts.
+--> Event 970 starts.
+--> Event 971 starts.
+ekin = 107.43, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 175 iterations for Angle
+EParent = 1.074305e-01 XAcc = 1.000000e+00 ThetaAcc = 1.223421e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.10743 DM energy = 0.10743
+--> Event 972 starts.
+--> Event 973 starts.
+ekin = 568.102, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 1243 iterations for Angle
+EParent = 5.681020e-01 XAcc = 1.000000e+00 ThetaAcc = 6.588617e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.568102 DM energy = 0.568102
+--> Event 974 starts.
+ekin = 288.809, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 152 iterations for Angle
+EParent = 2.888089e-01 XAcc = 9.999999e-01 ThetaAcc = 8.986052e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.288809 DM energy = 0.288809
+--> Event 975 starts.
+ekin = 137.538, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 119 iterations for Angle
+EParent = 1.375380e-01 XAcc = 9.999947e-01 ThetaAcc = 1.194979e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.137538 DM energy = 0.137537
+--> Event 976 starts.
+ekin = 340.418, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 82 iterations for Angle
+EParent = 3.404180e-01 XAcc = 9.999897e-01 ThetaAcc = 1.056645e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.340418 DM energy = 0.340414
+ekin = 209.948, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 103 iterations for Angle
+EParent = 2.099483e-01 XAcc = 9.999980e-01 ThetaAcc = 5.927567e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.209948 DM energy = 0.209948
+--> Event 977 starts.
+--> Event 978 starts.
+--> Event 979 starts.
+--> Event 980 starts.
+--> Event 981 starts.
+--> Event 982 starts.
+ekin = 108.162, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 18 iterations for Angle
+EParent = 1.081621e-01 XAcc = 1.000000e+00 ThetaAcc = 3.124820e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.108162 DM energy = 0.108162
+--> Event 983 starts.
+--> Event 984 starts.
+ekin = 4009.95, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 176 iterations for Angle
+EParent = 4.009948e+00 XAcc = 1.000000e+00 ThetaAcc = 7.147241e-05
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 4.00995 DM energy = 4.00995
+--> Event 985 starts.
+--> Event 986 starts.
+ekin = 1179.25, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 1433 iterations for Angle
+EParent = 1.179250e+00 XAcc = 1.000000e+00 ThetaAcc = 5.494193e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 1.17925 DM energy = 1.17925
+--> Event 987 starts.
+--> Event 988 starts.
+ekin = 870.802, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 888 iterations for Angle
+EParent = 8.708016e-01 XAcc = 1.000000e+00 ThetaAcc = 1.190386e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.870802 DM energy = 0.870802
+--> Event 989 starts.
+ekin = 407.616, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 547 iterations for Angle
+EParent = 4.076156e-01 XAcc = 1.000000e+00 ThetaAcc = 7.121764e-04
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.407616 DM energy = 0.407616
+--> Event 990 starts.
+--> Event 991 starts.
+--> Event 992 starts.
+ekin = 122.162, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 38 iterations for Angle
+EParent = 1.221621e-01 XAcc = 1.000000e+00 ThetaAcc = 9.283343e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.122162 DM energy = 0.122162
+--> Event 993 starts.
+ekin = 155.3, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 12 iterations for Angle
+EParent = 1.552997e-01 XAcc = 1.000000e+00 ThetaAcc = 9.753845e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.1553 DM energy = 0.1553
+--> Event 994 starts.
+ekin = 165.489, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 133 iterations for Angle
+EParent = 1.654892e-01 XAcc = 1.000000e+00 ThetaAcc = 1.033986e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.165489 DM energy = 0.165489
+ekin = 102.441, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 15 iterations for Angle
+EParent = 1.024410e-01 XAcc = 9.999995e-01 ThetaAcc = 4.201132e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.102441 DM energy = 0.102441
+--> Event 995 starts.
+--> Event 996 starts.
+--> Event 997 starts.
+--> Event 998 starts.
+ekin = 141.789, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 28 iterations for Angle
+EParent = 1.417887e-01 XAcc = 9.999993e-01 ThetaAcc = 4.320500e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.141789 DM energy = 0.141789
+--> Event 999 starts.
+ekin = 1559.83, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 24 iterations for Angle
+EParent = 1.559835e+00 XAcc = 9.999999e-01 ThetaAcc = 5.494682e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 1.55983 DM energy = 1.55983
+--> Event 1000 starts.
+ekin = 100000, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 252788 iterations for Angle
+EParent = 1.000000e+02 XAcc = 1.000000e+00 ThetaAcc = 4.686263e-07
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 100 DM energy = 100
+--> Event 1001 starts.
+--> Event 1002 starts.
+--> Event 1003 starts.
+ekin = 127.655, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 5 iterations for Angle
+EParent = 1.276552e-01 XAcc = 1.000000e+00 ThetaAcc = 6.567100e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.127655 DM energy = 0.127655
+--> Event 1004 starts.
+--> Event 1005 starts.
+--> Event 1006 starts.
+--> Event 1007 starts.
+--> Event 1008 starts.
+--> Event 1009 starts.
+--> Event 1010 starts.
+--> Event 1011 starts.
+--> Event 1012 starts.
+--> Event 1013 starts.
+ekin = 172.812, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 11 iterations for Angle
+EParent = 1.728119e-01 XAcc = 9.999974e-01 ThetaAcc = 7.489445e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.172812 DM energy = 0.172811
+--> Event 1014 starts.
+--> Event 1015 starts.
+ekin = 109.872, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 23 iterations for Angle
+EParent = 1.098723e-01 XAcc = 9.999742e-01 ThetaAcc = 2.939201e-01
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.109872 DM energy = 0.109869
+--> Event 1016 starts.
+ekin = 400.922, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 944 iterations for Angle
+EParent = 4.009224e-01 XAcc = 9.999976e-01 ThetaAcc = 4.648612e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.400922 DM energy = 0.400921
+--> Event 1017 starts.
+ekin = 111.319, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 14 iterations for Angle
+EParent = 1.113188e-01 XAcc = 9.999976e-01 ThetaAcc = 8.943294e-02
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.111319 DM energy = 0.111318
+ekin = 134.514, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 33 iterations for Angle
+EParent = 1.345138e-01 XAcc = 1.000000e+00 ThetaAcc = 2.526433e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.134514 DM energy = 0.134514
+--> Event 1018 starts.
+ekin = 255.886, Z = 74, A = 183.842, density = 6.32214e+19, sigma = 280.631, rate = 1.77419e+22
+Accepted after 262 iterations for Angle
+EParent = 2.558861e-01 XAcc = 1.000000e+00 ThetaAcc = 1.930156e-03
+ DM PDG ID = 5300122 emitted by gamma in material G4_W (Z=74, A=183.842) with energy = 0.255886 DM energy = 0.255886
+--> Event 1019 starts.

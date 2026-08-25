@@ -78,6 +78,12 @@ class DetectorConstruction : public G4VUserDetectorConstruction
      
      DetectorMessenger* fDetectorMessenger;
 
+     G4double         fBoxSize2;
+     G4Material*      fMaterial2;
+     G4LogicalVolume* fLBox2;
+     G4VPhysicalVolume* fPBox2;
+
+
   private:
     
      void               DefineMaterials();

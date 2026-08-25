@@ -11,6 +11,8 @@ class G4ParticleDefinition;
 class G4Material;
 class G4Element;
 
+// 31st July 
+// added actual calculation for primkaoff process for composite material
 
 class DMProcessPrimakoffALP : public G4VDiscreteProcess
 {
@@ -35,6 +37,29 @@ class DMProcessPrimakoffALP : public G4VDiscreteProcess
 
     /* This is temporary need to do for non-homogenous material*/
     const G4Element* GetDominantElement(const G4Material* mat) const;
+    void GetEffectiveZA(const G4Material* mat,G4double& Zeff, G4double& Aeff, G4double& sumAtoms) const;
+    std::vector<G4double> xsecelm;
+
+
+
+  struct TargetElementData
+    {
+        G4double Z;
+        G4double A;
+        G4double sigma;
+        G4double numberDensity;
+        G4double rate;
+    };
+
+    std::vector<TargetElementData>
+    BuildTargetTable(const G4Material* mat,
+                     G4double ekin) const;
+
+    const TargetElementData&
+    SampleTarget(const std::vector<TargetElementData>& table) const;
+
+   
+
 
 
     DarkMatter* myDarkMatter;

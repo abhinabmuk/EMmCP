@@ -50,6 +50,19 @@
 #include "G4ProcessManager.hh"
 #include "StepMax.hh"
 
+
+/* Added EM option 4 best EM option*/
+#include "G4EmStandardPhysics_option4.hh"
+#include "G4PhysListFactory.hh"
+#include "FTFP_BERT.hh"
+#include "G4EmExtraPhysics.hh"
+#include "G4DecayPhysics.hh"
+#include "G4RadioactiveDecayPhysics.hh"
+#include "G4HadronElasticPhysics.hh"
+#include "G4HadronPhysicsFTFP_BERT.hh"
+#include "G4StoppingPhysics.hh"
+#include "G4IonPhysics.hh"
+#include "G4NeutronTrackingCut.hh"
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 PhysicsList::PhysicsList() : G4VModularPhysicsList(),
@@ -65,6 +78,22 @@ PhysicsList::PhysicsList() : G4VModularPhysicsList(),
   fEmName = G4String("standard");
   fEmPhysicsList = new PhysListEmStandard(fEmName);
     
+  // EM — kept manual (constructed in ConstructProcess via fEmPhysicsList)
+  // fEmName = G4String("emstandard_opt4");
+  // fEmPhysicsList = new G4EmStandardPhysics_option4();
+  // RegisterPhysics(fEmPhysicsList);            // <-- register it now
+
+  // FTFP_BERT content — registered onto THIS modular list.
+  // G4VModularPhysicsList::ConstructProcess() (called in your
+  // ConstructProcess) will invoke these.
+  // RegisterPhysics(new G4HadronElasticPhysics());
+  //(new G4HadronPhysicsFTFP_BERT());
+
+   RegisterPhysics(new G4DecayPhysics());
+  // RegisterPhysics(new G4StoppingPhysics());
+  // RegisterPhysics(new G4IonPhysics());
+  // RegisterPhysics(new G4NeutronTrackingCut());
+
   SetDefaultCutValue(0.01*mm);
     
   SetVerboseLevel(1);
@@ -72,14 +101,15 @@ PhysicsList::PhysicsList() : G4VModularPhysicsList(),
   //register FCP  physics
   AddFCPPhysics(0.1,105.66*MeV);//Default charge and mass of FCP
 
-  RegisterPhysics( lPhys );
+//  RegisterPhysics( lPhys ); for now remove this line for mCP
+
    // ---------------------------------------------------------------
   // ALP physics parameters — the only two numbers you need to tune.
   // Material properties (Z, A, density) are NOT set here; they are
   // read automatically per-step from G4Track in DMProcessPrimakoffALP.
   // ---------------------------------------------------------------
   G4double alpMass_GeV = 0.0167;  // ALP mass in GeV
-  G4double eThresh_GeV = 1;  // Energy cut (based on detector) for now set to 1 GeV
+  G4double eThresh_GeV = 0.1;  // Energy cut (based on detector) for now set to 0.1 GeV
  
   // Dummy Z=1, A=1, density=1 — overridden per-step from G4Material
   fALP = new ALP(alpMass_GeV, eThresh_GeV,1,1,1);
@@ -200,7 +230,7 @@ void PhysicsList::ConstructParticle()
   G4GenericIon::GenericIonDefinition();
 
 //Construct FCP
-lPhys->ConstructParticle();
+//lPhys->ConstructParticle();
 
 DMParticleALP::Definition();
 
@@ -215,6 +245,7 @@ void PhysicsList::ConstructProcess()
   G4VModularPhysicsList::ConstructProcess();
   AddTransportation();
   fEmPhysicsList->ConstructProcess();
+  //AddStepMax();
 
   // ------------------------------------------------------------------
   // Finalize ALP object now that DMParticleALP singleton exists,

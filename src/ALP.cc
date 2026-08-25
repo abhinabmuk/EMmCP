@@ -25,7 +25,12 @@
 
 */
 
-
+// 29 July 
+/* Bug fixes for Primakoff cross-section */
+/*
+1 ] Removal of -2 in log factor
+2 ] fixing of C1 factor --> true cross-section
+*/
 ALP::ALP(double MAIn, double EThreshIn, double ANuclIn, double ZNuclIn, double DensityIn)
 : DarkMatter(MAIn, EThreshIn, ANuclIn, ZNuclIn, DensityIn,0.001)
 {
@@ -61,12 +66,16 @@ double ALP::TotalCrossSectionCalc(double E0)
   double atomFFcoeff=111.0*pow(ZNucl,-1.0/3.0)/Mel;             // this is a from Atomic Form factor 
   double tAtom=1.0/(atomFFcoeff*atomFFcoeff); // atomic coefficient of form-factor
   double tNucl=0.164*pow(ANucl,-2.0/3.0); // nuclear form-factor coefficient in GeV**2    // this is a d  
-  double LogFactor=log((tNucl+tmin)/(tAtom+tmin))-2.0; // see Note_ALP.pdf and check it
+ // double LogFactor=log((tNucl+tmin)/(tAtom+tmin))-2.0; // see Note_ALP.pdf and check it
+  double LogFactor=log((tNucl+tmin)/(tAtom+tmin)); // proper log term for full primakoff cross-section
+
   //double sigmaALPtotal=1.0/8.0*GaggBench*GaggBench*alphaEW*ZNucl*ZNucl*LogFactor*GeVtoPb; //this is simplified cross-section for NA64
   
 
    // See appendix of NA64 paper for full cross-section , also typo there 
-  double C1 = (tNucl*tNucl)/(((tNucl*tNucl)-(tAtom))* ((tNucl*tNucl)-(tAtom)) * ((tNucl*tNucl)-(tAtom)));
+ // double C1 = (tNucl*tNucl)/(((tNucl*tNucl)-(tAtom))* ((tNucl*tNucl)-(tAtom)) * ((tNucl*tNucl)-(tAtom)));
+  double C1 = (tNucl*tNucl)/((tNucl - tAtom)*(tNucl - tAtom)*(tNucl - tAtom) ); 
+
   double C2 = tNucl + 2*tmin + tAtom;
   double C3 = -2*tNucl+2*tAtom;
 
@@ -74,9 +83,9 @@ double ALP::TotalCrossSectionCalc(double E0)
 
 
   //debug check : 
-  G4cout << "Coupling Constant:" << GaggBench <<G4endl;
-  G4cout << "Mass:" << MA <<G4endl; //Mass check due to mismatch for ALPs.cc
-  G4cout << "sigmaALPtotal [pb]:" << sigmaALPtotal <<G4endl;
+  // G4cout << "Coupling Constant:" << GaggBench <<G4endl;
+  // G4cout << "Mass:" << MA <<G4endl; //Mass check due to mismatch for ALPs.cc
+  // G4cout << "sigmaALPtotal [pb]:" << sigmaALPtotal <<G4endl;
 
 
   return sigmaALPtotal; 
@@ -192,10 +201,13 @@ double ALP::TotalCrossSectionCalcPrimakoff(double E0, double A, double Z)
   double atomFFcoeff=111.0*pow(Z,-1.0/3.0)/Mel;             // this is a from Atomic Form factor 
   double tAtom=1.0/(atomFFcoeff*atomFFcoeff); // atomic coefficient of form-factor
   double tNucl=0.164*pow(A,-2.0/3.0); // nuclear form-factor coefficient in GeV**2    // this is a d  
-  double LogFactor=log((tNucl+tmin)/(tAtom+tmin))-2.0; // see Note_ALP.pdf and check it  
+  //double LogFactor=log((tNucl+tmin)/(tAtom+tmin))-2.0; // see Note_ALP.pdf and check it  
+  double LogFactor=log((tNucl+tmin)/(tAtom+tmin)); // proper log term for full primakoff cross-section
 
    // See appendix of NA64 paper for full cross-section , also typo there 
-  double C1 = (tNucl*tNucl)/(((tNucl*tNucl)-(tAtom))* ((tNucl*tNucl)-(tAtom)) * ((tNucl*tNucl)-(tAtom)));
+   // double C1 = (tNucl*tNucl)/(((tNucl*tNucl)-(tAtom))* ((tNucl*tNucl)-(tAtom)) * ((tNucl*tNucl)-(tAtom)));
+  double C1 = (tNucl*tNucl)/((tNucl - tAtom)*(tNucl - tAtom)*(tNucl - tAtom) ); 
+  
   double C2 = tNucl + 2*tmin + tAtom;
   double C3 = -2*tNucl+2*tAtom;
 
@@ -203,9 +215,9 @@ double ALP::TotalCrossSectionCalcPrimakoff(double E0, double A, double Z)
 
 
   //debug check : 
-  G4cout << "Coupling Constant:" << GaggBench <<G4endl;
-  G4cout << "Mass:" << MA <<G4endl; //Mass check due to mismatch for ALPs.cc
-  G4cout << "sigmaALPtotal [pb]:" << sigmaALPtotal <<G4endl;
+  // G4cout << "Coupling Constant:" << GaggBench <<G4endl;
+  // G4cout << "Mass:" << MA <<G4endl; //Mass check due to mismatch for ALPs.cc
+  // G4cout << "sigmaALPtotal [pb]:" << sigmaALPtotal <<G4endl;
 
 
   return sigmaALPtotal; 
