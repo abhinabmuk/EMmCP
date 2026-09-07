@@ -1458,6 +1458,12 @@ CMakeFiles/TestEm18.dir/src/DMProcessPrimakoffALP.cc.o: /home/badshah/Downloads/
   /home/badshah/Downloads/G4ALPS/G4ALPS/EMmCP/include/DMParticleALP.hh \
   /home/badshah/Downloads/G4ALPS/G4ALPS/EMmCP/include/DMProcessPrimakoffALP.hh \
   /home/badshah/Downloads/G4ALPS/G4ALPS/EMmCP/include/DarkMatter.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/CLHEP/Geometry/BasicVector3D.h \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/CLHEP/Geometry/Normal3D.h \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/CLHEP/Geometry/Point3D.h \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/CLHEP/Geometry/Transform3D.h \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/CLHEP/Geometry/Transform3D.icc \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/CLHEP/Geometry/Vector3D.h \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/CLHEP/Random/DualRand.h \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/CLHEP/Random/JamesRandom.h \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/CLHEP/Random/MTwistEngine.h \
@@ -1523,9 +1529,18 @@ CMakeFiles/TestEm18.dir/src/DMProcessPrimakoffALP.cc.o: /home/badshah/Downloads/
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/CLHEP/Vector/RotationZ.icc \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/CLHEP/Vector/ThreeVector.h \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/CLHEP/Vector/ThreeVector.icc \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4AffineTransform.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4AffineTransform.icc \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4Allocator.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4AllocatorPool.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4ApplicationState.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4AutoLock.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4AuxiliaryNavServices.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4AuxiliaryNavServices.icc \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4BlockingList.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4BlockingList.icc \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4ClassificationOfNewTrack.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4DCofThisEvent.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4DataVector.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4DataVector.icc \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4DensityEffectCalculator.hh \
@@ -1537,12 +1552,19 @@ CMakeFiles/TestEm18.dir/src/DMProcessPrimakoffALP.cc.o: /home/badshah/Downloads/
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4ElementVector.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4EmProcessSubType.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4EnvironmentUtils.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4Event.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4EventManager.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4Exception.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4ExceptionSeverity.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4ForceCondition.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4GPILSelection.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4GRSSolid.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4GRSSolid.icc \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4GRSVolume.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4GRSVolume.icc \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4GeomSplitter.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4GlobalConfig.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4HCofThisEvent.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4IonisParamElm.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4IonisParamMat.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4Isotope.hh \
@@ -1556,13 +1578,31 @@ CMakeFiles/TestEm18.dir/src/DMProcessPrimakoffALP.cc.o: /home/badshah/Downloads/
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4MaterialPropertiesTable.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4MaterialPropertyVector.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4MaterialTable.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4NavigationHistory.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4NavigationHistory.icc \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4NavigationHistoryPool.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4NavigationLevel.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4NavigationLevel.icc \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4NavigationLevelRep.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4NavigationLevelRep.icc \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4NavigationLogger.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4Navigator.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4Navigator.icc \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4NoProcess.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4NormalNavigation.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4NormalNavigation.icc \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4OrderedTable.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4PDefManager.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4ParameterisedNavigation.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4ParameterisedNavigation.icc \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4ParticleChange.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4ParticleChange.icc \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4ParticleDefinition.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4ParticleDefinition.icc \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4ParticleMomentum.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4ParticleTable.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4ParticleTable.icc \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4ParticleTableIterator.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4PhysicsFreeVector.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4PhysicsModelCatalog.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4PhysicsTable.hh \
@@ -1570,45 +1610,94 @@ CMakeFiles/TestEm18.dir/src/DMProcessPrimakoffALP.cc.o: /home/badshah/Downloads/
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4PhysicsVector.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4PhysicsVector.icc \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4PhysicsVectorType.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4PrimaryParticle.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4PrimaryTransformer.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4PrimaryVertex.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4ProcessManager.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4ProcessManager.icc \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4ProcessType.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4ProcessVector.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4ProcessVector.icc \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4Profiler.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4Profiler.icc \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4ReferenceCountedHandle.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4Region.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4Region.icc \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4RegularNavigation.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4ReplicaNavigation.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4ReplicaNavigation.icc \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4RotationMatrix.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4SandiaTable.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4SmartTrackStack.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4SmartVoxelHeader.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4SmartVoxelHeader.icc \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4SmartVoxelNode.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4SmartVoxelNode.icc \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4SmartVoxelProxy.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4SmartVoxelProxy.icc \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4StackManager.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4StackedTrack.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4Step.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4Step.icc \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4StepPoint.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4StepPoint.icc \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4StepStatus.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4SteppingControl.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4SteppingManager.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4String.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4String.icc \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4SystemOfUnits.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4Threading.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4ThreeVector.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4TouchableHandle.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4TouchableHistory.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4TouchableHistory.icc \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4TouchableHistoryHandle.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4Track.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4Track.icc \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4TrackStack.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4TrackStatus.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4TrackVector.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4TrackingManager.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4TrackingMessenger.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4TrajectoryContainer.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4Transform3D.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4Types.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4UIcommand.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4UIdirectory.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4UImessenger.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4UIparameter.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4UItokenNum.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4UserStackingAction.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4UserSteppingAction.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4UserTrackingAction.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4VDigiCollection.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4VDiscreteProcess.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4VExternalNavigation.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4VHitsCollection.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4VPVParameterisation.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4VParticleChange.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4VParticleChange.icc \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4VPhysicalVolume.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4VPhysicalVolume.icc \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4VProcess.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4VSolid.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4VSolid.icc \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4VSteppingVerbose.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4VTouchable.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4VTouchable.icc \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4VTrajectory.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4VUserEventInformation.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4VUserTrackInformation.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4VVolumeMaterialScanner.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4VoxelNavigation.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4VoxelNavigation.icc \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/G4ios.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/PTL/Globals.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/PTL/Types.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/PTL/Utility.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/Randomize.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/evtdefs.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/geomdefs.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/geomwdefs.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/globals.hh \
@@ -1616,6 +1705,7 @@ CMakeFiles/TestEm18.dir/src/DMProcessPrimakoffALP.cc.o: /home/badshah/Downloads/
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/templates.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/tls.hh \
   /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/trkdefs.hh \
+  /home/badshah/Downloads/geant4-v11.1.1-install/include/Geant4/trkgdefs.hh \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \

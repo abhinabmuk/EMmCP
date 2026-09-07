@@ -22,6 +22,26 @@
 
 Removal of SigmaNorm dependecne*/
 
+// 27 JUly 
+/*
+1] Double checking of mean free path computation for composite material
+// 2nd August 
+
+2] Mean free path should involve all the materials and its respective cross-section it should not include probabilities here
+
+
+7th September 
+
+3] Writing the output to file 
+
+*/
+
+#include "G4EventManager.hh" 
+#include "G4Event.hh" 
+#include <fstream> 
+#include <sstream>
+
+
 DMProcessPrimakoffALP::DMProcessPrimakoffALP(DarkMatter* DarkMatterPointerIn, G4ParticleDefinition* theDMParticlePtrIn)
 : G4VDiscreteProcess( "DMProcessPrimakoffALP", fUserDefined ),  // fElectromagnetic
   myDarkMatter(DarkMatterPointerIn),
@@ -55,6 +75,98 @@ const G4Element* DMProcessPrimakoffALP::GetDominantElement(const G4Material* mat
   return dominant;
 }
 
+/* More accurate representation ALP Presentation*/
+
+void DMProcessPrimakoffALP::GetEffectiveZA(const G4Material* mat,
+                                           G4double& Zeff,
+                                           G4double& Aeff,
+                                           G4double& sumAtoms) const
+{
+  const G4ElementVector* elements = mat->GetElementVector();
+  const G4int* atomsVector        = mat->GetAtomsVector();   // a_i per molecule
+  const std::size_t nElm          = elements->size();
+
+  Zeff = 0.0;
+  Aeff = 0.0;
+  sumAtoms = 0.0;
+
+  /* N --> Mass of Nucleons */
+
+  for (std::size_t i = 0; i < nElm; ++i) {
+    const G4double ai = static_cast<G4double>(atomsVector[i]);
+    Zeff     += ai * (*elements)[i]->GetZ();
+    Aeff     += ai * (*elements)[i]->GetN();   // GetN() = mass number (amu), matches your original
+    sumAtoms += ai;
+  }
+}
+
+
+
+// G4double DMProcessPrimakoffALP::GetMeanFreePath( const G4Track& aTrack,
+//                                                  G4double, /*previousStepSize*/
+//                                                  G4ForceCondition* /*condition*/ )
+// {
+//   G4double DensityMat = aTrack.GetMaterial()->GetDensity()/(g/cm3);
+//   G4double ekin = aTrack.GetKineticEnergy()/GeV;
+
+//   // adding to get Z and A values 
+//   const G4Material* mat = aTrack.GetMaterial();
+//   const G4Element*  elm = GetDominantElement(mat);
+ 
+//   G4double Z          = elm->GetZ();   
+//   G4double A          = elm->GetN();          // atomic mass number (amu)
+
+//   if( myDarkMatter->EmissionAllowed(ekin, DensityMat) ) {
+
+//     //  G4double CrossSection = myDarkMatter->GetSigmaTot(ekin); //A.C. by DarkMatter definition, this is in picobarn
+//     // Z and A values comes from current step in material   
+
+//  //  std::cout << "CrossSection  Z" << Z << std::endl;
+//   // std::cout << "CrossSection  A " << A << std::endl;
+
+//    // both below give same result
+//    //G4double CrossSection = myDarkMatter->GetSigmaTot(ekin);
+//    G4double CrossSection = myDarkMatter->TotalCrossSectionCalcPrimakoff(ekin, A, Z); //picobarn
+
+//     CrossSection *= picobarn;
+
+//  //   std::cout << "CrossSection  before benching " << CrossSection << std::endl;
+
+
+//       //The DarkMatter classes compute the cross section for eps = epsilBench. Here, we revert back to epsilon
+//       CrossSection *= (myDarkMatter->Getepsil()* myDarkMatter->Getepsil())/(myDarkMatter->GetepsilBench()* myDarkMatter->GetepsilBench());
+    
+//       //sigma norm removed
+//        //CrossSection /= myDarkMatter->GetSigmaNorm();
+
+//       CrossSection *= 1000000; // scaling
+
+//       G4double n = aTrack.GetMaterial()->GetTotNbOfAtomsPerVolume();
+//       G4double XMeanFreePath = 1./(n*CrossSection);
+
+// //      XMeanFreePath /= BiasSigmaFactor;
+
+//        //debug check
+//     //   std::cout << "CrossSection " << CrossSection << std::endl;
+//     //   std::cout << "picobarn value " << picobarn << std::endl;
+//     //   std::cout << "GetepsilBench() value " << myDarkMatter->GetepsilBench() << std::endl;
+//   //     std::cout << "Getepsil() value " << myDarkMatter->Getepsil() << std::endl;
+//      //  std::cout << "GetSigmaNorm() value " << myDarkMatter->GetSigmaNorm() << std::endl;
+//       // std::cout << "BiasSigmaFactor value " << BiasSigmaFactor << std::endl;
+//     //   std::cout << "n value" << n << std::endl;
+//     //   std::cout << "XMeanFreePath value " << XMeanFreePath << std::endl;
+
+
+
+
+
+//       return XMeanFreePath;
+
+//   }
+//   return DBL_MAX;
+// }
+
+/* Further simplification of Mean Free path 31 July */
 
 
 G4double DMProcessPrimakoffALP::GetMeanFreePath( const G4Track& aTrack,
@@ -64,61 +176,63 @@ G4double DMProcessPrimakoffALP::GetMeanFreePath( const G4Track& aTrack,
   G4double DensityMat = aTrack.GetMaterial()->GetDensity()/(g/cm3);
   G4double ekin = aTrack.GetKineticEnergy()/GeV;
 
-  // adding to get Z and A values 
   const G4Material* mat = aTrack.GetMaterial();
-  const G4Element*  elm = GetDominantElement(mat);
- 
-  G4double Z          = elm->GetZ();   
-  G4double A          = elm->GetN();          // atomic mass number (amu)
-
+  //----------------------------------------------------//
   if( myDarkMatter->EmissionAllowed(ekin, DensityMat) ) {
+  const G4ElementVector* elements = mat->GetElementVector();
+  const G4double* nAtomsPerVolume = mat->GetVecNbOfAtomsPerVolume();
 
-    //  G4double CrossSection = myDarkMatter->GetSigmaTot(ekin); //A.C. by DarkMatter definition, this is in picobarn
-    // Z and A values comes from current step in material   
+  G4double invMFP = 0.0;
 
-   std::cout << "CrossSection  Z" << Z << std::endl;
-   std::cout << "CrossSection  A " << A << std::endl;
-
-   // both below give same result
-   //G4double CrossSection = myDarkMatter->GetSigmaTot(ekin);
-   G4double CrossSection = myDarkMatter->TotalCrossSectionCalcPrimakoff(ekin, A, Z); //picobarn
-
+for (size_t i = 0; i < mat->GetNumberOfElements(); ++i)
+{
+    const G4Element* element = (*elements)[i];
+    G4double Z = element->GetZ();
+    G4double A = element->GetN();
+    G4double CrossSection = myDarkMatter->TotalCrossSectionCalcPrimakoff(ekin, A, Z);
     CrossSection *= picobarn;
+      // Revert from benchmark epsilon back to physical epsilon
+    CrossSection *= (myDarkMatter->Getepsil()* myDarkMatter->Getepsil())
+                  / (myDarkMatter->GetepsilBench()*myDarkMatter->GetepsilBench());
 
-    std::cout << "CrossSection  before benching " << CrossSection << std::endl;
+    CrossSection *= 1000000; // scaling by 1 million
+    G4double contribution =nAtomsPerVolume[i] * CrossSection;
+  //  std::cout
+  //       << "Material = " << mat->GetName()
+  //       << " Element = " << element->GetName()
+  //       << " Z = " << Z
+  //       << " A = " << A
+  //       << " n = " << nAtomsPerVolume[i]
+  //       << " sigma = " << CrossSection
+  //       << " n*sigma = " << contribution
+  //       << std::endl;
 
+    invMFP += contribution;
+}
 
-      //The DarkMatter classes compute the cross section for eps = epsilBench. Here, we revert back to epsilon
-      CrossSection *= (myDarkMatter->Getepsil()* myDarkMatter->Getepsil())/(myDarkMatter->GetepsilBench()* myDarkMatter->GetepsilBench());
-    
-      //sigma norm removed
-       //CrossSection /= myDarkMatter->GetSigmaNorm();
+     G4double XMeanFreePath = 1.0 / invMFP;
 
+ 
+ //    std::cout << "CrossSection for Mean Path " << CrossSection << std::endl;
+    // std::cout << "picobarn value " << picobarn << std::endl;
+    // std::cout << "GetepsilBench() value " << myDarkMatter->GetepsilBench() << std::endl;
+    // std::cout << "Getepsil() value " << myDarkMatter->Getepsil() << std::endl;
+    // std::cout << "n (atoms) value " << nAtoms << std::endl;
+    // std::cout << "n (molecules) value " << nMolecule << std::endl;
+    // std::cout << "sumAtoms (Sum a_i) value " << sumAtoms << std::endl;
+  //   std::cout << "XMeanFreePath value " << XMeanFreePath << std::endl;
+    // std::cout << "Photon energy = " << ekin << " GeV" << std::endl;
 
-      G4double n = aTrack.GetMaterial()->GetTotNbOfAtomsPerVolume();
-      G4double XMeanFreePath = 1./(n*CrossSection);
-
-//      XMeanFreePath /= BiasSigmaFactor;
-
-       //debug check
-       std::cout << "CrossSection " << CrossSection << std::endl;
-       std::cout << "picobarn value " << picobarn << std::endl;
-       std::cout << "GetepsilBench() value " << myDarkMatter->GetepsilBench() << std::endl;
-       std::cout << "Getepsil() value " << myDarkMatter->Getepsil() << std::endl;
-     //  std::cout << "GetSigmaNorm() value " << myDarkMatter->GetSigmaNorm() << std::endl;
-      // std::cout << "BiasSigmaFactor value " << BiasSigmaFactor << std::endl;
-       std::cout << "n value" << n << std::endl;
-       std::cout << "XMeanFreePath value " << XMeanFreePath << std::endl;
-
-
-
-
-
-      return XMeanFreePath;
-
+    return XMeanFreePath;
   }
   return DBL_MAX;
 }
+
+
+
+
+
+/* Update following July 31st */
 
 G4VParticleChange* DMProcessPrimakoffALP::PostStepDoIt( const G4Track& aTrack,
                                                         const G4Step & aStep )
@@ -133,16 +247,21 @@ G4VParticleChange* DMProcessPrimakoffALP::PostStepDoIt( const G4Track& aTrack,
  /*Same material lookup as GetMeanFreePath — must stay consistent,
    since the angular/energy sampling depends on Z, A too.  */ 
  // see SimulateEmissionWithAngle3 function overload in DarkMatter.cc
+  // auto table = BuildTargetTable(mat, ekin);
 
- const G4Material* mat = aTrack.GetMaterial();
-  const G4Element*  elm = GetDominantElement(mat);
-  G4double Z = elm->GetZ();
-  G4double A = elm->GetN();
+  // const auto& target = SampleTarget(table);
+  const G4Material* mat = aTrack.GetMaterial();
+  // const G4Element*  elm = GetDominantElement(mat);
+  // G4double Z = elm->GetZ();
+  // G4double A = elm->GetN();
 
+  auto table = BuildTargetTable(mat, incidentE);
+  const auto& target = SampleTarget(table);
 
-  G4double XAcc = myDarkMatter->SimulateEmissionWithAngle3(incidentE/GeV, angles, A, Z);
+  G4double XAcc = myDarkMatter->SimulateEmissionWithAngle3(incidentE/GeV, angles, target.A,  target.Z);
 
-  
+ 
+
 
   // Check if it failed? In this case XAcc = 0
 
@@ -175,9 +294,123 @@ G4VParticleChange* DMProcessPrimakoffALP::PostStepDoIt( const G4Track& aTrack,
   aParticleChange.ProposeEnergy( 0. );
   aParticleChange.ProposeTrackStatus( fStopAndKill );
 
+  /*Output to write to fill with Event ID instead of verbosing to 2 */
+
+G4int eventID =
+    G4EventManager::GetEventManager()->GetConstCurrentEvent()->GetEventID();
+// Write output to file
+std::ofstream outfile("DMEmission.txt", std::ios::app);
+
+if (outfile.is_open())
+{
+    outfile << "Event = " << eventID
+            << " | DM PDG ID = " << theDMParticlePtr->GetPDGEncoding()
+            << " | emitted by = " << aTrack.GetDefinition()->GetParticleName()
+            << " | material = " << mat->GetName()
+            << " | Z = " << target.Z
+            << " | A = " << target.A
+            << " | incident energy = " << incidentE / GeV << " GeV"
+            << " | XAcc = " << XAcc
+            << " | DM energy = " << DME / GeV << " GeV"
+            << std::endl;
+
+    outfile.close();
+}
+else
+{
+    G4cerr << "ERROR: Could not open DMEmission.txt" << G4endl;}
  std::cout << "DM PDG ID = " << theDMParticlePtr->GetPDGEncoding()
             << " emitted by " << aTrack.GetDefinition()->GetParticleName()
-            << " in material " << mat->GetName() << " (Z=" << Z << ", A=" << A << ")"
+            << " in material " << mat->GetName() << " (Z=" << target.Z << ", A=" << target.A << ")"
             << " with energy = " << incidentE/GeV << " DM energy = " << DME/GeV << std::endl;
   return G4VDiscreteProcess::PostStepDoIt(aTrack, aStep);
+}
+
+std::vector<DMProcessPrimakoffALP::TargetElementData>
+DMProcessPrimakoffALP::BuildTargetTable(
+        const G4Material* mat,
+        G4double ekin) const
+{
+    std::vector<TargetElementData> table;
+
+
+    const G4ElementVector* elements =
+        mat->GetElementVector();
+
+    const G4double* numberDensity =
+        mat->GetVecNbOfAtomsPerVolume();
+
+
+    for(size_t i=0; i<elements->size(); i++)
+    {
+        TargetElementData t;
+
+        t.Z = (*elements)[i]->GetZ();
+        t.A = (*elements)[i]->GetN();
+
+        t.numberDensity = numberDensity[i];
+
+        t.sigma =
+            myDarkMatter->TotalCrossSectionCalcPrimakoff(
+                ekin,
+                t.A,
+                t.Z);
+
+
+        t.rate = t.numberDensity*t.sigma;
+
+        // DEBUG
+        G4cout
+        << "ekin = " << ekin
+        << ", Z = " << t.Z
+        << ", A = " << t.A
+        << ", density = " << t.numberDensity
+        << ", sigma = " << t.sigma
+        << ", rate = " << t.rate
+        << G4endl;
+
+
+
+        table.push_back(t);
+    }
+
+
+    return table;
+}
+
+
+const DMProcessPrimakoffALP::TargetElementData&
+DMProcessPrimakoffALP::SampleTarget(
+    const std::vector<TargetElementData>& table) const
+{
+
+    G4double totalRate = 0.0;
+
+    for(const auto& t : table)
+    {
+        totalRate += t.rate;
+    }
+
+
+    // random number between 0 and total rate
+    G4double random =
+        G4UniformRand()*totalRate;
+
+
+    G4double cumulative = 0.0;
+
+
+    for(const auto& t : table)
+    {
+        cumulative += t.rate;
+
+        if(random < cumulative)
+        {
+            return t;
+        }
+    }
+
+
+    // safety fallback
+    return table.back();
 }

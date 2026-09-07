@@ -4,15 +4,26 @@
 /control/cout/ignoreThreadsExcept 0
 /control/verbose 2
 /run/verbose 1
+/tracking/verbose 0
 #
-/testem/det/setMat G4_Pb
-/testem/det/setSize 1 m
+#/testem/det/setMat G4_LEAD_OXIDE
+#/testem/det/setMat G4_Pb
+#/testem/det/setMat G4_Ag
+#/testem/det/setMat G4_Fe
+/testem/det/setMat G4_W
+#/testem/det/setMat G4_Ba
+#/testem/det/setMat G4_CONCRETE
+#/testem/det/setMat G4_Zn
+#/testem/det/setMat G4_Sn
+#/testem/det/setMat G4_Zr
+/testem/det/setSize 0.1 m
 #
-/testem/phys/addPhysics standard
+#/testem/phys/addPhysics standard
 #
-/run/setCut 1 mm
+/run/setCut 0.01 mm
 #
 /run/initialize
+/testem/trackSecondaries true
 #
 /gun/particle gamma
 /gun/energy 100 GeV
@@ -32,4 +43,4 @@
 /analysis/h1/set 13 100 0 1000 GeV  #e+ energy spectrum
 #
 /run/printProgress 1
-/run/beamOn 100
+/run/beamOn 1000000
